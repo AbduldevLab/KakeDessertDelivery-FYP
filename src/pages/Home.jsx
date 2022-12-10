@@ -16,11 +16,13 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
-import products from "../assets/fake-data/products.js";
+import products from "../assets/brand/products.js";
 
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+import foodCategoryImg01 from "../assets/images/desserts.png";
+import foodCategoryImg02 from "../assets/images/drinks.png";
+import foodCategoryImg03 from "../assets/images/snacks.png";
+
+
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
@@ -56,7 +58,7 @@ const Home = () => {
   const [hotPizza, setHotPizza] = useState([]);
 
   useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === "Pizza");
+    const filteredPizza = products.filter((item) => item.category === "Drinks");
     const slicePizza = filteredPizza.slice(0, 4);
     setHotPizza(slicePizza);
   }, []);
@@ -66,25 +68,25 @@ const Home = () => {
       setAllProducts(products);
     }
 
-    if (category === "BURGER") {
+    if (category === "DESSERT") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Burger"
+        (item) => item.category === "Desserts"
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "PIZZA") {
+    if (category === "DRINK") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Pizza"
+        (item) => item.category === "Drinks"
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "BREAD") {
+    if (category === "SNACK") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Bread"
+        (item) => item.category === "Snacks"
       );
 
       setAllProducts(filteredProducts);
@@ -190,7 +192,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Popular choices</h2>
+              <h2>Our Popular Choices</h2>
             </Col>
 
             <Col lg="12">
@@ -210,7 +212,7 @@ const Home = () => {
                   onClick={() => setCategory("BURGER")}
                 >
                   <img src={foodCategoryImg01} alt="" />
-                  Burger
+                  Desserts
                 </button>
 
                 <button
@@ -220,7 +222,7 @@ const Home = () => {
                   onClick={() => setCategory("PIZZA")}
                 >
                   <img src={foodCategoryImg02} alt="" />
-                  Pizza
+                  Drinks
                 </button>
 
                 <button
@@ -230,7 +232,7 @@ const Home = () => {
                   onClick={() => setCategory("BREAD")}
                 >
                   <img src={foodCategoryImg03} alt="" />
-                  Bread
+                  Snacks
                 </button>
               </div>
             </Col>

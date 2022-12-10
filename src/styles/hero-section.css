@@ -32,9 +32,11 @@
   transition: 0.3s;
 }
 
-/* .order__btn:hover {
-  background: #F4A460;
-} */
+.order__btn:hover {
+  color: inherit;
+  text-decoration: none !important;
+} 
+
 .all__foods-btn {
   background: transparent;
   border: 1px solid #CD853F !important;

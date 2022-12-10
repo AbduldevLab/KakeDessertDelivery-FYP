@@ -4,14 +4,14 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";
 
-import products from "../assets/fake-data/products";
+import products from "../assets/brand/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";
 import "../styles/pagination.css";
 
-const AllFoods = () => {
+const Allitems = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [pageNumber, setPageNumber] = useState(0);
@@ -41,7 +41,7 @@ const AllFoods = () => {
   };
 
   return (
-    <Helmet title="All-Foods">
+    <Helmet title="All Items">
       <CommonSection title="All Foods" />
 
       <section>
@@ -94,4 +94,4 @@ const AllFoods = () => {
   );
 };
 
-export default AllFoods;
+export default Allitems;
