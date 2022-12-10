@@ -23,6 +23,14 @@ const products = [
     title: "Cheese Cake Tub",
     price: 6,
     image01: product_01_image_01,
+    category: "Desserts",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+  {
+    id: "02",
+    title: "Cheese Cake Tub",
+    price: 6,
     image02: product_01_image_02,
     category: "Desserts",
 
@@ -86,7 +94,7 @@ const products = [
     price: 115.0,
     image01: product_07_image_01,
     category: "Drinks",
-    
+
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
   // {
