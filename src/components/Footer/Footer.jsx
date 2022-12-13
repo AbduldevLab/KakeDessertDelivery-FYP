@@ -16,8 +16,7 @@ const Footer = () => {
               <img src={logo} alt="logo" />
               <h5>Your Kake</h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nesciunt pariatur accusamus
+                To find where we are based on Google maps , click here
               </p>
             </div>
           </Col>
@@ -26,12 +25,12 @@ const Footer = () => {
             <h5 className="footer__title">Delivery Time</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Sunday - Thursday</span>
-                <p>10:00am - 11:00pm</p>
+                <span>Wednesday - Sunday</span>
+                <p>6:00pm - 10:00pm</p>
               </ListGroupItem>
 
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Friday - Saturday</span>
+                <span>Monday - Tuesday</span>
                 <p>Off day</p>
               </ListGroupItem>
             </ListGroup>
@@ -41,14 +40,14 @@ const Footer = () => {
             <h5 className="footer__title">Contact</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <p>Location: ZindaBazar, Sylhet-3100, Bangladesh</p>
+                <p>Location: Unit 6, Coolport Porters Road, Coolmine Industrial Estate, D15 K6XK</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Phone: 01712345678</span>
+                <span>Phone: +353 87 287 5835</span>
               </ListGroupItem>
 
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Email: example@gmail.com</span>
+                <span>Email: kakedessertdelivery@gmail.com</span>
               </ListGroupItem>
             </ListGroup>
           </Col>
@@ -68,7 +67,7 @@ const Footer = () => {
         <Row className="mt-5">
           <Col lg="6" md="6">
             <p className="copyright__text">
-              Copyright - 2022, website made by Muhibur Rahman. All Rights
+              Copyright - 2023, A.Zino All Rights
               Reserved.
             </p>
           </Col>
@@ -82,16 +81,16 @@ const Footer = () => {
                 </Link>{" "}
               </span>
 
-              <span>
+              {/* <span>
                 <Link to="https://github.com/muhib160">
                   <i class="ri-github-line"></i>
                 </Link>
-              </span>
+              </span> */}
 
               <span>
                 {" "}
-                <Link to=" https://www.youtube.com/c/MuhibsTechDiary">
-                  <i class="ri-youtube-line"></i>
+                <Link to=" https://www.instagram.com/kake_dessertdelivery/">
+                  <i class="ri-instagram-line"></i>
                 </Link>{" "}
               </span>
 

@@ -23,22 +23,24 @@ const products = [
     title: "Cheese Cake Tub",
     price: 6,
     image01: product_01_image_01,
-    category: "Desserts",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
-  {
-    id: "02",
-    title: "Cheese Cake Tub",
-    price: 6,
     image02: product_01_image_02,
     category: "Desserts",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
+  // {
+  //   id: "02",
+  //   title: "Cheese Cake Tub",
+  //   price: 6,
+  //   image02: product_01_image_02,
+  //   category: "Desserts",
+
+  //   desc: "See faqs page for any allergy advice and ingrediants.",
+  // },
+
   {
-    id: "02",
+    id: "03",
     title: "Cookie Dough Tray",
     price: 7,
     image01: product_02_image_01,
@@ -50,7 +52,7 @@ const products = [
   },
 
   {
-    id: "03",
+    id: "04",
     title: "Chocolate Cake Slice",
     price: 5,
     image01: product_03_image_01,
@@ -60,7 +62,7 @@ const products = [
   },
 
   {
-    id: "04",
+    id: "05",
     title: "Red-Velvet Cake Slice",
     price: 5,
     image01: product_04_image_01,
@@ -70,7 +72,7 @@ const products = [
   },
 
   {
-    id: "05",
+    id: "06",
     title: "Croissant",
     price: 3,
     image01: product_05_image_01,
@@ -79,7 +81,7 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
   {
-    id: "06",
+    id: "07",
     title: "Biscoff Shake",
     price: 5,
     image01: product_06_image_01,
@@ -89,9 +91,9 @@ const products = [
   },
 
   {
-    id: "07",
+    id: "08",
     title: "Strawberry Smoothie",
-    price: 115.0,
+    price: 5,
     image01: product_07_image_01,
     category: "Drinks",
 

@@ -207,9 +207,9 @@ const Home = () => {
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BURGER" ? "foodBtnActive" : ""
+                    category === "DESSERT" ? "foodBtnActive" : ""
                   } `}
-                  onClick={() => setCategory("BURGER")}
+                  onClick={() => setCategory("DESSERT")}
                 >
                   <img src={foodCategoryImg01} alt="" />
                   Desserts
@@ -217,9 +217,9 @@ const Home = () => {
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "PIZZA" ? "foodBtnActive" : ""
+                    category === "DRINK" ? "foodBtnActive" : ""
                   } `}
-                  onClick={() => setCategory("PIZZA")}
+                  onClick={() => setCategory("DRINK")}
                 >
                   <img src={foodCategoryImg02} alt="" />
                   Drinks
@@ -227,9 +227,9 @@ const Home = () => {
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BREAD" ? "foodBtnActive" : ""
+                    category === "SNACK" ? "foodBtnActive" : ""
                   } `}
-                  onClick={() => setCategory("BREAD")}
+                  onClick={() => setCategory("SNACK")}
                 >
                   <img src={foodCategoryImg03} alt="" />
                   Snacks
@@ -256,24 +256,23 @@ const Home = () => {
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
                 <h2 className="tasty__treat-title mb-4">
-                  Why <span>Tasty Treat?</span>
+                  Why <span>kake?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum, minus. Tempora reprehenderit a corporis velit,
-                  laboriosam vitae ullam, repellat illo sequi odio esse iste
-                  fugiat dolor, optio incidunt eligendi deleniti!
+                We provide a wide range of services, including custom cakes, special orders,
+                and wedding cakes. We use only fresh ingredients and make everything homemade
+                from scratch.
                 </p>
 
                 <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className=" choose__us-title d-flex align-items-center gap-2 ">
                       <i class="ri-checkbox-circle-line"></i> Fresh and tasty
-                      foods
+                      desserts
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Quia, voluptatibus.
+                    For our desserts, we only use the best ingredients. There are about 
+                    20+ different handcrafted desserts available. Check our Instagram to request a special order.
                     </p>
                   </ListGroupItem>
 
@@ -282,19 +281,18 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                    We are engaged across all of our social media channels. Expect a response to emails within 24 hours 
+                    at the very least. The website's live chat feature will be available soon.
                     </p>
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i>Order from any
-                      location{" "}
+                      <i class="ri-checkbox-circle-line"></i>Delivery and collection{" "}
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                    We provide both delivery and collection; for more information about 
+                    both services, see the business hours shown below. 
                     </p>
                   </ListGroupItem>
                 </ListGroup>
@@ -308,7 +306,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5 ">
-              <h2>Hot Pizza</h2>
+              <h2>Hot/Cold Drinks</h2>
             </Col>
 
             {hotPizza.map((item) => (
@@ -325,14 +323,14 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="testimonial ">
-                <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
+                <h5 className="testimonial__subtitle mb-4">Slide show</h5>
                 <h2 className="testimonial__title mb-4">
-                  What our <span>customers</span> are saying
+                  What our <span>Special</span> orders look like
                 </h2>
                 <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
+                To stay updated on our offers, various raffles,<br/>
+                and door-to-door giveaways, <br/>
+                make sure to follow our Instagram!
                 </p>
 
                 <TestimonialSlider />

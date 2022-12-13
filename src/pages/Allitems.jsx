@@ -42,8 +42,7 @@ const Allitems = () => {
 
   return (
     <Helmet title="All Items">
-      <CommonSection title="All Foods" />
-
+      <CommonSection title="All Desserts" />
       <section>
         <Container>
           <Row>

@@ -44,7 +44,7 @@ const Cart = () => {
                   Subtotal: €
                   <span className="cart__subtotal">{totalAmount}</span>
                 </h6>
-                <p>Taxes and shipping will calculate at checkout</p>
+                <p>Delivery fee at checkout</p>
                 <div className="cart__page-btn">
                   <button className="addTOCart__btn me-4">
                     <Link to="/foods">Continue Shopping</Link>
@@ -75,7 +75,7 @@ const Tr = (props) => {
         <img src={image01} alt="" />
       </td>
       <td className="text-center">{title}</td>
-      <td className="text-center">${price}</td>
+      <td className="text-center">€{price}</td>
       <td className="text-center">{quantity}px</td>
       <td className="text-center cart__item-del">
         <i class="ri-delete-bin-line" onClick={deleteItem}></i>

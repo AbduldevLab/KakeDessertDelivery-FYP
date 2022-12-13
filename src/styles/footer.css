@@ -88,25 +88,25 @@
 @media only screen and (max-width: 992px) {
   .newsletter input {
     padding: 7px;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
   .newsletter span {
     padding: 4px 20px;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .footer__title {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .delivery__time-item span {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .delivery__time-item p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 }

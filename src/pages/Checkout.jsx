@@ -16,7 +16,7 @@ const Checkout = () => {
 
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const shippingCost = 30;
+  const shippingCost = 2;
 
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
@@ -102,14 +102,14 @@ const Checkout = () => {
             <Col lg="4" md="6">
               <div className="checkout__bill">
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Subtotal: <span>${cartTotalAmount}</span>
+                  Subtotal: <span>€{cartTotalAmount}</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Shipping: <span>${shippingCost}</span>
+                  Delivery: <span>€{shippingCost}</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>${totalAmount}</span>
+                    Total: <span>€{totalAmount}</span>
                   </h5>
                 </div>
               </div>
