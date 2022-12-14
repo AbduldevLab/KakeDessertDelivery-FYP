@@ -87,7 +87,7 @@ const products = [
   },
   
   {
-    id: "08",
+    id: "09",
     title: "Snapple",
     price: 2.0,
     image01: product_02_image_03,
