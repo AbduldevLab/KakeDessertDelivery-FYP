@@ -16,7 +16,8 @@ const Footer = () => {
               <img src={logo} alt="logo" />
               <h5>Your Kake</h5>
               <p>
-                To find where we are based on Google maps , click here
+                To find where we are based on Google Maps, Click
+                <span className="footer__title"><Link to="/contact" > Here</Link></span>
               </p>
             </div>
           </Col>
@@ -54,7 +55,7 @@ const Footer = () => {
 
           <Col lg="3" md="4" sm="6">
             <h5 className="footer__title">Newsletter</h5>
-            <p>Subscribe our newsletter</p>
+            <p>Subscribe to our newsletter</p>
             <div className="newsletter">
               <input type="email" placeholder="Enter your email" />
               <span>
@@ -96,7 +97,7 @@ const Footer = () => {
 
               <span>
                 {" "}
-                <Link to=" https://www.linkedin.com/in/muhib160/">
+                <Link to=" https://www.linkedin.com/">
                   <i class="ri-linkedin-line"></i>
                 </Link>{" "}
               </span>

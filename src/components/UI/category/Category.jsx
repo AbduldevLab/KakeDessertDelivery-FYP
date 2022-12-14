@@ -15,7 +15,7 @@ const categoryData = [
     imgUrl: categoryImg01,
   },
   {
-    display: "Milk -Shakes",
+    display: "Cold Drinks",
     imgUrl: categoryImg02,
   },
 

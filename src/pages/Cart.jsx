@@ -47,7 +47,7 @@ const Cart = () => {
                 <p>Delivery fee at checkout</p>
                 <div className="cart__page-btn">
                   <button className="addTOCart__btn me-4">
-                    <Link to="/foods">Continue Shopping</Link>
+                    <Link to="/menu">Continue Shopping</Link>
                   </button>
                   <button className="addTOCart__btn">
                     <Link to="/checkout">Proceed to checkout</Link>
