@@ -12,7 +12,7 @@ import Register from "../pages/Register";
 
 const Routers = () => {
   return (
-    <Routes>
+    <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/menu" element={<Allitems />} />
