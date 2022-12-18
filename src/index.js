@@ -15,7 +15,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={process.env.PUBLIC_URL}>
+   <Router>
       <Provider store={store}>
         <App />
       </Provider>

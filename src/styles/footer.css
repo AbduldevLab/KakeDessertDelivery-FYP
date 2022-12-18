@@ -39,6 +39,11 @@
   color: #212245;
   font-weight: 600;
 }
+.footer__title1 {
+  font-size: 1rem;
+  color: #212245;
+  font-weight: 600;
+}
 
 .newsletter {
   padding: 5px;

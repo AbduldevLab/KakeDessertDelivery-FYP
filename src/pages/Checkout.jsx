@@ -10,7 +10,7 @@ const Checkout = () => {
   const [enterName, setEnterName] = useState("");
   const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
-  const [enterCountry, setEnterCountry] = useState("");
+  //const [enterCountry, setEnterCountry] = useState("");
   const [enterCity, setEnterCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
 
@@ -26,7 +26,7 @@ const Checkout = () => {
       name: enterName,
       email: enterEmail,
       phone: enterNumber,
-      country: enterCountry,
+      //country: enterCountry,
       city: enterCity,
       postalCode: postalCode,
     };
@@ -42,7 +42,7 @@ const Checkout = () => {
         <Container>
           <Row>
             <Col lg="8" md="6">
-              <h6 className="mb-4">Shipping Address</h6>
+              <h6 className="mb-4">Delivery Address</h6>
               <form className="checkout__form" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input
@@ -69,14 +69,14 @@ const Checkout = () => {
                     onChange={(e) => setEnterNumber(e.target.value)}
                   />
                 </div>
-                <div className="form__group">
+                {/* <div className="form__group">
                   <input
                     type="text"
                     placeholder="Country"
                     required
                     onChange={(e) => setEnterCountry(e.target.value)}
                   />
-                </div>
+                </div> */}
                 <div className="form__group">
                   <input
                     type="text"

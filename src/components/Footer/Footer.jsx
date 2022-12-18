@@ -13,11 +13,11 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-              <img src={logo} alt="logo" />
+            <Link to="/home"><img src={logo} alt="logo" /></Link>
               <h5>Your Kake</h5>
               <p>
                 To find where we are based on Google Maps, Click
-                <span className="footer__title"><Link to="/contact" > Here</Link></span>
+                <span className="footer__title1"><Link to="/contact" > Here</Link></span>
               </p>
             </div>
           </Col>
@@ -44,11 +44,11 @@ const Footer = () => {
                 <p>Location: Unit 6, Coolport Porters Road, Coolmine Industrial Estate, D15 K6XK</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Phone: +353 87 287 5835</span>
+                <span>Phone:</span> +353 87 287 5835
               </ListGroupItem>
 
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Email: kakedessertdelivery@gmail.com</span>
+                <span>Email:</span> kakedessertdelivery@gmail.com
               </ListGroupItem>
             </ListGroup>
           </Col>
@@ -77,27 +77,27 @@ const Footer = () => {
               <p className="m-0">Follow: </p>
               <span>
                 {" "}
-                <Link to="https://www.facebook.com/muhib160">
-                  <i class="ri-facebook-line"></i>
-                </Link>{" "}
+                <a rel="external" href="https://www.facebook.com/kakedessertdelivery">
+                  <i className="ri-facebook-line"></i>
+                </a>{" "}
               </span>
 
-              {/* <span>
-                <Link to="https://github.com/muhib160">
+              <span>
+              <a rel="external" href="https://github.com/AbdulHaouit">
                   <i class="ri-github-line"></i>
-                </Link>
-              </span> */}
+                </a>
+              </span> 
 
               <span>
                 {" "}
-                <Link to=" https://www.instagram.com/kake_dessertdelivery/">
-                  <i class="ri-instagram-line"></i>
-                </Link>{" "}
+                <a rel="external" href="https://instagram.com/kake_dessertdelivery?igshid=YmMyMTA2M2Y=">
+                  <i className="ri-instagram-line"></i>
+                </a>{" "}
               </span>
 
               <span>
                 {" "}
-                <Link to=" https://www.linkedin.com/">
+                <Link to=" /contact">
                   <i class="ri-linkedin-line"></i>
                 </Link>{" "}
               </span>

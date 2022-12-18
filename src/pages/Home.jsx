@@ -40,7 +40,7 @@ const featureData = [
   },
 
   {
-    title: "Fast replies",
+    title: "Fast Replies",
     imgUrl: featureImg02,
     desc: "Quick responses from us on all our social media platforms. Live chat coming soon..",
   },
@@ -113,7 +113,7 @@ const Home = () => {
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-6">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                  <Link to="/menu">Order now <i class="ri-arrow-right-s-line"></i> </Link>
+                  <Link to="/menu">Order Now <i class="ri-arrow-right-s-line"></i> </Link>
                   </button>
 
                   {/* <button className="all__foods-btn">
@@ -222,7 +222,7 @@ const Home = () => {
                   onClick={() => setCategory("DRINK")}
                 >
                   <img src={foodCategoryImg02} alt="" />
-                  Drinks
+                  Beverages
                 </button>
 
                 <button
