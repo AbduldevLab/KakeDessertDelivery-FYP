@@ -32,7 +32,7 @@ const Footer = () => {
 
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
                 <span>Monday - Tuesday</span>
-                <p>Off day</p>
+                <p>Closed</p>
               </ListGroupItem>
             </ListGroup>
           </Col>
