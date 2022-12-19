@@ -8,7 +8,7 @@ import products from "../assets/brand/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 
-import "../styles/all-foods.css";
+import "../styles/all-desserts.css";
 import "../styles/pagination.css";
 
 const Allitems = () => {

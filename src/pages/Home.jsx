@@ -55,12 +55,12 @@ const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
 
-  const [hotPizza, setHotPizza] = useState([]);
+  const [hotDrink, sethotDrink] = useState([]);
 
   useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === "Drinks");
-    const slicePizza = filteredPizza.slice(0, 4);
-    setHotPizza(slicePizza);
+    const filteredDrink = products.filter((item) => item.category === "Drinks");
+    const sliceCup = filteredDrink.slice(0, 4);
+    sethotDrink(sliceCup);
   }, []);
 
   useEffect(() => {
@@ -309,7 +309,7 @@ const Home = () => {
               <h2>Hot/Cold Drinks</h2>
             </Col>
 
-            {hotPizza.map((item) => (
+            {hotDrink.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
                 <ProductCard item={item} />
               </Col>

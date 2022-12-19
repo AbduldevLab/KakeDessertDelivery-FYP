@@ -17,7 +17,7 @@ const Footer = () => {
               <h5>Your Kake</h5>
               <p>
                 To find where we are based on Google Maps, Click
-                <span className="footer__title1"><Link to="/contact" > Here</Link></span>
+                <span className="footer__title1"><Link to="/contact" > here</Link></span>
               </p>
             </div>
           </Col>
@@ -56,12 +56,17 @@ const Footer = () => {
           <Col lg="3" md="4" sm="6">
             <h5 className="footer__title">Newsletter</h5>
             <p>Subscribe to our newsletter</p>
-            <div className="newsletter">
+            {/* <div className="newsletter">
               <input type="email" placeholder="Enter your email" />
               <span>
                 <i class="ri-send-plane-line"></i>
               </span>
-            </div>
+            </div> */}
+            <h5 className="footer__title">Faq's</h5>
+            <p>Common questions </p>
+
+            <h5 className="footer__title">Terms and Conditions</h5>
+            <p>Read more </p>
           </Col>
         </Row>
 
@@ -97,9 +102,9 @@ const Footer = () => {
 
               <span>
                 {" "}
-                <Link to=" /contact">
+                <a rel="external" href="https://www.linkedin.com/in/yusuf-shushan/">
                   <i class="ri-linkedin-line"></i>
-                </Link>{" "}
+                </a>{" "}
               </span>
             </div>
           </Col>
