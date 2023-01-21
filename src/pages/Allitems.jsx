@@ -4,7 +4,7 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";
 
-import products from "../assets/brand/products";
+import menuproducts from "../assets/brand/menuproducts.js";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 
@@ -16,7 +16,7 @@ const Allitems = () => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const searchedProduct = products.filter((item) => {
+  const searchedProduct = menuproducts.filter((item) => {
     if (searchTerm.value === "") {
       return item;
     }
