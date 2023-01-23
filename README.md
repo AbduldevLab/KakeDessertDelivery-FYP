@@ -28,10 +28,10 @@
 6. remixIcon/flaticon
 7. Firebase
 
-### Technologies Used:
+### Live domain link:
 
 ---
 
-Visit live deployed website, track work progress.
- 
+Visit the deployed website, track live work progress.
+
 www.kakedessertdelivery.com
