@@ -41,7 +41,7 @@ const Footer = () => {
             <h5 className="footer__title">Contact</h5>
             <ListGroup className="deliver__time-list">
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <p>Location: Unit 6, Coolport Porters Road, Coolmine Industrial Estate, D15 K6XK</p>
+                <p><span>Location:</span> Unit 6, Coolport Porters Road, Coolmine Industrial Estate, D15 K6XK</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
                 <span>Phone:</span> +353 87 287 5835
