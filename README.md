@@ -27,3 +27,11 @@
 5. Bootstrap
 6. remixIcon/flaticon
 7. Firebase
+
+### Technologies Used:
+
+---
+
+Visit live deployed website, track work progress.
+ 
+www.kakedessertdelivery.com
