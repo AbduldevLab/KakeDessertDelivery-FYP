@@ -1,11 +1,13 @@
 import React from "react";
 
 import "../../../styles/product-card.css";
+import EditProduct from "../../Modal/EditProduct";
 
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
+
 
 const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;
@@ -34,9 +36,10 @@ const ProductCard = (props) => {
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">€{price}</span>
-          <button className="addTOCart__btn" onClick={addToCart}>
+          <EditProduct/>
+          {/* <button className="addTOCart__btn" onClick={addToCart}>
             Add to Cart
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
