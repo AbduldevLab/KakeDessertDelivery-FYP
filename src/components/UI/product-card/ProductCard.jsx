@@ -23,6 +23,7 @@ const ProductCard = (props) => {
       })
     );
   };
+  
 
   return (
     <div className="product__item">
@@ -39,10 +40,11 @@ const ProductCard = (props) => {
           <EditProduct/>
           {/* <button className="addTOCart__btn" onClick={addToCart}>
             Add to Cart
-          </button> */}
+          </button>   */}
         </div>
       </div>
     </div>
+    
   );
 };
 
