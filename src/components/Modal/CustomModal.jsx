@@ -82,7 +82,7 @@ const CustomModal = (props) => {
     props.addToCart(toppings, sauces);
     props.closeModal();
   };
-
+  console.log("modalOpen:", props.modalOpen);
   return (
     <Modal
       show={props.showModal}
@@ -103,7 +103,7 @@ const CustomModal = (props) => {
             <input
               type="text"
               id="toppings"
-              onChange={(e) => setToppings(e.target.value.split(","))}
+              onChange={(e) => setToppings(e.target.value ? e.target.value.split(",") : [])}
             />
           </div>
           <div className="form-group">
@@ -111,7 +111,7 @@ const CustomModal = (props) => {
             <input
               type="text"
               id="sauces"
-              onChange={(e) => setSauces(e.target.value.split(","))}
+              onChange={(e) => setSauces(e.target.value ? e.target.value.split(",") : [])}
             />
           </div>
           <Button type="submit">Add to Cart</Button>
@@ -120,6 +120,7 @@ const CustomModal = (props) => {
       </Modal.Body>
     </Modal>
   );
+  
 };
 
 export default CustomModal;

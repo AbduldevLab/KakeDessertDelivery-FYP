@@ -49,6 +49,8 @@
 // };
 
 // export default ProductCard;
+//////////////////////////////////////////////////////
+
 import React, { useState } from "react";
 
 import "../../../styles/product-card.css";
@@ -90,13 +92,16 @@ const ProductCard = (props) => {
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">€{price}</span>
-          <button className="addTOCart__btn" onClick={() => setModalOpen(true)}>
+          <button className="addTOCart__btn" onClick={() => {
+            console.log("add to cart clicked");
+           setModalOpen(true)}}>
             Add to Cart
           </button>
         </div>
       </div>
       {modalOpen && (
         <ReactModal
+          showModal={modalOpen}
           closeModal={() => setModalOpen(false)}
           addToCart={addToCart}
         />
