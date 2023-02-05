@@ -42,6 +42,37 @@
   font-size: 0.9rem;
 }
 
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer > button {
+  margin-left: 10px;
+  border: none;
+}
+
+.modal-title {
+  color: #212245;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  color: #212245;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+option {
+  color: #212245;
+}
+
 @media only screen and (max-width: 992px) {
   .product__item {
     width: 170px;
