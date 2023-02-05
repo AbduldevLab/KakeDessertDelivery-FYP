@@ -36,7 +36,7 @@ const CustomModal = (props) => {
               // onChange={(e) => setToppings(e.target.value ? e.target.value.split(",") : [])}
               onChange={(e) => setToppings(e.target.value)}
             >
-            <option value="">Select a topping</option>
+            <option value="">Select one topping</option>
             <option value="Kinder">Kinder</option>
             <option value="Caramel fredo">Caramel fredo</option>
             <option value="Milky bar">Milky bar</option>
@@ -56,7 +56,7 @@ const CustomModal = (props) => {
               // onChange={(e) => setSauces(e.target.value ? e.target.value.split(",") : [])}
               onChange={(e) => setSauces(e.target.value)}
             >
-             <option value="">Select a sauce</option>
+             <option value="">Select one sauce</option>
              <option value="Milk chocolate">Milk chocolate</option>
              <option value="White chocolate">White chocolate</option>
              <option value="Milk chocolate">Kinder</option>
