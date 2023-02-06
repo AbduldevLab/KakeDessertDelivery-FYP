@@ -112,13 +112,9 @@ const Home = () => {
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-6">
-                  <button className="order__btn d-flex align-items-center justify-content-between">
+                <button className="order__btn d-flex align-items-center justify-content-between">
                   <Link to="/menu">Order Now <i class="ri-arrow-right-s-line"></i> </Link>
                   </button>
-
-                  {/* <button className="all__foods-btn">
-                    <Link to="/foods">Order now<i class="ri-arrow-right-s-line"></i></Link>
-                  </button> */}
                 </div>
 
                 <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">

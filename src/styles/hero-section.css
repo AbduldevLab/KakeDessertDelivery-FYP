@@ -32,9 +32,10 @@
   transition: 0.3s;
 }
 
-.order__btn:hover {
+.order__btn:hover a{
   color: inherit;
   text-decoration: none !important;
+  color: #F4A460;
 } 
 
 .all__foods-btn {
