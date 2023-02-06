@@ -36,17 +36,17 @@ const CustomModal = (props) => {
               // onChange={(e) => setToppings(e.target.value ? e.target.value.split(",") : [])}
               onChange={(e) => setToppings(e.target.value)}
             >
-            <option value="">Select one topping</option>
-            <option value="Kinder">Kinder</option>
-            <option value="Caramel fredo">Caramel fredo</option>
-            <option value="Milky bar">Milky bar</option>
-            <option value="Crunchie">Crunchie</option>
-            <option value="M&M">M&M</option>
-            <option value="Flake">Flake</option>
-            <option value="Maltesers">Maltesers</option>
-            <option value="Mint aero">Mint aero</option>
-            <option value="Biscoff bits">Biscoff bits</option>
-            <option value="Oreo bits ">Oreo bits</option>
+            <option style={{ color: "#F4A460" }} value="default">Select one topping</option>
+            <option style={{ color: "#F4A460" }} value="Kinder">Kinder</option>
+            <option style={{ color: "#F4A460" }} value="Caramel fre do">Caramel fredo</option>
+            <option style={{ color: "#F4A460" }} value="Milky bar">Milky bar</option>
+            <option style={{ color: "#F4A460" }} value="Crunchie">Crunchie</option>
+            <option style={{ color: "#F4A460" }} value="M&M">M&M</option>
+            <option style={{ color: "#F4A460" }} value="Flake">Flake</option>
+            <option style={{ color: "#F4A460" }} value="Maltesers">Maltesers</option>
+            <option style={{ color: "#F4A460" }} value="Mint aero">Mint aero</option>
+            <option style={{ color: "#F4A460" }} value="Biscoff bits">Biscoff bits</option>
+            <option style={{ color: "#F4A460" }} value="Oreo bits ">Oreo bits</option>
             </select>
           </div>
           <div className="form-group">
@@ -56,12 +56,12 @@ const CustomModal = (props) => {
               // onChange={(e) => setSauces(e.target.value ? e.target.value.split(",") : [])}
               onChange={(e) => setSauces(e.target.value)}
             >
-             <option value="">Select one sauce</option>
-             <option value="Milk chocolate">Milk chocolate</option>
-             <option value="White chocolate">White chocolate</option>
-             <option value="Milk chocolate">Kinder</option>
-             <option value="White chocolate">Biscoff</option>
-             <option value="Milk chocolate">Caramel</option>
+             <option style={{ color: "#F4A460" }} value="default">Select one sauce</option>
+             <option style={{ color: "#F4A460" }} value="Milk chocolate">Milk chocolate</option>
+             <option style={{ color: "#F4A460" }} value="White chocolate">White chocolate</option>
+             <option style={{ color: "#F4A460" }} value="Kinder">Kinder</option>
+             <option style={{ color: "#F4A460" }} value="Biscoff">Biscoff</option>
+             <option style={{ color: "#F4A460" }} value="Caramel">Caramel</option>
              </select>  
           </div>
           <Modal.Footer className="modal-footer">
