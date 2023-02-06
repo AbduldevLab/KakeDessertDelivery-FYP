@@ -6,13 +6,17 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const CustomModal = (props) => {
-  const [toppings, setToppings] = useState([]);
-  const [sauces, setSauces] = useState([]);
+  const [toppings, setToppings] = useState("default");
+  const [sauces, setSauces] = useState("default1");
+  const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addToCart(toppings, sauces);
-    props.closeModal();
+    setAttemptedSubmit(true);
+    if (toppings !== "default" && sauces !== "default1") {
+      props.addToCart(toppings, sauces);
+      props.closeModal();
+    }
   };
   return (
     <Modal
@@ -56,7 +60,7 @@ const CustomModal = (props) => {
               style={{ color: "#F4A460" }}
               onChange={(e) => setSauces(e.target.value)}
             >
-             <option value="default">Select one sauce</option>
+             <option value="default1">Select one sauce</option>
              <option value="Milk chocolate">Milk chocolate</option>
              <option value="White chocolate">White chocolate</option>
              <option value="Kinder">Kinder</option>
@@ -64,20 +68,27 @@ const CustomModal = (props) => {
              <option value="Caramel">Caramel</option>
              </select>  
           </div>
-          <Modal.Footer className="modal-footer">
-          <Button type="submit" style={{ backgroundColor: "#CD853F" }}>Add to Cart</Button>
-          <Button onClick={props.closeModal} style={{ backgroundColor: "#CD853F" }}>Cancel</Button>
-          </Modal.Footer>
-        </form>
-      </Modal.Body>
-    </Modal>
+           {attemptedSubmit && sauces === "default1" && <p style={{ color: "red" }}>Please select a sauce!</p>} 
+           {attemptedSubmit && toppings === "default" && <p style={{ color: "red" }}>Please select a Topping!</p>} 
+             <Modal.Footer className="modal-footer">
+              {attemptedSubmit === false || sauces !== "default1" && toppings !== "default" ? (
+                <Button type="submit" variant="danger" style={{ backgroundColor: "#CD853F" }}>
+                  Add to Cart
+                </Button>
+              ) : (
+                <Button variant="danger" disabled style={{ backgroundColor: "#CD853F" }}>
+                  Add to Cart
+                </Button>
+              )}
+              <Button onClick={props.closeModal} style={{ backgroundColor: "#CD853F" }}>Cancel</Button>
+             </Modal.Footer>
+             </form>
+          </Modal.Body>
+         </Modal>
   );
   
 };
 
 export default CustomModal;
-
-
-
 
 
