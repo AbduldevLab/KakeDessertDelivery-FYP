@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 
 import "../../../styles/product-card.css";
 import ReactModal from "../../Modal/CustomModal";
+import CloseModal from "../../Modal/ClosedModal";
 
 import { Link } from "react-router-dom";
 
@@ -13,6 +14,7 @@ const ProductCard = (props) => {
   const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [closeModalOpen, setCloseModalOpen] = useState(false);
 
   const addToCart = (toppings, sauces) => {
     dispatch(
@@ -25,6 +27,18 @@ const ProductCard = (props) => {
         sauces,
       })
     );
+  };
+  const handleClick = () => {
+    const currentTime = new Date().getHours();
+    const workHoursStart = 18;
+    const workHoursEnd = 22;
+
+    if (currentTime >= workHoursStart && currentTime < workHoursEnd) {
+      setModalOpen(true);
+    } else {
+      setCloseModalOpen(true);
+      console.log("We are closed");
+    }
   };
 
   return (
@@ -39,8 +53,7 @@ const ProductCard = (props) => {
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">€{price}</span>
-          <button className="addTOCart__btn" onClick={() => {
-           setModalOpen(true)}}>
+          <button className="addTOCart__btn" onClick={handleClick}>
             Add to Cart
           </button>
         </div>
@@ -50,6 +63,13 @@ const ProductCard = (props) => {
           showModal={modalOpen}
           closeModal={() => setModalOpen(false)}
           addToCart={addToCart}
+        />
+      )}
+      {closeModalOpen && (
+        <CloseModal
+          showModal={closeModalOpen}
+          closeModal={() => setCloseModalOpen(false)}
+          message="We are closed. Please come back between 18:00-22:00."
         />
       )}
     </div>

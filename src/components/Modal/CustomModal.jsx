@@ -14,7 +14,7 @@ const CustomModal = (props) => {
     e.preventDefault();
     setAttemptedSubmit(true);
     if (toppings !== "default" && sauces !== "default1") {
-      props.addToCart(toppings, sauces);
+      props.addToCart({toppings: toppings, sauces: sauces});
       props.closeModal();
     }
   };
@@ -68,10 +68,10 @@ const CustomModal = (props) => {
              <option value="Caramel">Caramel</option>
              </select>  
           </div>
-           {attemptedSubmit && sauces === "default1" && <p style={{ color: "red" }}>Please select a sauce!</p>} 
+           {attemptedSubmit && sauces === "default1" && <p style={{ color: "red" }}>Please select a Sauce!</p>} 
            {attemptedSubmit && toppings === "default" && <p style={{ color: "red" }}>Please select a Topping!</p>} 
              <Modal.Footer className="modal-footer">
-              {attemptedSubmit === false || sauces !== "default1" && toppings !== "default" ? (
+              {attemptedSubmit === false || (sauces !== "default1" && toppings !== "default")? (
                 <Button type="submit" variant="danger" style={{ backgroundColor: "#CD853F" }}>
                   Add to Cart
                 </Button>
