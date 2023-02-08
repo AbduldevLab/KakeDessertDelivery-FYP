@@ -41,6 +41,9 @@
   border-radius: 5px;
   font-size: 0.9rem;
 }
+.addTOCart__btn:hover {
+  color: #F4A460;
+}
 
 .modal-footer {
   display: flex;
