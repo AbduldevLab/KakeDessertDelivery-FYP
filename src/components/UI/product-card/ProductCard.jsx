@@ -37,7 +37,6 @@ const ProductCard = (props) => {
       setModalOpen(true);
     } else {
       setCloseModalOpen(true);
-      console.log("We are closed");
     }
   };
 
@@ -69,7 +68,11 @@ const ProductCard = (props) => {
         <CloseModal
           showModal={closeModalOpen}
           closeModal={() => setCloseModalOpen(false)}
-          message="We are closed. Please come back between 18:00-22:00."
+          message={
+            <div style={{ textAlign: "center", color: "red" }}>
+              Sorry, we are currently closed. Please come back between 18:00-22:00.
+            </div>
+          }
         />
       )}
     </div>

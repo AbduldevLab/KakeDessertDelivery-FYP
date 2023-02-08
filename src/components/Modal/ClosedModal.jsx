@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/product-card.css";
+
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
@@ -16,7 +16,9 @@ const ClosedModal = ({ showModal, closeModal, message }) => {
         </Button>
       </Modal.Footer>
     </Modal>
+    
   );
+  
 };
 
 export default ClosedModal;

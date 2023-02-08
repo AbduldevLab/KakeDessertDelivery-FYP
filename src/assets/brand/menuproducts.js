@@ -115,7 +115,7 @@ const products = [
   },
   {
     id: "13",
-    title: "Smoothie",
+    title: "Smoothies",
     price: 3,
     image01: product_01_image_01,
     category: "Drinks",
