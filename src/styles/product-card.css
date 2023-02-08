@@ -86,7 +86,7 @@ option {
   }
 
   .product__img {
-    width: 150px;
+    width: 140px;
     height: 100px;
   }
 
@@ -95,8 +95,10 @@ option {
   }
 
   .addTOCart__btn {
-    padding: 7px 17px;
+    padding: 7px 16px;
     font-size: 0.7rem;
+    /* position: absolute; */
+    bottom: 0;
   }
   .addTOCart__btn :hover{
     color: #CD853F;
