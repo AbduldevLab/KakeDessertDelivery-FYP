@@ -129,7 +129,7 @@ const Home = () => {
                     <span className="shipping__icon">
                       <i class="ri-shield-check-line"></i>
                     </span>{" "}
-                    100% secure checkout
+                    In-Person Payments Only
                   </p>
                 </div>
               </div>

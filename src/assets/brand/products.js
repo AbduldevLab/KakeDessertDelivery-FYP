@@ -61,7 +61,7 @@ const products = [
 
   {
     id: "04",
-    title: "Brownie tray",
+    title: "Brownie Tray",
     price: 5,
     image01: product_02_image_07,
     category: "Desserts",
@@ -91,7 +91,7 @@ const products = [
 
   {
     id: "07",
-    title: "Cold drinks",
+    title: "Cold Drinks",
     price: 3,
     image01: product_01_image_03,
     category: "Drinks",
@@ -100,7 +100,7 @@ const products = [
   },
   {
     id: "08",
-    title: "Hot drinks",
+    title: "Hot Drinks",
     price: 3,
     image01: product_01_image_04,
     category: "Drinks",
@@ -118,7 +118,7 @@ const products = [
   },
   {
     id: "10",
-    title: "Chocolate bars",
+    title: "Chocolate Bars",
     price: 1.50,
     image01: product_00_image_00,
     category: "Snacks",

@@ -29,11 +29,15 @@ const ProductCard = (props) => {
     );
   };
   const handleClick = () => {
+    const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant"];
     const currentTime = new Date().getHours();
-    const workHoursStart = 18;
+    const workHoursStart = 16;
     const workHoursEnd = 22;
+    const currentDay = new Date().getDay();
+    const monday = 1;
+    const tuesday = 2;
 
-    if (currentTime >= workHoursStart && currentTime < workHoursEnd) {
+    if (desserts.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday || currentDay !== tuesday)) {
       setModalOpen(true);
     } else {
       setCloseModalOpen(true);
@@ -70,12 +74,13 @@ const ProductCard = (props) => {
           closeModal={() => setCloseModalOpen(false)}
           message={
             <div style={{ textAlign: "center", color: "red" }}>
-              Sorry, we are currently closed. Please come back between 18:00-22:00.
+              Sorry, we are currently closed. Please come back between (6:00 pm - 10:00 pm) from (Wed-Sun).
             </div>
           }
         />
       )}
     </div>
+    
   );
 };
 

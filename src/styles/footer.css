@@ -44,6 +44,9 @@
   color: #212245;
   font-weight: 600;
 }
+.footer__title1 a:hover {
+  color: #F4A460;
+}
 
 .newsletter {
   padding: 5px;
@@ -88,6 +91,9 @@
 .copyright__text {
   font-size: 0.8rem;
   color: #CD853F;
+}
+a:hover i {
+  color: #F4A460;
 }
 
 @media only screen and (max-width: 992px) {

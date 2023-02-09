@@ -128,6 +128,13 @@
   .mobile__menu i {
     font-size: 1.5rem;
   }
+    .cart__badge {
+    top: 20px;
+    right: -7px;
+    width: 13px;
+    height: 13px;
+    font-size: 0.645rem;
+  }
 
   .show__menu {
     display: block;

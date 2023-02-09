@@ -87,7 +87,7 @@ const products = [
 
   {
     id: "10",
-    title: "Brownie tray",
+    title: "Brownie Tray",
     price: 5,
     image01: product_02_image_07,
     category: "Desserts",
@@ -124,7 +124,7 @@ const products = [
   },
   {
     id: "11",
-    title: "Brownie tray",
+    title: "Brownie Tray",
     price: 5,
     image01: product_02_image_06,
     category: "Desserts",
@@ -133,7 +133,7 @@ const products = [
   },
   {
     id: "15",
-    title: "Cold drinks",
+    title: "Cold Drinks",
     price: 3,
     image01: product_01_image_03,
     category: "Drinks",
@@ -143,7 +143,7 @@ const products = [
 
   {
     id: "12",
-    title: "Brownie tray",
+    title: "Brownie Tray",
     price: 5,
     image01: product_02_image_05,
     category: "Desserts",
@@ -183,7 +183,7 @@ const products = [
 
   {
     id: "16",
-    title: "Hot drinks",
+    title: "Hot Drinks",
     price: 3,
     image01: product_01_image_04,
     category: "Drinks",
@@ -193,7 +193,7 @@ const products = [
  
   {
     id: "18",
-    title: "Chocolate bars",
+    title: "Chocolate Bars",
     price: 1.50,
     image01: product_00_image_00,
     category: "Snacks",
@@ -202,7 +202,7 @@ const products = [
   },
   {
     id: "19",
-    title: "American candy",
+    title: "American Candy",
     price: 2.50,
     image01: product_00_image_00,
     category: "Snacks",

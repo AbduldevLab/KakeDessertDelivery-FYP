@@ -16,8 +16,9 @@ const Footer = () => {
             <Link to="/home"><img src={logo} alt="logo" /></Link>
               <h5>Your Kake</h5>
               <p>
-                To find where we are based on Google Maps, Click
+              By clicking
                 <span className="footer__title1"><Link to="/contact" > here</Link></span>
+              , you can view our location on the map.
               </p>
             </div>
           </Col>
