@@ -3,6 +3,11 @@ import React, { useState} from "react";
 import "../../../styles/product-card.css";
 import ReactModal from "../../Modal/CustomModal";
 import CloseModal from "../../Modal/ClosedModal";
+import ReactModal1 from "../../Modal/Custom1Modal";
+import ReactModal2 from "../../Modal/Custom2Modal";
+
+
+
 
 import { Link } from "react-router-dom";
 
@@ -14,6 +19,8 @@ const ProductCard = (props) => {
   const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [modal1Open, setModal1Open] = useState(false);
+  const [modal2Open, setModal2Open] = useState(false);
   const [closeModalOpen, setCloseModalOpen] = useState(false);
 
   const addToCart = (toppings, sauces) => {
@@ -29,21 +36,29 @@ const ProductCard = (props) => {
     );
   };
   const handleClick = () => {
-    const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant"];
-    const currentTime = new Date().getHours();
-    const workHoursStart = 16;
-    const workHoursEnd = 22;
-    const currentDay = new Date().getDay();
-    const monday = 1;
-    const tuesday = 2;
-
-    if (desserts.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday || currentDay !== tuesday)) {
-      setModalOpen(true);
-    } else {
-      setCloseModalOpen(true);
-    }
-  };
-
+    const remainder =["Smoothies","Biscoff Shake","Crisps","Chocolate Bars","American Candy"];
+    const hotDrinks = ["Hot Drinks"];
+    const coldDrinks = ["Cold Drinks"];
+     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant"];
+      const currentTime = new Date().getHours();
+      const workHoursStart = 0;
+      const workHoursEnd = 22;
+      const currentDay = new Date().getDay();
+      const monday = 1;
+      const tuesday = 2;
+    
+      if (coldDrinks.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {
+        setModal2Open(true);
+      } else if (hotDrinks.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {
+        setModal1Open(true);
+      } else if (desserts.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {
+        setModalOpen(true);
+      } else if(remainder.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)){
+        addToCart(null, null);
+      } else {
+        setCloseModalOpen(true);
+      }
+    };
   return (
     <div className="product__item">
       <div className="product__img">
@@ -78,6 +93,20 @@ const ProductCard = (props) => {
             </div>
           }
         />
+      )}
+      {modal1Open && (
+      <ReactModal1
+        showModal={modal1Open}
+        closeModal={() => setModal1Open(false)}
+        addToCart={addToCart}
+       />
+      )}
+      {modal2Open && (
+      <ReactModal2
+        showModal={modal2Open}
+        closeModal={() => setModal2Open(false)}
+        addToCart={addToCart}
+       />
       )}
     </div>
     

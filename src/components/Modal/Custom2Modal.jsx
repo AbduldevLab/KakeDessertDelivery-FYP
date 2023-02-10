@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
-
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-
-const Custom1Modal = (props) => {
+const Custom2Modal = (props) => {
   const [drink, setDrink] = useState("default");
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
@@ -30,38 +27,29 @@ const Custom1Modal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Select a Hot Drink
+          Select a Cold Drink
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="drink">Hot Drink:</label>
+            <label htmlFor="drink">Cold Drink:</label>
             <select
               id="drink"
               style={{ color: "#F4A460" }}
               onChange={(e) => setDrink(e.target.value)}
             >
-              <option value="default">Select a hot drink</option>
-              <option value="Espresso €2.00">Espresso €2.00</option>
-              <option value="Cappuccino €3.00">Cappuccino €3.00</option>
-              <option value="Flat White €3.00">Flat White €3.00</option>
-              <option value="Latte €3.00">Latte €3.00</option>
-              <option value="Macchiata €2.50">Macchiata €2.50</option>
-              <option value="Hot Chocolate €3.00">Hot Chocolate €3.00</option>
-              <option value="Mint Aero Hot Choc €3.50">
-                Mint Aero Hot Choc €3.50
-              </option>
-              <option value="Crunchie Hot Choc €3.50">
-                Crunchie Hot Choc €3.50
-              </option>
-              <option value="Kinder Hot Choc €3.50">
-                Kinder Hot Choc €3.50
-              </option>
+              <option value="default">Select a cold drink</option>
+              <option value="coke">Coke</option>
+              <option value="coke zero">Coke zero</option>
+              <option value="fanta orange">Fanta orange</option>
+              <option value="fanta lime">Fanta lime</option>
+              <option value="7up">7up</option>
+              <option value="snapple">Snapple</option>
             </select>
           </div>
           {attemptedSubmit && drink === "default" && (
-            <p style={{ color: "red" }}>Please select an option!</p>
+            <p style={{ color: "red" }}>Please select a drink!</p>
           )}
           <Modal.Footer className="modal-footer">
             {attemptedSubmit === false || drink !== "default" ? (
@@ -94,4 +82,4 @@ const Custom1Modal = (props) => {
   );
 };
 
-export default Custom1Modal;
+export default Custom2Modal;

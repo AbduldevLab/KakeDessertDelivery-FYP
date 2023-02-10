@@ -50,12 +50,12 @@
 
 .cart__badge {
   position: absolute;
-  top: 30px;
+  top: 27px;
   right: -10px;
   background: #F4A460;
   color: #fff;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 16px;
   border-radius: 50%;
   font-size: 0.77rem;
   font-weight: 500;
