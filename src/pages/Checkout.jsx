@@ -154,9 +154,16 @@ const Checkout = () => {
                     Delivery: <span>€{0}</span>
                   </p>
                 )}
+                {deliveryOption === "delivery" && (
                 <p className="checkout__total">
                   Total: <span>€{totalAmount}</span>
                 </p>
+                )}
+                {deliveryOption !== "delivery" && (
+                <p className="checkout__total">
+                  Total: <span>€{totalAmount-shippingCost}</span>
+                </p>
+                )}
               </div>
               </div>
             </Col>
