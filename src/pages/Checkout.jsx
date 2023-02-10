@@ -17,9 +17,10 @@ const Checkout = () => {
 
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const shippingCost = 2;
+  const shippingCost = 3;
 
   const totalAmount = cartTotalAmount + Number(shippingCost);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -144,9 +145,15 @@ const Checkout = () => {
                 <p>
                   Cart Total: <span>€{cartTotalAmount}</span>
                 </p>
-                <p>
-                  Delivery: <span>€{shippingCost}</span>
-                </p>
+                {deliveryOption === "delivery" && (
+                  <p>
+                    Delivery: <span>€{shippingCost}</span>
+                  </p>
+                )}{deliveryOption !== "delivery" && (
+                  <p>
+                    Delivery: <span>€{0}</span>
+                  </p>
+                )}
                 <p className="checkout__total">
                   Total: <span>€{totalAmount}</span>
                 </p>

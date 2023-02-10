@@ -43,19 +43,19 @@ const Custom1Modal = (props) => {
               onChange={(e) => setDrink(e.target.value)}
             >
               <option value="default">Select a hot drink</option>
-              <option value="Espresso €2.00">Espresso €2.00</option>
-              <option value="Cappuccino €3.00">Cappuccino €3.00</option>
-              <option value="Flat White €3.00">Flat White €3.00</option>
-              <option value="Latte €3.00">Latte €3.00</option>
-              <option value="Macchiata €2.50">Macchiata €2.50</option>
-              <option value="Hot Chocolate €3.00">Hot Chocolate €3.00</option>
-              <option value="Mint Aero Hot Choc €3.50">
+              <option value="Espresso">Espresso €2.00</option>
+              <option value="Cappuccino">Cappuccino €3.00</option>
+              <option value="Flat White">Flat White €3.00</option>
+              <option value="Latte">Latte €3.00</option>
+              <option value="Macchiata">Macchiata €2.50</option>
+              <option value="Hot Chocolate">Hot Chocolate €3.00</option>
+              <option value="Mint Aero Hot Choc">
                 Mint Aero Hot Choc €3.50
               </option>
-              <option value="Crunchie Hot Choc €3.50">
+              <option value="Crunchie Hot Choc">
                 Crunchie Hot Choc €3.50
               </option>
-              <option value="Kinder Hot Choc €3.50">
+              <option value="Kinder Hot Choc">
                 Kinder Hot Choc €3.50
               </option>
             </select>
