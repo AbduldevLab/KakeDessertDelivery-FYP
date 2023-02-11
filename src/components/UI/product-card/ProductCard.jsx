@@ -41,7 +41,7 @@ const ProductCard = (props) => {
     const coldDrinks = ["Cold Drinks"];
      const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant"];
       const currentTime = new Date().getHours();
-      const workHoursStart = 18;
+      const workHoursStart = 0;
       const workHoursEnd = 22;
       const currentDay = new Date().getDay();
       const monday = 1;

@@ -44,8 +44,8 @@ const Custom2Modal = (props) => {
               <option value="coke zero">Coke zero €1.50</option>
               <option value="fanta orange">Fanta orange €1.50</option>
               <option value="fanta lime">Fanta lime €1.50</option>
-              <option value="7up">7up €1.50</option>
-              <option value="snapple">Snapple €1.50</option>
+              <option value="7up">7UP €1.50</option>
+              {/* <option value="snapple">Snapple €1.50</option> */}
             </select>
           </div>
           {attemptedSubmit && drink === "default" && (
