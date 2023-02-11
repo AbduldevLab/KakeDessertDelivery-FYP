@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.299e1ead.chunk.css",
-    "main.js": "/static/js/main.1093e43c.chunk.js",
-    "main.js.map": "/static/js/main.1093e43c.chunk.js.map",
+    "main.js": "/static/js/main.01c055a7.chunk.js",
+    "main.js.map": "/static/js/main.01c055a7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.02d91f0f.js",
     "runtime-main.js.map": "/static/js/runtime-main.02d91f0f.js.map",
     "static/css/2.b9c1a045.chunk.css": "/static/css/2.b9c1a045.chunk.css",
@@ -14,8 +14,10 @@
     "static/js/2.71957943.chunk.js.LICENSE.txt": "/static/js/2.71957943.chunk.js.LICENSE.txt",
     "static/media/Biscoff shake.e92e9a56.JPG": "/static/media/Biscoff shake.e92e9a56.JPG",
     "static/media/CheeseCake tub.dca5544d.jpg": "/static/media/CheeseCake tub.dca5544d.jpg",
+    "static/media/Chocolate cake slice.5f5b57f5.jpg": "/static/media/Chocolate cake slice.5f5b57f5.jpg",
     "static/media/Coming Soon.042e02c4.jpg": "/static/media/Coming Soon.042e02c4.jpg",
     "static/media/Hot drinks.8e53789c.jpg": "/static/media/Hot drinks.8e53789c.jpg",
+    "static/media/Red-velvet cake slice.0aa94f01.jpg": "/static/media/Red-velvet cake slice.0aa94f01.jpg",
     "static/media/Snapple.921e1e64.jpg": "/static/media/Snapple.921e1e64.jpg",
     "static/media/Strawberry smoothie.f9c9fe69.jpeg": "/static/media/Strawberry smoothie.f9c9fe69.jpeg",
     "static/media/common-section.css": "/static/media/banner-02.ca1f13aa.jpg",
@@ -47,6 +49,6 @@
     "static/css/2.b9c1a045.chunk.css",
     "static/js/2.71957943.chunk.js",
     "static/css/main.299e1ead.chunk.css",
-    "static/js/main.1093e43c.chunk.js"
+    "static/js/main.01c055a7.chunk.js"
   ]
 }
