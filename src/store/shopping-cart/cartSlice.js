@@ -1,9 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const items =
+
+
+let items =
   localStorage.getItem("cartItems") !== null
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
+const openingHour = 18;
+const closingHour = 22;
+const currentDate = new Date();
+const currentHour = currentDate.getHours();
+
+if (currentHour < openingHour || currentHour >= closingHour) {
+  localStorage.removeItem("cartItems");
+  localStorage.removeItem("totalAmount");
+  localStorage.removeItem("totalQuantity");
+  items = [];
+}
 
 const totalAmount =
   localStorage.getItem("totalAmount") !== null
@@ -122,4 +135,5 @@ const cartSlice = createSlice({
 });
 
 export const cartActions = cartSlice.actions;
+
 export default cartSlice;
