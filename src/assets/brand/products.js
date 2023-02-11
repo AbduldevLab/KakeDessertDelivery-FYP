@@ -52,7 +52,7 @@ const products = [
   {
     id: "03",
     title: "Croissant",
-    price: 5,
+    price: 3,
     image01: product_05_image_17,
     category: "Desserts",
 
@@ -62,7 +62,7 @@ const products = [
   {
     id: "04",
     title: "Brownie Tray",
-    price: 5,
+    price: 7,
     image01: product_02_image_07,
     category: "Desserts",
 
@@ -92,7 +92,7 @@ const products = [
   {
     id: "07",
     title: "Cold Drinks",
-    price: 3,
+    price: 1.5,
     image01: product_01_image_03,
     category: "Drinks",
 

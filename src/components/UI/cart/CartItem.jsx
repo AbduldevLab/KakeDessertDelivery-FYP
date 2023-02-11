@@ -42,12 +42,12 @@ const CartItem = ({ item }) => {
               {quantity}x <span>€{totalPrice}</span>
             </p>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-            <span className="decrease__btn" onClick={decreaseItem}>
-                <i class="ri-subtract-line"></i>
-              </span>
-              <span className="quantity">{quantity}</span>
               <span className="increase__btn" onClick={incrementItem}>
                 <i class="ri-add-line"></i>
+              </span>
+              <span className="quantity">{quantity}</span>
+              <span className="decrease__btn" onClick={decreaseItem}>
+                <i class="ri-subtract-line"></i>
               </span>
             </div>
           </div>
@@ -62,3 +62,4 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
+

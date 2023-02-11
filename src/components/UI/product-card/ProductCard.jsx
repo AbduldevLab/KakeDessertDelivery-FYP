@@ -1,3 +1,4 @@
+
 import React, { useState} from "react";
 
 import "../../../styles/product-card.css";
@@ -39,7 +40,7 @@ const ProductCard = (props) => {
     const remainder =["Smoothies","Biscoff Shake","Crisps","Chocolate Bars","American Candy"];
     const hotDrinks = ["Hot Drinks"];
     const coldDrinks = ["Cold Drinks"];
-     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant"];
+     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant", "Red-velvet cake Slice", "Chocolate cake Slice"];
       const currentTime = new Date().getHours();
       const workHoursStart = 18;
       const workHoursEnd = 22;
@@ -83,17 +84,6 @@ const ProductCard = (props) => {
           addToCart={addToCart}
         />
       )}
-      {closeModalOpen && (
-        <CloseModal
-          showModal={closeModalOpen}
-          closeModal={() => setCloseModalOpen(false)}
-          message={
-            <div style={{ textAlign: "center", color: "red" }}>
-              Sorry, we are currently closed. Please come back between <br/> (6:00 pm - 10:00 pm) from (Wed-Sun).
-            </div>
-          }
-        />
-      )}
       {modal1Open && (
       <ReactModal1
         showModal={modal1Open}
@@ -107,6 +97,17 @@ const ProductCard = (props) => {
         closeModal={() => setModal2Open(false)}
         addToCart={addToCart}
        />
+      )}
+      {closeModalOpen && (
+        <CloseModal
+          showModal={closeModalOpen}
+          closeModal={() => setCloseModalOpen(false)}
+          message={
+            <div style={{ textAlign: "center", color: "red" }}>
+              Sorry, we are currently closed. Please come back between <br/> (6:00 pm - 10:00 pm) from (Wed-Sun).
+            </div>
+          }
+        />
       )}
     </div>
     

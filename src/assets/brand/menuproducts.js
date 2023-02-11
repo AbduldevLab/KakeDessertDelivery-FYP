@@ -21,6 +21,9 @@ import product_05_image_15 from "../images/Croissants/c1.jpg";
 import product_05_image_16 from "../images/Croissants/c2.jpg";
 import product_05_image_17 from "../images/Croissants/c3.jpg";
 
+import product_06_image_18 from "../images/Red-velvet cake slice.jpg";
+import product_06_image_19 from "../images/Chocolate cake slice.jpg";
+
 import product_00_image_00 from "../images/Coming Soon.jpg";
 
 
@@ -47,6 +50,38 @@ const products = [
   },
 
   {
+    id: "15",
+    title: "Cold Drinks",
+    price: 1.5,
+    image01: product_01_image_03,
+    category: "Drinks",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+
+  {
+    id: "18",
+    title: "Chocolate Bars",
+    price: 1.50,
+    image01: product_00_image_00,
+    category: "Snacks",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+  {
+    id: "20",
+    title: "Red-velvet cake Slice",
+    price: 5,
+    image01: product_06_image_18,
+    category: "Desserts",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+
+  {
     id: "06",
     title: "Cookie Dough Tray",
     price: 7,
@@ -56,16 +91,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
   
-  {
-    id: "08",
-    title: "Croissant",
-    price: 5,
-    image01: product_05_image_16,
-    category: "Desserts",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
-    
   {
     id: "03",
     title: "Cheese Cake Tub",
@@ -78,7 +103,7 @@ const products = [
   {
     id: "09",
     title: "Croissant",
-    price: 5,
+    price: 3,
     image01: product_05_image_15,
     category: "Desserts",
 
@@ -88,7 +113,7 @@ const products = [
   {
     id: "10",
     title: "Brownie Tray",
-    price: 5,
+    price: 7,
     image01: product_02_image_07,
     category: "Desserts",
 
@@ -98,7 +123,7 @@ const products = [
   {
     id: "07",
     title: "Croissant",
-    price: 5,
+    price: 3,
     image01: product_05_image_17,
     category: "Desserts",
 
@@ -125,31 +150,24 @@ const products = [
   {
     id: "11",
     title: "Brownie Tray",
-    price: 5,
+    price: 7,
     image01: product_02_image_06,
     category: "Desserts",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
+
+  
   {
-    id: "15",
-    title: "Cold Drinks",
+    id: "14",
+    title: "Biscoff Shake",
     price: 3,
-    image01: product_01_image_03,
+    image01: product_01_image_02,
     category: "Drinks",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-  {
-    id: "12",
-    title: "Brownie Tray",
-    price: 5,
-    image01: product_02_image_05,
-    category: "Desserts",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
   {
     id: "02",
     title: "Cheese Cake Tub",
@@ -171,15 +189,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-  {
-    id: "14",
-    title: "Biscoff Shake",
-    price: 3,
-    image01: product_01_image_02,
-    category: "Drinks",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
 
   {
     id: "16",
@@ -192,20 +201,41 @@ const products = [
   },
  
   {
-    id: "18",
-    title: "Chocolate Bars",
-    price: 1.50,
-    image01: product_00_image_00,
-    category: "Snacks",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
-  {
     id: "19",
     title: "American Candy",
     price: 2.50,
     image01: product_00_image_00,
     category: "Snacks",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+  {
+    id: "12",
+    title: "Brownie Tray",
+    price: 7,
+    image01: product_02_image_05,
+    category: "Desserts",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+  {
+    id: "08",
+    title: "Croissant",
+    price: 3,
+    image01: product_05_image_16,
+    category: "Desserts",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+  {
+    id: "21",
+    title: "Chocolate cake Slice",
+    price: 5,
+    image01: product_06_image_19,
+    category: "Desserts",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
