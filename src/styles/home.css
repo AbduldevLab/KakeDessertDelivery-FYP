@@ -181,11 +181,10 @@
   }
 
   .hero__service p {
+    font-size: 0.65rem !important;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    word-break: break-all;
-    word-wrap: break-word;
   }
 }
