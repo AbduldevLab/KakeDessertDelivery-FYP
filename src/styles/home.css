@@ -159,9 +159,12 @@
   }
 
   .hero__service p {
+    display: inline-block;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  
+
   .food__category button {
     padding: 5px 8px;
     font-size: 0.7rem;
@@ -176,6 +179,9 @@
   }
 
   .hero__service p {
+    display: inline-block;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
