@@ -181,10 +181,12 @@
   }
 
   .hero__service p {
-    font-size: 0.68rem !important;
+    font-size: 0.67rem !important;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: justify;
+    letter-spacing: -0.04em;
   }
 }
