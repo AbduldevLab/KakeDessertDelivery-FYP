@@ -154,10 +154,14 @@
     justify-content: center;
   }
 
-  .hero__service p{
-    /* justify-content: center; */
-    font-size: 0.7rem !important;
+  .hero__service {
+    flex-wrap: nowrap;
   }
+
+  .hero__service p {
+    white-space: nowrap;
+  }
+  
   .food__category button {
     padding: 5px 8px;
     font-size: 0.7rem;
