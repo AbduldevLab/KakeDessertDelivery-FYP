@@ -155,8 +155,7 @@
   }
 
   .hero__service {
-    font-size: 0.8rem;
-    line-height: 1.2;
+    justify-content: center;
   }
   .food__category button {
     padding: 5px 8px;
@@ -164,5 +163,14 @@
   }
   .why__choose-us {
     padding-top: 0 !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .hero__service {
+    flex-wrap: nowrap;
+  }
+
+  .hero__service p {
+    white-space: nowrap;
   }
 }
