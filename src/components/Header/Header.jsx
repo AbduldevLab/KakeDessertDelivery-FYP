@@ -60,12 +60,15 @@ const Header = () => {
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
-          <Link to="/home"><img src={logo} alt="logo" /></Link>
+          <Link to="/home" onClick={() => window.scrollTo(0, 0)}><img src={logo} alt="logo" /></Link>
             {/* <h5>Happy kake</h5> */}
           </div>
 
           {/* ======= menu ======= */}
-          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+          <div className="navigation" ref={menuRef} onClick={() => {
+            toggleMenu();
+            window.scrollTo(0, 0);
+          }}>
             <div className="menu d-flex align-items-center gap-5">
               {nav__links.map((item, index) => (
                 <NavLink
@@ -83,7 +86,10 @@ const Header = () => {
 
           {/* ======== nav right icons ========= */}
           <div className="nav__right d-flex align-items-center gap-4">
-            <span className="cart__icon" onClick={toggleCart}>
+            <span className="cart__icon" onClick={() => {
+            toggleCart();
+            window.scrollTo(0, 0);
+          }}>
               <i class="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
@@ -94,7 +100,10 @@ const Header = () => {
               </Link>
             </span> */}
 
-            <span className="mobile__menu" onClick={toggleMenu}>
+            <span className="mobile__menu" onClick={() => {
+            toggleMenu();
+            window.scrollTo(0, 0);
+          }}>
               <i class="ri-menu-line"></i>
             </span>
           </div>

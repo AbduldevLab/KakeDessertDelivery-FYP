@@ -11,8 +11,9 @@
 
 .footer__logo h5 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 15px;
+  color: #212245;
 }
 
 .footer__logo p {
@@ -26,23 +27,23 @@
 }
 
 .delivery__time-item span {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.05rem;
   color: #212245;
 }
 
 .delivery__time-item p {
-  color: #212245;
+  color: #333;;
 }
 .footer__title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #212245;
-  font-weight: 600;
+  font-weight: 550;
 }
 .footer__title1 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #212245;
-  font-weight: 600;
+  font-weight: 500;
 }
 .footer__title1 a:hover {
   color: #F4A460;

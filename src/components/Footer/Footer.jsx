@@ -17,7 +17,7 @@ const Footer = () => {
               <h5>Your Kake</h5>
               <p>
               By clicking
-                <span className="footer__title1"><Link to="/contact" > here</Link></span>
+                <span className="footer__title1"><Link to="/contact" onClick={() => window.scrollTo(0, 0)}> here</Link></span>
               , you can view our location on the map.
               </p>
             </div>

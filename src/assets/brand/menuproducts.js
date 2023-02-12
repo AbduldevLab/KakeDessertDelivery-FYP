@@ -72,7 +72,7 @@ const products = [
 
   {
     id: "20",
-    title: "Red-velvet cake Slice",
+    title: "Red-velvet Slice",
     price: 5,
     image01: product_06_image_18,
     category: "Desserts",
@@ -232,7 +232,7 @@ const products = [
 
   {
     id: "21",
-    title: "Chocolate cake Slice",
+    title: "Chocolate Slice",
     price: 5,
     image01: product_06_image_19,
     category: "Desserts",

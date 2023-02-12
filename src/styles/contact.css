@@ -33,3 +33,7 @@
 .mapContainer a button.custom-btn {
     color: #F4A460;
 }
+body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
