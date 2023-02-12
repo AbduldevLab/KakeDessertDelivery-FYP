@@ -4,7 +4,6 @@ import { Container } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Headroom from "react-headroom";
 
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
@@ -52,19 +51,11 @@ const Header = () => {
         headerRef.current.classList.remove("header__shrink");
       }
     });
-    
 
     return () => window.removeEventListener("scroll");
   }, []);
 
   return (
-    <Headroom
-      style={{
-        background: "white",
-        boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.1)",
-        padding: "10px 0",
-      }}
-    >
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
@@ -116,7 +107,6 @@ const Header = () => {
         </div>
       </Container>
     </header>
-    </Headroom>
   );
 };
 
