@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import { Link } from 'react-router-dom';
 
 import Helmet from "../components/Helmet/Helmet";
@@ -16,9 +16,6 @@ const Button = styled.button`
 }
 `;
 const Contact = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 return(
     <Helmet title="Contact">
       
