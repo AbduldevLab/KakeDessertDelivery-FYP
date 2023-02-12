@@ -100,10 +100,7 @@ const Header = () => {
               </Link>
             </span> */}
 
-            <span className="mobile__menu" onClick={() => {
-            toggleMenu();
-            window.scrollTo(0, 0);
-          }}>
+            <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>
             </span>
           </div>
