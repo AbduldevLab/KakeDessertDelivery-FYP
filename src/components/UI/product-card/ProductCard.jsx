@@ -40,7 +40,7 @@ const ProductCard = (props) => {
     const remainder =["Smoothies","Biscoff Shake","Crisps","Chocolate Bars","American Candy"];
     const hotDrinks = ["Hot Drinks"];
     const coldDrinks = ["Cold Drinks"];
-     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant", "Red-velvet cake Slice", "Chocolate cake Slice"];
+     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant", "Red-velvet Slice", "Chocolate Slice"];
       const currentTime = new Date().getHours();
       const workHoursStart = 18;
       const workHoursEnd = 22;
