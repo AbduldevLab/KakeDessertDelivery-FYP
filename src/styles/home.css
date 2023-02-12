@@ -188,6 +188,6 @@
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .hero__service p {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
