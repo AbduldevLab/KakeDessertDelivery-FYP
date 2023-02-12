@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 100px;
-  line-height: 100px;
+  line-height: 80px;
 }
 
 .logo {
@@ -147,9 +147,11 @@
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;
-    height: 100%;
-    line-height: 80px;
+    height: 100px;
+    /* line-height: 80px; */
   }
+  
+
 
   .logo img {
     width: calc(90% - 20%);
