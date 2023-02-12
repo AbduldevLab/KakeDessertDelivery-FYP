@@ -80,8 +80,8 @@
 
 /* Responsive features */
 @media only screen and (max-width: 992px) {
-  header {
-    height: 100vh;
+  .header {
+    height: 100%;
   }
   .logo img {
     width: calc(90% - 10%);
@@ -147,7 +147,7 @@
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;
-    height: 80px;
+    height: 100%;
     line-height: 80px;
   }
 
