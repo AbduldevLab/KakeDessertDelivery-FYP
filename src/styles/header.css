@@ -80,6 +80,9 @@
 
 /* Responsive features */
 @media only screen and (max-width: 992px) {
+  header {
+    height: 100vh;
+  }
   .logo img {
     width: calc(90% - 10%);
     object-fit: contain;
