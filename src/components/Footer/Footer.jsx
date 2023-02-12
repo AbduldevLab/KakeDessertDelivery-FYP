@@ -13,11 +13,11 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-            <Link to="/home"><img src={logo} alt="logo" /></Link>
+            <Link to="/home" onClick={() => window.scrollTo(0, 0)}><img src={logo} alt="logo" /></Link>
               <h5>Your Kake</h5>
               <p>
               By clicking
-                <span className="footer__title1"><Link onClick={() => window.scrollTo(0, 0)} to="/contact" > here</Link></span>
+                <span className="footer__title1"><Link to="/contact" onClick={() => window.scrollTo(0, 0)}> here</Link></span>
               , you can view our location on the map.
               </p>
             </div>
