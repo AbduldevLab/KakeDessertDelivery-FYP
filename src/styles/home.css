@@ -154,9 +154,9 @@
     justify-content: center;
   }
 
-  /* .hero__service {
-    justify-content: center;
-  } */
+  .hero__service {
+    font-size: 0.5rem !important;
+  }
   .food__category button {
     padding: 5px 8px;
     font-size: 0.7rem;
