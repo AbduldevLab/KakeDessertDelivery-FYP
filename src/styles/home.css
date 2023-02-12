@@ -1,3 +1,5 @@
+
+
 .feature__subtitle {
   color: #CD853F;
 }
@@ -183,5 +185,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 }
