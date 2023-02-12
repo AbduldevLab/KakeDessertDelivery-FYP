@@ -186,7 +186,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: justify;
     letter-spacing: -0.04em;
   }
 }
