@@ -27,9 +27,9 @@
 }
 
 .delivery__time-item span {
-  font-weight: 500;
   font-size: 1.05rem;
   color: #212245;
+  font-weight: 550;
 }
 
 .delivery__time-item p {
@@ -43,7 +43,7 @@
 .footer__title1 {
   font-size: 0.9rem;
   color: #212245;
-  font-weight: 500;
+  font-weight: 550;
 }
 .footer__title1 a:hover {
   color: #F4A460;

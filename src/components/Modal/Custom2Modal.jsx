@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
@@ -83,3 +84,4 @@ const Custom2Modal = (props) => {
 };
 
 export default Custom2Modal;
+/////////////////////////////////////////////////////////

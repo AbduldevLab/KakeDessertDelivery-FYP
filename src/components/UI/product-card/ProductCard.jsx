@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const ProductCard = (props) => {
-  const { id, title, image01, price } = props.item;
+  const { id, title, image01, price} = props.item;
   const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -40,12 +40,12 @@ const ProductCard = (props) => {
     const remainder =["Smoothies","Biscoff Shake","Crisps","Chocolate Bars","American Candy"];
     const hotDrinks = ["Hot Drinks"];
     const coldDrinks = ["Cold Drinks"];
-     const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant", "Red-velvet Slice", "Chocolate Slice"];
+    const desserts = ["Cheese Cake Tub", "Cookie Dough Tray", "Brownie Tray", "Croissant", "Red-velvet Slice", "Chocolate Slice"];
       const currentTime = new Date().getHours();
-      const workHoursStart = 18;
-      const workHoursEnd = 22;
+      const workHoursStart = 0;
+      const workHoursEnd = 24;
       const currentDay = new Date().getDay();
-      const monday = 1;
+      const monday = 3;
       const tuesday = 2;
     
       if (coldDrinks.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {

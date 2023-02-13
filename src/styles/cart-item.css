@@ -5,17 +5,22 @@
 }
 
 .cart__product-title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
+}
+.cart-item{
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .cart__product-price {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .cart__product-price span {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
+  padding-left: 100px;
   color: #CD853F;
 }
 

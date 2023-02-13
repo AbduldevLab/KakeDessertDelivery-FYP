@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
@@ -14,7 +15,7 @@ const CustomModal = (props) => {
     e.preventDefault();
     setAttemptedSubmit(true);
     if (toppings !== "default" && sauces !== "default1") {
-      props.addToCart({ toppings: toppings, sauces: sauces });
+      props.addToCart({toppings, sauces});
       props.closeModal();
     }
   };
@@ -42,7 +43,7 @@ const CustomModal = (props) => {
             >
               <option value="default">Select one topping</option>
               <option value="Kinder">Kinder</option>
-              <option value="Caramel fre do">Caramel fredo</option>
+              <option value="Caramel fredo">Caramel fredo</option>
               <option value="Milky bar">Milky bar</option>
               <option value="Crunchie">Crunchie</option>
               <option value="M&M">M&M</option>

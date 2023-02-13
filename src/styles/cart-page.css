@@ -2,6 +2,11 @@ th {
   text-align: center;
 }
 
+.cart-item li {
+  list-style-type: circle;
+  display: block;
+  color:#F4A460
+}
 .cart__img-box {
   width: 80px;
 }
@@ -28,4 +33,9 @@ th {
   td {
     font-size: 0.8rem;
   }
+  .cart-item li {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  
 }

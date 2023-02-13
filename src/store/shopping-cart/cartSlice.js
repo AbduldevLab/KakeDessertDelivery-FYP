@@ -4,8 +4,8 @@ let items =
   localStorage.getItem("cartItems") !== null
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
-const openingHour = 18;
-const closingHour = 22;
+const openingHour = 0;
+const closingHour = 24;
 const currentDate = new Date();
 const currentHour = currentDate.getHours();
 
@@ -47,7 +47,7 @@ const cartSlice = createSlice({
     addItem(state, action) {
       const newItem = action.payload;
       const existingItem = state.cartItems.find(
-        (item) => item.title === newItem.title
+        (item) => (item.title) === (newItem.title)
       );
       state.totalQuantity++;
 
@@ -57,6 +57,7 @@ const cartSlice = createSlice({
         state.cartItems.push({
           id: newItem.id,
           title: newItem.title,
+          selection: newItem.toppings,
           image01: newItem.image01,
           price: newItem.price,
           quantity: 1,
