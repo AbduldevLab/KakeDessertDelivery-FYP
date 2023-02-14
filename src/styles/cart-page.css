@@ -32,7 +32,7 @@ th {
 @media only screen and (max-width: 768px) {
   th,
   td {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   .cart-item1 li {
     font-size: 0.6rem;
@@ -47,7 +47,7 @@ th {
     font-size: 0.6rem;
   }
   .cart-item1 li {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   
 }
