@@ -20,8 +20,12 @@
   justify-content: center;
   cursor: pointer;
   margin: 5px;
-}
-
-.paginationBttns a:hover {
+  transition: all 0.3s ease-in-out;
+  } 
+  .paginationBttns a:hover {
   background: #CD853F;
-}
+  }
+  .paginationBttns a.active {
+  background: #CD853F !important;
+  }
+  

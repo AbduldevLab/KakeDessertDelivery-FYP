@@ -84,6 +84,7 @@ const Allitems = () => {
                 previousLabel={"Prev"}
                 nextLabel={"Next"}
                 containerClassName=" paginationBttns "
+                activeClassName="active"
               />
             </div>
           </Row>
