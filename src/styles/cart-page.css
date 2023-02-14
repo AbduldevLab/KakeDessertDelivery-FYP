@@ -2,10 +2,11 @@ th {
   text-align: center;
 }
 
-.cart-item li {
+.cart-item1 li {
   list-style-type: circle;
   display: block;
-  color:#F4A460
+  color:#F4A460;
+  font-size: 1rem;
 }
 .cart__img-box {
   width: 80px;
@@ -31,11 +32,24 @@ th {
 @media only screen and (max-width: 768px) {
   th,
   td {
-    font-size: 0.8rem;
-  }
-  .cart-item li {
     font-size: 0.7rem;
-    font-weight: 500;
+  }
+  .cart-item1 li {
+    font-size: 0.7rem;
   }
   
 }
+
+
+@media only screen and (max-width: 375px) {
+  th,
+  td {
+    font-size: 0.6rem;
+  }
+  .cart-item1 li {
+    font-size: 0.6rem;
+  }
+  
+}
+
+

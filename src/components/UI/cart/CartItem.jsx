@@ -7,12 +7,11 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
-  const { id, title, price, image01, selection, quantity, totalPrice} = item;
+  const { id, title, price, image01, quantity, totalPrice } = item;
 
   const dispatch = useDispatch();
 
   console.log(item);
-
 
   const incrementItem = () => {
     dispatch(
@@ -21,7 +20,6 @@ const CartItem = ({ item }) => {
         title,
         price,
         image01,
-        selection,
       })
     );
   };
@@ -43,23 +41,26 @@ const CartItem = ({ item }) => {
           <div>
             <h6 className="cart__product-title">{title}</h6>
             <div className="cart-item">
-          <ul>
-            {Object.entries(item.selection).map(([key, value], index) => (
-              <React.Fragment key={key}>
-                {item.title !== "Cold Drinks" && item.title !== "Hot Drinks" && (
-                  <li>
-                    {index === 0 ? "toppings: " : "sauces: "}{value}
-                  </li>
-                )}
-                {(item.title === "Cold Drinks" || item.title === "Hot Drinks") && (
-                  <li>
-                    {value}
-                  </li>
-                )}
-              </React.Fragment>
-            ))}
-          </ul>
-        </div>
+              <ul>
+                {item.selection && Object.entries(item.selection).length !== 0
+                  ? Object.entries(item.selection).map(
+                      ([key, value], index) => (
+                        <React.Fragment key={key}>
+                          {item.title !== "Cold Drinks" &&
+                            item.title !== "Hot Drinks" && (
+                              <li>
+                                {index === 0 ? "toppings: " : "sauces: "}
+                                {value}
+                              </li>
+                            )}
+                          {(item.title === "Cold Drinks" ||
+                            item.title === "Hot Drinks") && <li>{value}</li>}
+                        </React.Fragment>
+                      )
+                    )
+                  : ""}
+              </ul>
+            </div>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
               {quantity}x <span>€{totalPrice}</span>
             </p>
@@ -84,4 +85,3 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
-

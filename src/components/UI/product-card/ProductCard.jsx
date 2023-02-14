@@ -46,7 +46,7 @@ const ProductCard = (props) => {
       const workHoursEnd = 24;
       const currentDay = new Date().getDay();
       const monday = 3;
-      const tuesday = 2;
+      const tuesday = 4;
     
       if (coldDrinks.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {
         setModal2Open(true);

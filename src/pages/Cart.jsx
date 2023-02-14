@@ -63,12 +63,11 @@ const Cart = () => {
 };
 
 const Tr = (props) => {
-  const { id, image01, title, price, quantity, selection} = props.item;
+  const { id, image01, title, price, quantity, selection } = props.item;
   const dispatch = useDispatch();
   // const addToCart = (toppings, sauces) => {
   //   dispatch(cartActions.addToCart({ toppings, sauces }));
   // };
-
 
   const deleteItem = () => {
     dispatch(cartActions.deleteItem(id));
@@ -78,23 +77,25 @@ const Tr = (props) => {
       <td className="text-center cart__img-box">
         <img src={image01} alt="" />
       </td>
-      <td className="text-center">{title} 
-  <div className="cart-item">
-    {Object.entries(selection).map(([key,value], index) => (
-      <React.Fragment key={key}>
-        {title !== "Cold Drinks" && title !== "Hot Drinks" && (
-          <li >
-            {index === 0 ? "toppings: " : "sauces: "}{value}
-          </li>
-        )}
-        {(title === "Cold Drinks" || title === "Hot Drinks") && (
-          <li >
-            {value}
-          </li>
-        )}
-      </React.Fragment>
-    ))}
-  </div>
+      <td className="text-center">
+        {title}
+        <div className="cart-item1">
+          {selection && Object.entries(selection).length !== 0
+            ? Object.entries(selection).map(([key, value], index) => (
+                <React.Fragment key={key}>
+                  {title !== "Cold Drinks" && title !== "Hot Drinks" && (
+                    <li>
+                      {index === 0 ? "toppings: " : "sauces: "}
+                      {value}
+                    </li>
+                  )}
+                  {(title === "Cold Drinks" || title === "Hot Drinks") && (
+                    <li>{value}</li>
+                  )}
+                </React.Fragment>
+              ))
+            : ""}
+        </div>
       </td>
       <td className="text-center">€{price}</td>
       <td className="text-center">{quantity}</td>
