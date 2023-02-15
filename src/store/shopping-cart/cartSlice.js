@@ -4,8 +4,8 @@ let items =
   localStorage.getItem("cartItems") !== null
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
-const openingHour = 13;
-const closingHour = 23;
+const openingHour = 0;
+const closingHour = 24;
 const currentDate = new Date();
 const currentHour = currentDate.getHours();
 
@@ -38,18 +38,28 @@ const initialState = {
   totalAmount: totalAmount,
 };
 
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
 
   reducers: {
     // =========== add item ============
+
     addItem(state, action) {
       const newItem = action.payload;
-      const existingItem = state.cartItems.find(
-        (item) => (item) === (newItem)
-      );
+      const existingItem = state.cartItems.find(item => {
+        const sorted = Object.entries(item.selection).map(key => `${key}`).join(", ");
+        console.log(sorted);
+        const sortedNew = Object.entries(newItem.selection).map(key => `${key}`).join(", ");
+        console.log(sortedNew);
+        return sorted === sortedNew;
+      });
+      
       state.totalQuantity++;
+    
+      // console.log("newItem toppings:", existingItem.sorted);
+      // console.log("existingItem toppings:", existingItem.sortedNew);
 
       if (!existingItem) {
         // ===== note: if you use just redux you should not mute state array instead of clone the state array, but if you use redux toolkit that will not a problem because redux toolkit clone the array behind the scene
