@@ -48,11 +48,11 @@ const Footer = () => {
                 <p><span>Location:</span> Unit 6, Coolport Porters Road, Coolmine Industrial Estate, D15 K6XK</p>
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Phone:</span> +353 87 287 5835
+                <p><span>Phone:</span> +353 87 287 5835</p>
               </ListGroupItem>
 
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                <span>Email:</span> kakedessertdelivery@gmail.com
+                <p><span>Email:</span> kakedessertdelivery@gmail.com</p>
               </ListGroupItem>
             </ListGroup>
           </Col>
@@ -67,7 +67,11 @@ const Footer = () => {
               </span>
             </div> */}
             <h5 className="footer__title">Faq's</h5>
-            <p>Common questions </p>
+            <p className="footer__title2">
+            <Link to="/faqs" onClick={() => document.getElementById("top1").scrollIntoView({ behavior: "smooth" })}>
+                Common questions
+              </Link>
+            </p>
 
             <h5 className="footer__title">Terms and Conditions</h5>
             <p>Read more </p>

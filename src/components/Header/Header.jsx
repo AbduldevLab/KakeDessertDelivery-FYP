@@ -94,11 +94,11 @@ const Header = () => {
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
-            {/* <span className="user">
+            <span className="user">
               <Link to="/login">
                 <i class="ri-user-line"></i>
               </Link>
-            </span> */}
+            </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>

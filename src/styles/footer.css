@@ -17,8 +17,8 @@
 }
 
 .footer__logo p {
-  font-size: 0.9rem;
-  color: #333;
+  font-size: 1rem;
+  color: #080808;
   line-height: 28px;
 }
 
@@ -33,23 +33,34 @@
 }
 
 .delivery__time-item p {
-  color: #333;;
+  color: #080808;
 }
 .footer__title {
   font-size: 1.05rem;
   color: #212245;
   font-weight: 550;
 }
+p{
+  color: #080808;
+}
 .footer__title1 {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: #212245;
+  font-weight: 550;
+}
+.footer__title2 {
+  font-size: 1rem;
   color: #212245;
   font-weight: 550;
 }
 .footer__title1 a:hover {
   color: #F4A460;
 }
+.footer__title2 a:hover {
+  color: #F4A460;
+}
 
-.newsletter {
+/* .newsletter {
   padding: 5px;
   border: 1px solid #212245;
   border-radius: 5px;
@@ -80,7 +91,7 @@
 
 .newsletter input::placeholder {
   color: #212245;
-}
+} */
 
 .social__links span i {
   padding: 5px;

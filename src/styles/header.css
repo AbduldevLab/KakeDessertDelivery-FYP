@@ -36,7 +36,19 @@
   color: #CD853F !important;
 }
 
-.cart__icon i,
+.cart__icon {
+  font-size: 1.35rem; /* adjust the size as needed */
+}
+
+.cart__icon:hover {
+  color: #F4A460;
+}
+.cart__icon:active {
+  color: #F4A460;
+}
+.user{
+  font-size: 1.35rem;
+}
 .user i,
 .mobile__menu i {
   font-size: 1.3rem;
