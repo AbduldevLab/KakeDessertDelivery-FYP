@@ -48,33 +48,14 @@ const cartSlice = createSlice({
 
     addItem(state, action) {
       const newItem = action.payload;
+      console.log(newItem);
+      const existingItem = state.cartItems.find(
+        item => item.selection === newItem.toppings);
+        
 
-      let result= "";
-      let result1 = "";
-
-      const existingItem = state.cartItems.find(item => {
-        result.toppings = Object.entries(item.selection).map(key => `${key}`).join(", ");
-        console.log("One "+ result);
-        return result;
-      });
-      console.log("One "+ result);
-
-
-      if(result1 !== ""){
-        result1=Object.entries(newItem.selection).map(key => `${key}`).join(", ");
-        console.log("two "+ result1);
-        return result1;
-      }
-      console.log("two "+ result1);
-     
-
-      // if(result===newItem.selection){
-      //   state.totalQuantity++;
-      // }
-      
+      state.totalQuantity++;
+        
       if (!existingItem) {
-        // ===== note: if you use just redux you should not mute state array instead of clone the state array, but if you use redux toolkit that will not a problem because redux toolkit clone the array behind the scene
-
         state.cartItems.push({
           id: newItem.id,
           title: newItem.title,
@@ -86,23 +67,20 @@ const cartSlice = createSlice({
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalPrice =
-          Number(existingItem.totalPrice) + Number(newItem.price);
+        existingItem.totalPrice = Number(existingItem.totalPrice) + Number(newItem.price);
       }
-
-      state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity),
-
-        0
-      );
-
+        
+      state.totalAmount = state.cartItems.reduce((total, item) => total + Number(item.price) * Number(item.quantity), 0);
+        
       setItemFunc(
         state.cartItems.map((item) => item),
         state.totalAmount,
         state.totalQuantity
       );
     },
-
+    
+   
+ 
     // ========= remove item ========
 
     removeItem(state, action) {
