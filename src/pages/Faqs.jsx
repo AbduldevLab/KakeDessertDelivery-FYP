@@ -148,7 +148,7 @@ function Faqs() {
 
           <div className="faq-nine">
             {/* faq question */}
-            <h1 className="faq-page">I want to add an item after i placed <br/>an order</h1>
+            <h1 className="faq-page">I want to add an item after i placed an order</h1>
             {/* faq answer */}
             <div className="faq-body">
               <p>

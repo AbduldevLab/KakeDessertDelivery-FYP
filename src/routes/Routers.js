@@ -10,6 +10,7 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
+import TC from "../pages/TC";
 
 const Routers = () => {
   return (
@@ -24,6 +25,7 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/faqs" element={<Faqs />} />
+      <Route path="/TC" element={<TC />} />
     </Routes>
   );
 };

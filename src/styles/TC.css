@@ -1,0 +1,52 @@
+.content {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .section-title  {
+    color: rgb(205,133,63);
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .section-p{
+    background-color: white;
+    text-align: left; 
+    width: 100%; 
+    padding: 0 30px;
+  }
+  li {
+    background-color: white;
+  }
+  
+  
+  /* Style for larger screens */
+  @media screen and (max-width: 576px) {
+    .content {
+      padding: 0px;
+    }
+    .section-title {
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    .section-p{
+        background-color: white;
+        margin: auto;
+        text-align: left; 
+        width: 100%; 
+        padding: 0 30px;
+   
+      }
+      li {
+        background-color: white;
+      }
+  }
+  
+  body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+  
