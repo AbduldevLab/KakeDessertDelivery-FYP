@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
-
 import "../../../styles/shopping-cart.css";
 import EmptyCart from "../../../assets/images/emptyCart.png";
 
