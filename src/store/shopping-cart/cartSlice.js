@@ -129,6 +129,17 @@ const cartSlice = createSlice({
         state.totalQuantity
       );
     },
+
+    // =========== clear cart ===========
+
+    clear(state) {
+      state.cartItems = [];
+      state.totalQuantity = 0;
+      state.totalAmount = 0;
+      localStorage.removeItem("cartItems");
+      localStorage.removeItem("totalAmount");
+      localStorage.removeItem("totalQuantity");
+    },
   },
 });
 

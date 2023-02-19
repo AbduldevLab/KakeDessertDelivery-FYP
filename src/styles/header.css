@@ -64,13 +64,13 @@
   position: absolute;
   top: 27px;
   right: -10px;
-  background: #F4A460;
-  color: #fff;
-  width: 17px;
+  background: #ffffff;
+  color: #F4A460;
+  width: 20px;
   height: 16px;
   border-radius: 50%;
-  font-size: 0.77rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,6 +167,10 @@
     width: calc(90% - 20%);
     object-fit: contain;
     margin-top: -5px !important;
+  }
+  .cart__badge {
+    font-size:0.9rem;
+     font-weight: 800;
   }
   /* .logo h5 {
     margin-top: -55px;
