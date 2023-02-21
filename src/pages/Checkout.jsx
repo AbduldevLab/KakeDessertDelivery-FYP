@@ -1,8 +1,12 @@
+
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
+
+import {db} from "../config/firebase";
+import {collection, addDoc} from "firebase/firestore";
 
 import "../styles/checkout.css";
 
@@ -13,7 +17,12 @@ const Checkout = () => {
   const [enterNumber, setEnterNumber] = useState("");
   const [enterCity, setEnterCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
-  const [collectionTime, setCollectionTime] = useState("");
+  const [collectionTime, setCollectionTime] = useState("asap");
+
+  const [emailError, setEmailError] = useState("");
+  const [numberError, setNumberError] = useState("");
+
+  const ordersRef = collection(db, "Orders");
 
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
@@ -22,7 +31,7 @@ const Checkout = () => {
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     let userShippingAddress;
     if (deliveryOption === "delivery") {
@@ -33,6 +42,17 @@ const Checkout = () => {
         city: enterCity,
         postalCode: postalCode,
       };
+      try {
+        await addDoc(ordersRef, {
+          name: enterName,
+          email: enterEmail,
+          phone: enterNumber,
+          address: enterCity,
+          postalCode: postalCode,
+        });
+      } catch (err) {
+        console.error(err);
+      }
     } else {
       userShippingAddress = {
         name: enterName,
@@ -40,10 +60,39 @@ const Checkout = () => {
         phone: enterNumber,
         collectionTime: collectionTime,
       };
+      try {
+        await addDoc(ordersRef, {
+          name: enterName,
+          email: enterEmail,
+          phone: enterNumber,
+          collectionTime: collectionTime,
+        });
+      } catch (err) {
+        console.error(err);
+      }
     }
-
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
+
+      // Check if email and phone number are valid
+      let emailError = "";
+      let numberError = "";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^(\+353|0)\d{9}$/;
+      if (!emailRegex.test(enterEmail)) {
+        emailError = "Invalid email address";
+      }
+      if (!phoneRegex.test(enterNumber)) {
+        numberError = "Invalid phone number";
+      }
+      setEmailError(emailError);
+      setNumberError(numberError);
+
+      // Place order if email and phone number are valid
+      if (!emailError && !numberError) {
+        // Place order code goes here
+        alert("Thank you,Order has been placed!");
+      }
   };
 
   return (
@@ -79,20 +128,48 @@ const Checkout = () => {
                 </div>
 
                 <div className="form__group">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    required
-                    onChange={(e) => setEnterEmail(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="text"
-                    placeholder="Enter your phone number"
-                    required
-                    onChange={(e) => setEnterNumber(e.target.value)}
-                  />
+                <input
+                      type="email"
+                      placeholder="Enter your email"
+                      required
+                      onChange={(e) => {
+                        const value = e.target.value.trim();
+                        if (value.includes("@") && value.includes(".")) {
+                          setEnterEmail(value);
+                        } else {
+                          setEnterEmail("");
+                        }
+                      }}
+                    />
+                    {emailError && <p className="error-message">{emailError}</p>}
+                  </div>
+                  <div className="form__group">
+                    <input
+                      type="text"
+                      placeholder="Enter your phone number"
+                      required
+                      onChange={(e) => {
+                        const value = e.target.value.trim();
+                        if (/^\d+$/.test(value)) {
+                          if (value.startsWith("0")) {
+                            if (value.length === 10) {
+                              setEnterNumber(value);
+                            } else {
+                              setEnterNumber("");
+                            }
+                          } else if (value.startsWith("+353")) {
+                            if (value.length === 13) {
+                              setEnterNumber(value);
+                            } else {
+                              setEnterNumber("");
+                            }
+                          }
+                        } else {
+                          setEnterNumber("");
+                        }
+                      }}
+                    />
+                {numberError && <p className="error-message">{numberError}</p>}
                 </div>
                 {deliveryOption === "delivery" ? (
                   <div>
@@ -135,7 +212,7 @@ const Checkout = () => {
                           </Input>
                   </div>
                 )}
-                <button className="btn" style={{ backgroundColor: "#CD853F" , color: "white"}}>Place Order</button>
+                <button className="btn" onClick={submitHandler} style={{ backgroundColor: "#CD853F" , color: "white"}}>Place Order</button>
               </Form>
             </Col>
             <Col lg="4" md="6">

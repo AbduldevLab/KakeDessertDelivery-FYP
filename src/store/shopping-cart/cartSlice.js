@@ -4,8 +4,8 @@ let items =
   localStorage.getItem("cartItems") !== null
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
-const openingHour = 18;
-const closingHour = 22;
+const openingHour = 0;
+const closingHour = 24;
 const currentDate = new Date();
 const currentHour = currentDate.getHours();
 
