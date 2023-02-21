@@ -1,0 +1,17 @@
+.link:hover {
+    color: #F4A460;
+  }
+  .error-message {
+    color: red;
+  }
+  
+  .success-message {
+    color: green;
+  }  
+  .logout {
+    margin-top: 1rem;
+  }
+  body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }

@@ -59,7 +59,11 @@ const Footer = () => {
 
           <Col lg="3" md="4" sm="6">
             <h5 className="footer__title">Newsletter</h5>
-            <p>Subscribe to our newsletter</p>
+            <p className="footer__title2">
+            <Link to="/register" onClick={() => document.getElementById("top1").scrollIntoView({ behavior: "smooth" })}>
+            Subscribe to our newsletter
+              </Link>
+            </p>
             {/* <div className="newsletter">
               <input type="email" placeholder="Enter your email" />
               <span>

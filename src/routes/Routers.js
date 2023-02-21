@@ -7,7 +7,7 @@ import ItemDetails from "../pages/ItemDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Contact from "../pages/Contact";
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
 import TC from "../pages/TC";
@@ -21,7 +21,7 @@ const Routers = () => {
       <Route path="/menu/:id" element={<ItemDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
-      <Route path="/login" element={<Login />} />
+      {/* <Route path="/login" element={<Login />} /> */}
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/faqs" element={<Faqs />} />
