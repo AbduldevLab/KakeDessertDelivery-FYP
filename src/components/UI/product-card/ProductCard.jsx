@@ -24,15 +24,16 @@ const ProductCard = (props) => {
   const [modal2Open, setModal2Open] = useState(false);
   const [closeModalOpen, setCloseModalOpen] = useState(false);
 
-  const addToCart = (toppings, sauces) => {
+  const addToCart = (toppings, sauces, drink) => {
     dispatch(
       cartActions.addItem({
         id,
         title,
         image01,
         price,
-        toppings,
+        selection: toppings,
         sauces,
+        drink,
       })
     );
   };
@@ -45,8 +46,8 @@ const ProductCard = (props) => {
       const workHoursStart = 0;
       const workHoursEnd = 24;
       const currentDay = new Date().getDay();
-      const monday = 0;
-      const tuesday = 0;
+      const monday = 1;
+      const tuesday = 2;
     
       if (coldDrinks.includes(title) && currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)) {
         setModal2Open(true);

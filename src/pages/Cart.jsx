@@ -63,14 +63,14 @@ const Cart = () => {
 };
 
 const Tr = (props) => {
-  const { id, image01, title, price, quantity, selection } = props.item;
+  const { image01, title, price, quantity, selection } = props.item;
   const dispatch = useDispatch();
   // const addToCart = (toppings, sauces) => {
   //   dispatch(cartActions.addToCart({ toppings, sauces }));
   // };
 
   const deleteItem = () => {
-    dispatch(cartActions.deleteItem(id));
+    dispatch(cartActions.deleteItem({title, selection}));
   };
   return (
     <tr>

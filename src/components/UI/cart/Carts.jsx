@@ -38,9 +38,8 @@ const Carts = () => {
         <span>Clear</span>
       </button>
       
-      <div className="cart__item-list">
         {cartProducts.length === 0 ? (
-          <div className="cart__item-list1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div>
             <img src={EmptyCart} className="w-300" alt="" />
             <h6 className="text-center mt-5">No item added to the cart</h6>
@@ -51,7 +50,6 @@ const Carts = () => {
             <CartItem item={item} key={index} />
           ))
         )}
-      </div>
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
