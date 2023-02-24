@@ -36,7 +36,7 @@ function Faqs() {
             <div className="faq-body">
               <p>
                 We are open 5 days a week, we accept pre-orders on business days
-                 and deliveries begin from 6PM, we usually stop accepting
+                and deliveries begin from 6PM, we usually stop accepting
                 orders at 10PM. The shop is open to the public from 6PM for
                 walk-ins
               </p>
@@ -148,7 +148,7 @@ function Faqs() {
 
           <div className="faq-nine">
             {/* faq question */}
-            <h1 className="faq-page">I want to add an item after i placed an order</h1>
+            <h1 className="faq-page">Adding more items after placing an order</h1>
             {/* faq answer */}
             <div className="faq-body">
               <p>

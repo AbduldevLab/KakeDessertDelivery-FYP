@@ -25,7 +25,7 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/faqs" element={<Faqs />} />
-      <Route path="/TC" element={<TC />} />
+      <Route path="/t&c" element={<TC />} />
     </Routes>
   );
 };

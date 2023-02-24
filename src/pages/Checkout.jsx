@@ -1,12 +1,16 @@
 
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 
+import { cartActions } from "../store/shopping-cart/cartSlice";
+
+
 import {db} from "../config/firebase";
 import {collection, addDoc} from "firebase/firestore";
+
 
 import "../styles/checkout.css";
 
@@ -24,6 +28,11 @@ const Checkout = () => {
 
   const ordersRef = collection(db, "Orders");
 
+  const dispatch = useDispatch();
+  const clearCart = () => {
+    dispatch(cartActions.clear());
+  };
+
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 3;
@@ -33,66 +42,52 @@ const Checkout = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    let userShippingAddress;
-    if (deliveryOption === "delivery") {
-      userShippingAddress = {
-        name: enterName,
-        email: enterEmail,
-        phone: enterNumber,
-        city: enterCity,
-        postalCode: postalCode,
-      };
-      try {
-        await addDoc(ordersRef, {
+
+    // Check if email and phone number are valid
+    let emailError = "";
+    let numberError = "";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^(\+353|0)\d{9}$/;
+    if (!emailRegex.test(enterEmail)) {
+      emailError = "Invalid email address";
+    }
+    if (!phoneRegex.test(enterNumber)) {
+      numberError = "Invalid phone number";
+    }
+    setEmailError(emailError);
+    setNumberError(numberError);
+
+    // Place order if email and phone number are valid
+    if (!emailError && !numberError) {
+      let userShippingAddress;
+      if (deliveryOption === "delivery") {
+        userShippingAddress = {
           name: enterName,
           email: enterEmail,
           phone: enterNumber,
           address: enterCity,
           postalCode: postalCode,
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    } else {
-      userShippingAddress = {
-        name: enterName,
-        email: enterEmail,
-        phone: enterNumber,
-        collectionTime: collectionTime,
-      };
-      try {
-        await addDoc(ordersRef, {
+        };
+      } else {
+        userShippingAddress = {
           name: enterName,
           email: enterEmail,
           phone: enterNumber,
           collectionTime: collectionTime,
-        });
+        };
+      }
+      shippingInfo.push(userShippingAddress);
+      console.log(shippingInfo);
+
+      try {
+        await addDoc(ordersRef, userShippingAddress);
+        alert("Thank you,Order has been placed!");
+        clearCart();
+        document.getElementById("checkout__form").reset();
       } catch (err) {
         console.error(err);
       }
     }
-    shippingInfo.push(userShippingAddress);
-    console.log(shippingInfo);
-
-      // Check if email and phone number are valid
-      let emailError = "";
-      let numberError = "";
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phoneRegex = /^(\+353|0)\d{9}$/;
-      if (!emailRegex.test(enterEmail)) {
-        emailError = "Invalid email address";
-      }
-      if (!phoneRegex.test(enterNumber)) {
-        numberError = "Invalid phone number";
-      }
-      setEmailError(emailError);
-      setNumberError(numberError);
-
-      // Place order if email and phone number are valid
-      if (!emailError && !numberError) {
-        // Place order code goes here
-        alert("Thank you,Order has been placed!");
-      }
   };
 
   return (
@@ -103,7 +98,7 @@ const Checkout = () => {
           <Row>
             <Col lg="8" md="6">
               <h6 className="mb-4">Order Information</h6>
-              <Form className="checkout__form" onSubmit={submitHandler}>
+              <Form className="checkout__form" id="checkout__form" onSubmit={submitHandler}>
                 <FormGroup>
                   Choose an option below:
                   <Input
