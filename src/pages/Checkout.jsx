@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
+import CloseModal from "../components/Modal/ClosedModal";
 
 import { cartActions } from "../store/shopping-cart/cartSlice";
 
@@ -24,6 +25,8 @@ const Checkout = () => {
   const [emailError, setEmailError] = useState("");
   const [numberError, setNumberError] = useState("");
 
+  const [closeModalOpen, setCloseModalOpen] = useState(false);
+
   const ordersRef = collection(db, "Orders");
 
   const dispatch = useDispatch();
@@ -42,6 +45,14 @@ const Checkout = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
+    const currentTime = new Date().getHours();
+    const workHoursStart = 18;
+    const workHoursEnd = 22;
+    const currentDay = new Date().getDay();
+    const monday = 1;
+    const tuesday = 2;
+  
+
     // Check if email and phone number are valid
     let emailError = "";
     let numberError = "";
@@ -57,40 +68,45 @@ const Checkout = () => {
     setNumberError(numberError);
 
     // Place order if email and phone number are valid
-    if (!emailError && !numberError) {
-      let userShippingAddress;
-      if (deliveryOption === "delivery") {
-        userShippingAddress = {
-          name: enterName,
-          email: enterEmail,
-          phone: enterNumber,
-          address: enterCity,
-          postalCode: postalCode,
-          cartItems: cartItems,
-        };
-      } else {
-        userShippingAddress = {
-          name: enterName,
-          email: enterEmail,
-          phone: enterNumber,
-          collectionTime: collectionTime,
-          cartItems: cartItems,
-        };
+    if(currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)){
+      if (!emailError && !numberError) {
+        let userShippingAddress;
+        if (deliveryOption === "delivery") {
+          userShippingAddress = {
+            name: enterName,
+            email: enterEmail,
+            phone: enterNumber,
+            address: enterCity,
+            postalCode: postalCode,
+            cartItems: cartItems,
+          };
+        } else {
+          userShippingAddress = {
+            name: enterName,
+            email: enterEmail,
+            phone: enterNumber,
+            collectionTime: collectionTime,
+            cartItems: cartItems,
+          };
+        }
+        shippingInfo.push(userShippingAddress);
+  
+        console.log(shippingInfo);
+        console.log(cartItems);
+  
+        try {
+          await addDoc(ordersRef, userShippingAddress);
+          alert("Thank you, Order has been placed!");
+          clearCart();
+          document.getElementById("checkout__form").reset();
+        } catch (err) {
+          console.error(err);
+        }
       }
-      shippingInfo.push(userShippingAddress);
-
-      console.log(shippingInfo);
-      console.log(cartItems);
-
-      try {
-        await addDoc(ordersRef, userShippingAddress);
-        alert("Thank you, Order has been placed!");
-        clearCart();
-        document.getElementById("checkout__form").reset();
-      } catch (err) {
-        console.error(err);
-      }
+    }else {
+      setCloseModalOpen(true);
     }
+    
   };
 
   return (
@@ -210,8 +226,10 @@ const Checkout = () => {
                           </Input>
                   </div>
                 )}
-                <button className="btn" onClick={submitHandler} style={{ backgroundColor: "#CD853F" , color: "white"}}>Place Order</button>
-              </Form>
+                    <button className="btn" onClick={submitHandler} style={{ backgroundColor: "#CD853F", color: "white" }}>
+                      Place Order
+                    </button>
+            </Form>
             </Col>
             <Col lg="4" md="6">
             <div className="checkout__bill">
@@ -240,6 +258,17 @@ const Checkout = () => {
                 </p>
                 )}
               </div>
+              {closeModalOpen && (
+              <CloseModal
+                showModal={closeModalOpen}
+                closeModal={() => setCloseModalOpen(false)}
+                message={
+                  <div style={{ textAlign: "center", color: "red" }}>
+                    Sorry, we are currently closed. Please come back between <br/> (6:00 pm - 10:00 pm) from (Wed-Sun).
+                  </div>
+                }
+              />
+            )}
               </div>
             </Col>
           </Row>
