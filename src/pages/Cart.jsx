@@ -8,8 +8,8 @@ import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
 
-import {db} from "../config/firebase";
-import {collection, addDoc} from "firebase/firestore";
+// import {db} from "../config/firebase";
+// import {collection, addDoc} from "firebase/firestore";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -69,14 +69,14 @@ const Tr =  (props) => {
   const { image01, title, price, quantity, selection } = props.item;
   const dispatch = useDispatch();
 
-  const ordersRef = collection(db, "Orders");
+  // const ordersRef = collection(db, "Orders");
 
-   addDoc(ordersRef, {
-      productTitle: title,
-      selection: selection,
-      quantity: quantity,
-      totalPrice: price,
-    })
+  //  addDoc(ordersRef, {
+  //     productTitle: title,
+  //     selection: selection,
+  //     quantity: quantity,
+  //     totalPrice: price,
+  //   })
   
 
   const deleteItem = () => {

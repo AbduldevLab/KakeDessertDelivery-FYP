@@ -7,10 +7,8 @@ import Helmet from "../components/Helmet/Helmet";
 
 import { cartActions } from "../store/shopping-cart/cartSlice";
 
-
 import {db} from "../config/firebase";
 import {collection, addDoc} from "firebase/firestore";
-
 
 import "../styles/checkout.css";
 
@@ -34,6 +32,7 @@ const Checkout = () => {
   };
 
   const shippingInfo = [];
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 3;
 
@@ -67,6 +66,7 @@ const Checkout = () => {
           phone: enterNumber,
           address: enterCity,
           postalCode: postalCode,
+          cartItems: cartItems,
         };
       } else {
         userShippingAddress = {
@@ -74,14 +74,17 @@ const Checkout = () => {
           email: enterEmail,
           phone: enterNumber,
           collectionTime: collectionTime,
+          cartItems: cartItems,
         };
       }
       shippingInfo.push(userShippingAddress);
+
       console.log(shippingInfo);
+      console.log(cartItems);
 
       try {
         await addDoc(ordersRef, userShippingAddress);
-        alert("Thank you,Order has been placed!");
+        alert("Thank you, Order has been placed!");
         clearCart();
         document.getElementById("checkout__form").reset();
       } catch (err) {
