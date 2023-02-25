@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
-
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
 
 const Custom1Modal = (props) => {
   const [drink, setDrink] = useState("default");
@@ -52,12 +49,8 @@ const Custom1Modal = (props) => {
               <option value="Mint Aero Hot Choc">
                 Mint Aero Hot Choc €3.50
               </option>
-              <option value="Crunchie Hot Choc">
-                Crunchie Hot Choc €3.50
-              </option>
-              <option value="Kinder Hot Choc">
-                Kinder Hot Choc €3.50
-              </option>
+              <option value="Crunchie Hot Choc">Crunchie Hot Choc €3.50</option>
+              <option value="Kinder Hot Choc">Kinder Hot Choc €3.50</option>
             </select>
           </div>
           {attemptedSubmit && drink === "default" && (

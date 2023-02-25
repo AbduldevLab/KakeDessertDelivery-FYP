@@ -25,7 +25,6 @@ const Carts = () => {
   };
   return (
     <div className="cart__container">
-           
       <ListGroup className="cart">
         <div className="cart__close">
           <span onClick={toggleCart}>
@@ -33,27 +32,32 @@ const Carts = () => {
           </span>
           <div className="cart__title">Cart</div>
         </div>
-       
+
         <div className="cart__clear">
-        <span onClick={clearCart}>
-          clear
-          </span>
+          <span onClick={clearCart}>clear</span>
         </div>
-      
-      <div className="cart__item-list">
-        {cartProducts.length === 0 ? (
-          <div className="cart__item-list1" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div>
-            <img src={EmptyCart} className="w-300" alt="" />
-            <h6 className="text-center mt-5">No items added to the cart</h6>
-          </div>
-          </div>
-        ) : (
-          cartProducts.map((item, index) => (
-            <CartItem item={item} key={index} />
-          ))
-        )}
-      </div>
+
+        <div className="cart__item-list">
+          {cartProducts.length === 0 ? (
+            <div
+              className="cart__item-list1"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <img src={EmptyCart} className="w-300" alt="" />
+                <h6 className="text-center mt-5">No items added to the cart</h6>
+              </div>
+            </div>
+          ) : (
+            cartProducts.map((item, index) => (
+              <CartItem item={item} key={index} />
+            ))
+          )}
+        </div>
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>

@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
 
 const CustomModal = (props) => {
   const [toppings, setToppings] = useState("default");
@@ -15,7 +13,7 @@ const CustomModal = (props) => {
     e.preventDefault();
     setAttemptedSubmit(true);
     if (toppings !== "default" && sauces !== "default1") {
-      props.addToCart({toppings, sauces});
+      props.addToCart({ toppings, sauces });
       props.closeModal();
     }
   };

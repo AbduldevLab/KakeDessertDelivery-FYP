@@ -11,14 +11,16 @@ const ClosedModal = ({ showModal, closeModal, message }) => {
       </Modal.Header>
       <Modal.Body>{message}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={closeModal} style={{ backgroundColor: "#CD853F" }}>
+        <Button
+          variant="secondary"
+          onClick={closeModal}
+          style={{ backgroundColor: "#CD853F" }}
+        >
           Close
         </Button>
       </Modal.Footer>
     </Modal>
-    
   );
-  
 };
 
 export default ClosedModal;

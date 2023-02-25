@@ -2,8 +2,12 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-import { getAuth ,createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
-
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -17,7 +21,7 @@ const firebaseConfig = {
   storageBucket: "kake-project.appspot.com",
   messagingSenderId: "671879726441",
   appId: "1:671879726441:web:9d2ead0ff9fc09450469f8",
-  measurementId: "G-DTPQERSFGN"
+  measurementId: "G-DTPQERSFGN",
 };
 
 // Initialize Firebase
@@ -28,9 +32,9 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 export {
-   auth,
-   createUserWithEmailAndPassword,
-   signInWithPopup,
-   GoogleAuthProvider,
-   db
-  };
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  db,
+};

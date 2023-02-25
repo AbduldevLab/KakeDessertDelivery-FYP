@@ -38,7 +38,6 @@ const initialState = {
   totalAmount: totalAmount,
 };
 
-
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -49,21 +48,18 @@ const cartSlice = createSlice({
     addItem(state, action) {
       const newItem = action.payload;
 
-      const existingItem = state.cartItems.find(
-        item =>
-        {
-          if (item.selection) {
-            return (
-              item.title === newItem.title &&
-              item.selection.toppings === newItem.selection.toppings &&
-              item.selection.sauces === newItem.selection.sauces &&
-              item.selection.drink === newItem.selection.drink
-            );
-          } else {
-            return item.title === newItem.title;
-          }
+      const existingItem = state.cartItems.find((item) => {
+        if (item.selection) {
+          return (
+            item.title === newItem.title &&
+            item.selection.toppings === newItem.selection.toppings &&
+            item.selection.sauces === newItem.selection.sauces &&
+            item.selection.drink === newItem.selection.drink
+          );
+        } else {
+          return item.title === newItem.title;
         }
-      );
+      });
 
       state.totalQuantity++;
 
@@ -99,9 +95,22 @@ const cartSlice = createSlice({
 
     removeItem(state, action) {
       const newItem = action.payload;
-      const existingItem = state.cartItems.find(
-        item =>
-        {
+      const existingItem = state.cartItems.find((item) => {
+        if (item.selection) {
+          return (
+            item.title === newItem.title &&
+            item.selection.toppings === newItem.selection.toppings &&
+            item.selection.sauces === newItem.selection.sauces &&
+            item.selection.drink === newItem.selection.drink
+          );
+        } else {
+          return item.title === newItem.title;
+        }
+      });
+      state.totalQuantity--;
+
+      if (existingItem.quantity === 1) {
+        state.cartItems = state.cartItems.filter((item) => {
           if (item.selection) {
             return (
               item.title === newItem.title &&
@@ -112,26 +121,7 @@ const cartSlice = createSlice({
           } else {
             return item.title === newItem.title;
           }
-        }
-      );
-      state.totalQuantity--;
-
-      if (existingItem.quantity === 1) {
-        state.cartItems = state.cartItems.filter(
-          item =>
-          {
-            if (item.selection) {
-              return (
-                item.title === newItem.title &&
-                item.selection.toppings === newItem.selection.toppings &&
-                item.selection.sauces === newItem.selection.sauces &&
-                item.selection.drink === newItem.selection.drink
-              );
-            } else {
-              return item.title === newItem.title;
-            }
-          }
-        );
+        });
       } else {
         existingItem.quantity--;
         existingItem.totalPrice =
@@ -154,24 +144,21 @@ const cartSlice = createSlice({
 
     deleteItem(state, action) {
       const newItem = action.payload;
-      const existingItem = state.cartItems.find(
-        item =>
-        {
-          if (item.selection) {
-            return (
-              item.title === newItem.title &&
-              item.selection.toppings === newItem.selection.toppings &&
-              item.selection.sauces === newItem.selection.sauces &&
-              item.selection.drink === newItem.selection.drink
-            );
-          } else {
-            return item.title === newItem.title;
-          }
+      const existingItem = state.cartItems.find((item) => {
+        if (item.selection) {
+          return (
+            item.title === newItem.title &&
+            item.selection.toppings === newItem.selection.toppings &&
+            item.selection.sauces === newItem.selection.sauces &&
+            item.selection.drink === newItem.selection.drink
+          );
+        } else {
+          return item.title === newItem.title;
         }
-      );
-    
+      });
+
       if (existingItem) {
-        state.cartItems = state.cartItems.filter(item => {
+        state.cartItems = state.cartItems.filter((item) => {
           if (item.selection && newItem.selection) {
             return (
               item.title !== newItem.title ||
@@ -185,7 +172,7 @@ const cartSlice = createSlice({
         });
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
       }
-    
+
       state.totalAmount = state.cartItems.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
@@ -212,4 +199,3 @@ const cartSlice = createSlice({
 export const cartActions = cartSlice.actions;
 
 export default cartSlice;
-

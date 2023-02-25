@@ -22,8 +22,6 @@ import foodCategoryImg01 from "../assets/images/desserts.png";
 import foodCategoryImg02 from "../assets/images/drinks.png";
 import foodCategoryImg03 from "../assets/images/snacks.png";
 
-
-
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
 import whyImg from "../assets/images/location.png";
@@ -100,20 +98,25 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content  ">
-                <h5 className="mb-3">An easy way to place an order right now!</h5>
+                <h5 className="mb-3">
+                  An easy way to place an order right now!
+                </h5>
                 <h1 className="mb-4 hero__title">
                   <span>Craving?</span> Just wait <br /> kake at
                   <span> your door</span>
                 </h1>
 
                 <p>
-                Visit us and try some of our freshly made desserts. Specially made for you
-                from our wide selection of topics, of your choice!
+                  Visit us and try some of our freshly made desserts. Specially
+                  made for you from our wide selection of topics, of your
+                  choice!
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-6">
-                <button className="order__btn d-flex align-items-center justify-content-between">
-                  <Link to="/menu">Order Now <i class="ri-arrow-right-s-line"></i> </Link>
+                  <button className="order__btn d-flex align-items-center justify-content-between">
+                    <Link to="/menu">
+                      Order Now <i class="ri-arrow-right-s-line"></i>{" "}
+                    </Link>
                   </button>
                 </div>
 
@@ -153,17 +156,19 @@ const Home = () => {
           <Row>
             <Col lg="12" className="text-center">
               <h5 className="feature__subtitle mb-4">What we serve</h5>
-              <h2 className="feature__title">Just sit back and <span>leave</span></h2>
               <h2 className="feature__title">
-              <span>the rest</span> to us
+                Just sit back and <span>leave</span>
+              </h2>
+              <h2 className="feature__title">
+                <span>the rest</span> to us
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                You simply order from us and then you should be good to go. 
-                We offer delivery and collection.
+                You simply order from us and then you should be good to go. We
+                offer delivery and collection.
               </p>
               <p className="feature__text">
-              Simply get in touch with us on one of our social media sites down below
-              if you have any questions or concerns..{" "}
+                Simply get in touch with us on one of our social media sites
+                down below if you have any questions or concerns..{" "}
               </p>
             </Col>
 
@@ -255,9 +260,9 @@ const Home = () => {
                   Why <span>kake?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                We provide a wide range of services, including custom cakes, special orders,
-                and wedding cakes. We use only fresh ingredients and make everything homemade
-                from scratch.
+                  We provide a wide range of services, including custom cakes,
+                  special orders, and wedding cakes. We use only fresh
+                  ingredients and make everything homemade from scratch.
                 </p>
 
                 <ListGroup className="mt-4">
@@ -267,8 +272,9 @@ const Home = () => {
                       desserts
                     </p>
                     <p className="choose__us-desc">
-                    For our desserts, we only use the best ingredients. There are about 
-                    20+ different handcrafted desserts available. Check our Instagram to request a special order.
+                      For our desserts, we only use the best ingredients. There
+                      are about 20+ different handcrafted desserts available.
+                      Check our Instagram to request a special order.
                     </p>
                   </ListGroupItem>
 
@@ -277,18 +283,22 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
-                    We are engaged across all of our social media channels. Expect a response to emails within 24 hours 
-                    at the very least. The website's live chat feature will be available soon.
+                      We are engaged across all of our social media channels.
+                      Expect a response to emails within 24 hours at the very
+                      least. The website's live chat feature will be available
+                      soon.
                     </p>
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i>Delivery and collection{" "}
+                      <i class="ri-checkbox-circle-line"></i>Delivery and
+                      collection{" "}
                     </p>
                     <p className="choose__us-desc">
-                    We provide both delivery and collection; for more information about 
-                    both services, see the business hours shown below. 
+                      We provide both delivery and collection; for more
+                      information about both services, see the business hours
+                      shown below.
                     </p>
                   </ListGroupItem>
                 </ListGroup>
@@ -324,9 +334,10 @@ const Home = () => {
                   What our <span>Special</span> orders look like
                 </h2>
                 <p className="testimonial__desc">
-                To stay updated on our offers, various raffles,<br/>
-                and door-to-door giveaways, <br/>
-                make sure to follow our Instagram!
+                  To stay updated on our offers, various raffles,
+                  <br />
+                  and door-to-door giveaways, <br />
+                  make sure to follow our Instagram!
                 </p>
 
                 <TestimonialSlider />

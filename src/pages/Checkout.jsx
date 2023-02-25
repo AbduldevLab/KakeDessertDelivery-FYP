@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
@@ -8,8 +7,8 @@ import CloseModal from "../components/Modal/ClosedModal";
 
 import { cartActions } from "../store/shopping-cart/cartSlice";
 
-import {db} from "../config/firebase";
-import {collection, addDoc} from "firebase/firestore";
+import { db } from "../config/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 import "../styles/checkout.css";
 
@@ -41,7 +40,6 @@ const Checkout = () => {
 
   const totalAmount = cartTotalAmount + Number(shippingCost);
 
-
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -51,7 +49,6 @@ const Checkout = () => {
     const currentDay = new Date().getDay();
     const monday = 1;
     const tuesday = 2;
-  
 
     // Check if email and phone number are valid
     let emailError = "";
@@ -68,7 +65,12 @@ const Checkout = () => {
     setNumberError(numberError);
 
     // Place order if email and phone number are valid
-    if(currentTime >= workHoursStart && currentTime < workHoursEnd && (currentDay !== monday && currentDay !== tuesday)){
+    if (
+      currentTime >= workHoursStart &&
+      currentTime < workHoursEnd &&
+      currentDay !== monday &&
+      currentDay !== tuesday
+    ) {
       if (!emailError && !numberError) {
         let userShippingAddress;
         if (deliveryOption === "delivery") {
@@ -90,10 +92,10 @@ const Checkout = () => {
           };
         }
         shippingInfo.push(userShippingAddress);
-  
+
         console.log(shippingInfo);
         console.log(cartItems);
-  
+
         try {
           await addDoc(ordersRef, userShippingAddress);
           alert("Thank you, Order has been placed!");
@@ -103,10 +105,9 @@ const Checkout = () => {
           console.error(err);
         }
       }
-    }else {
+    } else {
       setCloseModalOpen(true);
     }
-    
   };
 
   return (
@@ -117,7 +118,11 @@ const Checkout = () => {
           <Row>
             <Col lg="8" md="6">
               <h6 className="mb-4">Order Information</h6>
-              <Form className="checkout__form" id="checkout__form" onSubmit={submitHandler}>
+              <Form
+                className="checkout__form"
+                id="checkout__form"
+                onSubmit={submitHandler}
+              >
                 <FormGroup>
                   Choose an option below:
                   <Input
@@ -142,48 +147,50 @@ const Checkout = () => {
                 </div>
 
                 <div className="form__group">
-                <input
-                      type="email"
-                      placeholder="Enter your email"
-                      required
-                      onChange={(e) => {
-                        const value = e.target.value.trim();
-                        if (value.includes("@") && value.includes(".")) {
-                          setEnterEmail(value);
-                        } else {
-                          setEnterEmail("");
-                        }
-                      }}
-                    />
-                    {emailError && <p className="error-message">{emailError}</p>}
-                  </div>
-                  <div className="form__group">
-                    <input
-                      type="text"
-                      placeholder="Enter your phone number"
-                      required
-                      onChange={(e) => {
-                        const value = e.target.value.trim();
-                        if (/^\d+$/.test(value)) {
-                          if (value.startsWith("0")) {
-                            if (value.length === 10) {
-                              setEnterNumber(value);
-                            } else {
-                              setEnterNumber("");
-                            }
-                          } else if (value.startsWith("+353")) {
-                            if (value.length === 13) {
-                              setEnterNumber(value);
-                            } else {
-                              setEnterNumber("");
-                            }
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    onChange={(e) => {
+                      const value = e.target.value.trim();
+                      if (value.includes("@") && value.includes(".")) {
+                        setEnterEmail(value);
+                      } else {
+                        setEnterEmail("");
+                      }
+                    }}
+                  />
+                  {emailError && <p className="error-message">{emailError}</p>}
+                </div>
+                <div className="form__group">
+                  <input
+                    type="text"
+                    placeholder="Enter your phone number"
+                    required
+                    onChange={(e) => {
+                      const value = e.target.value.trim();
+                      if (/^\d+$/.test(value)) {
+                        if (value.startsWith("0")) {
+                          if (value.length === 10) {
+                            setEnterNumber(value);
+                          } else {
+                            setEnterNumber("");
                           }
-                        } else {
-                          setEnterNumber("");
+                        } else if (value.startsWith("+353")) {
+                          if (value.length === 13) {
+                            setEnterNumber(value);
+                          } else {
+                            setEnterNumber("");
+                          }
                         }
-                      }}
-                    />
-                {numberError && <p className="error-message">{numberError}</p>}
+                      } else {
+                        setEnterNumber("");
+                      }
+                    }}
+                  />
+                  {numberError && (
+                    <p className="error-message">{numberError}</p>
+                  )}
                 </div>
                 {deliveryOption === "delivery" ? (
                   <div>
@@ -207,68 +214,74 @@ const Checkout = () => {
                 ) : (
                   <div className="form__group">
                     Time:
-                     <Input
-                            type="select"
-                            name="collectionTime"
-                            id="collectionTime"
-                            value={collectionTime}
-                            onChange={(e) => setCollectionTime(e.target.value)}
-                          >
-                            <option value="asap">asap</option>
-                            <option value="18:30">18:30</option>
-                            <option value="19:00">19:00</option>
-                            <option value="19:30">19:30</option>
-                            <option value="20:00">20:00</option>
-                            <option value="20:30">20:30</option>
-                            <option value="21:00">21:00</option>
-                            <option value="21:30">21:30</option>
-                            <option value="22:00">22:00</option>
-                          </Input>
+                    <Input
+                      type="select"
+                      name="collectionTime"
+                      id="collectionTime"
+                      value={collectionTime}
+                      onChange={(e) => setCollectionTime(e.target.value)}
+                    >
+                      <option value="asap">asap</option>
+                      <option value="18:30">18:30</option>
+                      <option value="19:00">19:00</option>
+                      <option value="19:30">19:30</option>
+                      <option value="20:00">20:00</option>
+                      <option value="20:30">20:30</option>
+                      <option value="21:00">21:00</option>
+                      <option value="21:30">21:30</option>
+                      <option value="22:00">22:00</option>
+                    </Input>
                   </div>
                 )}
-                    <button className="btn" onClick={submitHandler} style={{ backgroundColor: "#CD853F", color: "white" }}>
-                      Place Order
-                    </button>
-            </Form>
+                <button
+                  className="btn"
+                  onClick={submitHandler}
+                  style={{ backgroundColor: "#CD853F", color: "white" }}
+                >
+                  Place Order
+                </button>
+              </Form>
             </Col>
             <Col lg="4" md="6">
-            <div className="checkout__bill">
-              <h6 className="mb-4">Order Summary</h6>
-              <div className="checkout__cart">
-                <p>
-                  Cart Total: <span>€{cartTotalAmount}</span>
-                </p>
-                {deliveryOption === "delivery" && (
+              <div className="checkout__bill">
+                <h6 className="mb-4">Order Summary</h6>
+                <div className="checkout__cart">
                   <p>
-                    Delivery: <span>€{shippingCost}</span>
+                    Cart Total: <span>€{cartTotalAmount}</span>
                   </p>
-                )}{deliveryOption !== "delivery" && (
-                  <p>
-                    Delivery: <span>€{0}</span>
-                  </p>
+                  {deliveryOption === "delivery" && (
+                    <p>
+                      Delivery: <span>€{shippingCost}</span>
+                    </p>
+                  )}
+                  {deliveryOption !== "delivery" && (
+                    <p>
+                      Delivery: <span>€{0}</span>
+                    </p>
+                  )}
+                  {deliveryOption === "delivery" && (
+                    <p className="checkout__total">
+                      Total: <span>€{totalAmount}</span>
+                    </p>
+                  )}
+                  {deliveryOption !== "delivery" && (
+                    <p className="checkout__total">
+                      Total: <span>€{totalAmount - shippingCost}</span>
+                    </p>
+                  )}
+                </div>
+                {closeModalOpen && (
+                  <CloseModal
+                    showModal={closeModalOpen}
+                    closeModal={() => setCloseModalOpen(false)}
+                    message={
+                      <div style={{ textAlign: "center", color: "red" }}>
+                        Sorry, we are currently closed. Please come back between{" "}
+                        <br /> (6:00 pm - 10:00 pm) from (Wed-Sun).
+                      </div>
+                    }
+                  />
                 )}
-                {deliveryOption === "delivery" && (
-                <p className="checkout__total">
-                  Total: <span>€{totalAmount}</span>
-                </p>
-                )}
-                {deliveryOption !== "delivery" && (
-                <p className="checkout__total">
-                  Total: <span>€{totalAmount-shippingCost}</span>
-                </p>
-                )}
-              </div>
-              {closeModalOpen && (
-              <CloseModal
-                showModal={closeModalOpen}
-                closeModal={() => setCloseModalOpen(false)}
-                message={
-                  <div style={{ textAlign: "center", color: "red" }}>
-                    Sorry, we are currently closed. Please come back between <br/> (6:00 pm - 10:00 pm) from (Wed-Sun).
-                  </div>
-                }
-              />
-            )}
               </div>
             </Col>
           </Row>

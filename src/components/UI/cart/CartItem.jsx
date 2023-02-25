@@ -24,11 +24,11 @@ const CartItem = ({ item }) => {
   };
 
   const decreaseItem = () => {
-    dispatch(cartActions.removeItem({title, selection}));
+    dispatch(cartActions.removeItem({ title, selection }));
   };
 
   const deleteItem = () => {
-    dispatch(cartActions.deleteItem({title, selection}));
+    dispatch(cartActions.deleteItem({ title, selection }));
   };
 
   return (
@@ -64,7 +64,7 @@ const CartItem = ({ item }) => {
               {quantity}x <span>€{totalPrice}</span>
             </p>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-            <span className="decrease__btn" onClick={decreaseItem}>
+              <span className="decrease__btn" onClick={decreaseItem}>
                 <i class="ri-subtract-line"></i>
               </span>
               <span className="quantity">{quantity}</span>

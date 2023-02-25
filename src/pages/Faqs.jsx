@@ -5,24 +5,24 @@ import Helmet from "../components/Helmet/Helmet";
 import "../styles/faqs.css";
 
 function Faqs() {
-    useEffect(() => {
-      var faq = document.getElementsByClassName('faq-page');
-      var i;
-      for (i = 0; i < faq.length; i++) {
-        faq[i].addEventListener('click', function () {
-          /* Toggle between adding and removing the "active" class,
+  useEffect(() => {
+    var faq = document.getElementsByClassName("faq-page");
+    var i;
+    for (i = 0; i < faq.length; i++) {
+      faq[i].addEventListener("click", function () {
+        /* Toggle between adding and removing the "active" class,
           to highlight the button that controls the panel */
-          this.classList.toggle('active1');
-          /* Toggle between hiding and showing the active panel */
-          var body = this.nextElementSibling;
-          if (body.style.display === 'block') {
-            body.style.display = 'none';
-          } else {
-            body.style.display = 'block';
-          }
-        });
-      }
-    }, []);
+        this.classList.toggle("active1");
+        /* Toggle between hiding and showing the active panel */
+        var body = this.nextElementSibling;
+        if (body.style.display === "block") {
+          body.style.display = "none";
+        } else {
+          body.style.display = "block";
+        }
+      });
+    }
+  }, []);
 
   return (
     <Helmet title="FAQs">
@@ -36,9 +36,8 @@ function Faqs() {
             <div className="faq-body">
               <p>
                 We are open 5 days a week, we accept pre-orders on business days
-                and deliveries begin from 6PM, we usually stop accepting
-                orders at 10PM. The shop is open to the public from 6PM for
-                walk-ins
+                and deliveries begin from 6PM, we usually stop accepting orders
+                at 10PM. The shop is open to the public from 6PM for walk-ins
               </p>
             </div>
           </div>
@@ -50,9 +49,9 @@ function Faqs() {
             {/* FAQ answer */}
             <div className="faq-body">
               <p>
-                Delivery is €3 if the minimum spend is reached. If not, an
-                extra delivery charge will be added to reach the minimum spend,
-                which is €10.
+                Delivery is €3 if the minimum spend is reached. If not, an extra
+                delivery charge will be added to reach the minimum spend, which
+                is €10.
               </p>
             </div>
           </div>
@@ -107,13 +106,13 @@ function Faqs() {
               <p>
                 All dishes may contain one or more of the following allergens:
                 Wheat, Gluten, Peanuts, Nuts, Sesame Seeds, Celery, Soya, Milk,
-                Eggs, Mustard, Lupin, Mollusc, Crustaceans, Sulphur
-                Dioxide. Dishes may also contain food additives and/or other
-                substances that might not be suitable for pregnant women or
-                people with specific dietary needs. For any questions regarding
-                allergens or other contents of specific dishes, please contact
-                the store directly via our social media platforms, or email us
-                at kakedessertdelivery@gmail.com
+                Eggs, Mustard, Lupin, Mollusc, Crustaceans, Sulphur Dioxide.
+                Dishes may also contain food additives and/or other substances
+                that might not be suitable for pregnant women or people with
+                specific dietary needs. For any questions regarding allergens or
+                other contents of specific dishes, please contact the store
+                directly via our social media platforms, or email us at
+                kakedessertdelivery@gmail.com
               </p>
             </div>
           </div>
@@ -126,8 +125,8 @@ function Faqs() {
             <div className="faq-body">
               <p>
                 All of our products may contain traces of nuts. Please contact
-                us via our social media platforms if you have any questions reagrding 
-                this matter.
+                us via our social media platforms if you have any questions
+                reagrding this matter.
               </p>
             </div>
           </div>
@@ -139,8 +138,8 @@ function Faqs() {
             {/* faq answer */}
             <div className="faq-body">
               <p>
-                You can pay with a credit / debit card, Revolut or with cash in person only.
-                Revolut payments can be made beforehand.
+                You can pay with a credit / debit card, Revolut or with cash in
+                person only. Revolut payments can be made beforehand.
               </p>
             </div>
           </div>
@@ -148,7 +147,9 @@ function Faqs() {
 
           <div className="faq-nine">
             {/* faq question */}
-            <h1 className="faq-page">Adding more items after placing an order</h1>
+            <h1 className="faq-page">
+              Adding more items after placing an order
+            </h1>
             {/* faq answer */}
             <div className="faq-body">
               <p>
@@ -178,5 +179,5 @@ function Faqs() {
       </div>
     </Helmet>
   );
-};
+}
 export default Faqs;
