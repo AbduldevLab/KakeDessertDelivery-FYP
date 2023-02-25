@@ -34,9 +34,11 @@ const Carts = () => {
           <div className="cart__title">Cart</div>
         </div>
        
-      <button className="cart__clear-button" onClick={clearCart}>
-        <span>Clear</span>
-      </button>
+        <div className="cart__clear">
+        <span onClick={clearCart}>
+          clear
+          </span>
+        </div>
       
       <div className="cart__item-list">
         {cartProducts.length === 0 ? (

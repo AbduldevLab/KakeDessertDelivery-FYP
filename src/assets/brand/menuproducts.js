@@ -26,7 +26,7 @@ import product_06_image_19 from "../images/Chocolate cake slice.jpg";
 
 import product_00_image_00 from "../images/Coming Soon.jpg";
 
-
+// The following array contains the product details
 
 const products = [
   {
@@ -59,11 +59,10 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-
   {
     id: "18",
     title: "Chocolate Bars",
-    price: 1.50,
+    price: 1.5,
     image01: product_00_image_00,
     category: "Snacks",
 
@@ -80,7 +79,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-
   {
     id: "06",
     title: "Cookie Dough Tray",
@@ -90,7 +88,7 @@ const products = [
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
-  
+
   {
     id: "03",
     title: "Cheese Cake Tub",
@@ -119,7 +117,7 @@ const products = [
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
-   
+
   {
     id: "07",
     title: "Croissant",
@@ -132,7 +130,7 @@ const products = [
   {
     id: "17",
     title: "Crisps",
-    price: 1.50,
+    price: 1.5,
     image01: product_00_image_00,
     category: "Snacks",
 
@@ -157,7 +155,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-  
   {
     id: "14",
     title: "Biscoff Shake",
@@ -178,7 +175,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-
   {
     id: "05",
     title: "Cookie Dough Tray",
@@ -189,7 +185,6 @@ const products = [
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
 
-
   {
     id: "16",
     title: "Hot Drinks",
@@ -199,11 +194,11 @@ const products = [
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
- 
+
   {
     id: "19",
     title: "American Candy",
-    price: 2.50,
+    price: 2.5,
     image01: product_00_image_00,
     category: "Snacks",
 
