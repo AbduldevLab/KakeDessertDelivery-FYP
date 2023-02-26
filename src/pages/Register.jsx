@@ -14,49 +14,70 @@ import "../styles/register.css";
 const Register = () => {
   const signupNameRef = useRef();
   const signupEmailRef = useRef();
-  const [setLoggedIn] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const handleEmailAndPasswordLogin = async (e) => {
     e.preventDefault();
 
     const name = signupNameRef.current.value;
     const email = signupEmailRef.current.value;
+    // Check if email and name are valid
+    let emailError = "";
+    let nameError = "";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nameRegex = /^[a-zA-Z]+(\s[a-zA-Z]+)+$/;
+
+    if (!emailRegex.test(email)) {
+      emailError = "Invalid email address";
+    }
+    if (!nameRegex.test(name)) {
+      nameError = "Please enter your full name";
+    }
+    setEmailError(emailError);
+    setNameError(nameError);
+
+    if (!emailError && !nameError) {
+      try {
+        await createUserWithEmailAndPassword(auth, email, name);
+        setLoggedIn(true);
+        setSuccessMessage(`${name}, you have successfully signed up!`);
+      } catch (error) {
+        const errorCode = error.code;
+        if (errorCode === "auth/email-already-in-use") {
+          setErrorMessage("This email address is already in use.");
+        }
+        setSuccessMessage(""); // Clear success message on error
+        console.log(error);
+      }
+    }
+    // Clear error messages after 2 seconds
+    setTimeout(() => {
+    setEmailError("");
+    setNameError("");
+  }, 3000);
+
+  };
+
+  const handleGoogleLogin = async (e) => {
+    e.preventDefault();
+
+    const provider = new GoogleAuthProvider();
     try {
-      await createUserWithEmailAndPassword(auth, email, name);
-      setLoggedIn(true);
-      setSuccessMessage(`${name}, you have successfully signed up!`);
+      await signInWithPopup(auth, provider);
+      setSuccessMessage("Successfully signed up!");
       setErrorMessage(""); // Clear error message on success
     } catch (error) {
-      const errorCode = error.code;
-      if (errorCode === "auth/email-already-in-use") {
-        setErrorMessage(
-          "This email address is already in use."
-        );
-      } else if (errorCode === "auth/invalid-email") {
-        setErrorMessage("This email address is invalid.");
-      } else {
-        setErrorMessage("Please enter your full name.");
-      }
+      setErrorMessage("Error occurred, please try again.");
       setSuccessMessage(""); // Clear success message on error
       console.log(error);
     }
   };
 
-  const handleGoogleLogin = async (e) => {
-    e.preventDefault();
-  
-    const provider = new GoogleAuthProvider();
-  try {
-    await signInWithPopup(auth, provider);
-    setSuccessMessage("Successfully signed up!");
-    setErrorMessage(""); // Clear error message on success
-  } catch (error) {
-    setErrorMessage("Error occurred, please try again.");
-    setSuccessMessage(""); // Clear success message on error
-  }
-  };
   return (
     <Helmet title="Signup">
       <CommonSection title="Signup" />
@@ -72,6 +93,9 @@ const Register = () => {
                     required
                     ref={signupNameRef}
                   />
+                  {nameError && (
+                    <p className="error-message">{nameError}</p>
+                  )}
                 </div>
                 <div className="form__group">
                   <input
@@ -80,6 +104,9 @@ const Register = () => {
                     required
                     ref={signupEmailRef}
                   />
+                  {emailError && (
+                    <p className="error-message">{emailError}</p>
+                  )}
                 </div>
                 <p>
                   For special discounts/coupon codes, make sure to hit that
@@ -91,12 +118,9 @@ const Register = () => {
                 >
                   Sign Up
                 </button>
-                {errorMessage && (
-                  <div className="error-message">{errorMessage}</div>
-                )}
-                {successMessage && (
-                  <div className="success-message">{successMessage}</div>
-                )}
+                {loggedIn && (
+                <div className="success-message">{successMessage}</div>
+              )}
               </form>
               <div className="d-flex justify-content-center align-items-center mb-3">
                 <button className="addTOCart__btn" onClick={handleGoogleLogin}>
