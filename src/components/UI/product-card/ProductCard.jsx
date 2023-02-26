@@ -137,8 +137,8 @@ const ProductCard = (props) => {
           showModal={closeModalOpen}
           closeModal={() => setCloseModalOpen(false)}
           message={
-            <div style={{ textAlign: "center", color: "red" }}>
-              Sorry, we are currently closed. Please come back between <br />{" "}
+            <div className = "closed" style={{ textAlign: "center", color: "red" }}>
+              Sorry, we are currently closed.<br /> Please come back between <br />{" "}
               (6:00 pm - 10:00 pm) from (Wed-Sun).
             </div>
           }
