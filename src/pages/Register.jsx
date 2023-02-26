@@ -59,6 +59,7 @@ const Register = () => {
     setTimeout(() => {
       setEmailError("");
       setNameError("");
+      setSuccessMessage("");
     }, 3000);
   };
 
