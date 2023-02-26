@@ -57,10 +57,9 @@ const Register = () => {
     }
     // Clear error messages after 2 seconds
     setTimeout(() => {
-    setEmailError("");
-    setNameError("");
-  }, 3000);
-
+      setEmailError("");
+      setNameError("");
+    }, 3000);
   };
 
   const handleGoogleLogin = async (e) => {
@@ -93,9 +92,7 @@ const Register = () => {
                     required
                     ref={signupNameRef}
                   />
-                  {nameError && (
-                    <p className="error-message">{nameError}</p>
-                  )}
+                  {nameError && <p className="error-message">{nameError}</p>}
                 </div>
                 <div className="form__group">
                   <input
@@ -104,13 +101,11 @@ const Register = () => {
                     required
                     ref={signupEmailRef}
                   />
-                  {emailError && (
-                    <p className="error-message">{emailError}</p>
-                  )}
+                  {emailError && <p className="error-message">{emailError}</p>}
                 </div>
                 <p>
-                  For special discounts/coupon codes, make sure to hit that
-                  sign up button to be subscribed to our newsletter
+                  For special discounts/coupon codes, make sure to hit that sign
+                  up button to be subscribed to our newsletter
                 </p>
                 <button
                   onClick={handleEmailAndPasswordLogin}
@@ -119,8 +114,8 @@ const Register = () => {
                   Sign Up
                 </button>
                 {loggedIn && (
-                <div className="success-message">{successMessage}</div>
-              )}
+                  <div className="success-message">{successMessage}</div>
+                )}
               </form>
               <div className="d-flex justify-content-center align-items-center mb-3">
                 <button className="addTOCart__btn" onClick={handleGoogleLogin}>

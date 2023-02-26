@@ -50,27 +50,26 @@ const Checkout = () => {
     const monday = 1;
     const tuesday = 2;
 
-    // Check if email and phone number are valid
-    let emailError = "";
-    let numberError = "";
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^(\+353|0)\d{9}$/;
-    if (!emailRegex.test(enterEmail)) {
-      emailError = "Invalid email address";
-    }
-    if (!phoneRegex.test(enterNumber)) {
-      numberError = "Invalid phone number";
-    }
-    setEmailError(emailError);
-    setNumberError(numberError);
-
-    // Place order if email and phone number are valid
     if (
       currentTime >= workHoursStart &&
       currentTime < workHoursEnd &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
+      // Check if email and phone number are valid
+      let emailError = "";
+      let numberError = "";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^(\+353|0)\d{9}$/;
+      if (!emailRegex.test(enterEmail)) {
+        emailError = "Invalid email address";
+      }
+      if (!phoneRegex.test(enterNumber)) {
+        numberError = "Invalid phone number";
+      }
+      setEmailError(emailError);
+      setNumberError(numberError);
+      // Place order if email and phone number are valid
       if (!emailError && !numberError) {
         let userShippingAddress;
         if (deliveryOption === "delivery") {
