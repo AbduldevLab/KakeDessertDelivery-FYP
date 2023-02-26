@@ -8,9 +8,6 @@
   .success-message {
     color: green;
   }  
-  .logout {
-    margin-top: 1rem;
-  }
   body {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;

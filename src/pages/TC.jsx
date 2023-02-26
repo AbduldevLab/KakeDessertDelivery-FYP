@@ -2,11 +2,11 @@ import React from "react";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 
-import "../styles/TC.css";
+import "../styles/tc.css";
 
-const TC = () => {
+const Tc = () => {
   return (
-    <Helmet title="FAQs">
+    <Helmet title="tc">
       <div id="top2">
         <CommonSection title="Terms & Conditions" />
         <section className="content">
@@ -93,4 +93,4 @@ const TC = () => {
   );
 };
 
-export default TC;
+export default Tc;

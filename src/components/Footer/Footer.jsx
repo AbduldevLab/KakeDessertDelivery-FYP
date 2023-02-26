@@ -107,7 +107,7 @@ const Footer = () => {
             <h5 className="footer__title">Terms and Conditions</h5>
             <p className="footer__title2">
               <Link
-                to="/TC"
+                to="/t&c"
                 onClick={() =>
                   document
                     .getElementById("top1")

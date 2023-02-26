@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Category from "../components/UI/category/Category.jsx";
 
 import "../styles/home.css";
+import "../styles/product-details.css";
 
 import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";

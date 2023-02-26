@@ -26,44 +26,37 @@ const Register = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, name);
       setLoggedIn(true);
-      setSuccessMessage(`${name}, you have Successfully signed up!`);
+      setSuccessMessage(`${name}, you have successfully signed up!`);
+      setErrorMessage(""); // Clear error message on success
     } catch (error) {
       const errorCode = error.code;
-      let errorMessage = "An error occurred. Please try again.";
       if (errorCode === "auth/email-already-in-use") {
-        errorMessage =
-          "The email address is already in use by another account.";
+        setErrorMessage(
+          "This email address is already in use."
+        );
       } else if (errorCode === "auth/invalid-email") {
-        errorMessage = "The email address is invalid.";
+        setErrorMessage("This email address is invalid.");
+      } else {
+        setErrorMessage("Please enter your full name.");
       }
-      setErrorMessage(errorMessage);
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 3000);
+      setSuccessMessage(""); // Clear success message on error
       console.log(error);
     }
   };
 
   const handleGoogleLogin = async (e) => {
     e.preventDefault();
-
+  
     const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      setLoggedIn(true);
-      setSuccessMessage("Successfully signed up!");
-      setErrorMessage(""); // Clear error message on success
-    } catch (error) {
-      let errorMessage =
-        "The email address is already in use by another account.";
-      setErrorMessage(errorMessage);
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 3000);
-      console.log(error);
-    }
+  try {
+    await signInWithPopup(auth, provider);
+    setSuccessMessage("Successfully signed up!");
+    setErrorMessage(""); // Clear error message on success
+  } catch (error) {
+    setErrorMessage("Error occurred, please try again.");
+    setSuccessMessage(""); // Clear success message on error
+  }
   };
-
   return (
     <Helmet title="Signup">
       <CommonSection title="Signup" />
@@ -71,10 +64,7 @@ const Register = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form
-                className="form mb-5"
-                onSubmit={handleEmailAndPasswordLogin}
-              >
+              <form className="form mb-5">
                 <div className="form__group">
                   <input
                     type="text"
@@ -92,10 +82,13 @@ const Register = () => {
                   />
                 </div>
                 <p>
-                  For special discounts/coupon codes, make sure to hit hit that
+                  For special discounts/coupon codes, make sure to hit that
                   sign up button to be subscribed to our newsletter
                 </p>
-                <button type="submit" className="addTOCart__btn">
+                <button
+                  onClick={handleEmailAndPasswordLogin}
+                  className="addTOCart__btn"
+                >
                   Sign Up
                 </button>
                 {errorMessage && (
