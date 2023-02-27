@@ -14,6 +14,7 @@
 - Contact page
 - Register page
 - Modern  UI/UX
+- Admin Dashboard
 - More to come .. In progress.
 
 ### Technologies Used:
@@ -26,7 +27,11 @@
 4. CSS
 5. Bootstrap
 6. remixIcon/flaticon
-7. Firebase
+7. react-router-dom
+8. react-google-charts
+9. react-icons
+10. react-rating-start
+11. Firebase
 
 ### Live domain link:
 
@@ -35,3 +40,9 @@
 Visit the deployed website, track live work progress.
 
 www.kakedessertdelivery.com
+
+### Copyright and License:
+
+---
+
+copyright 2023 A.Zino.
