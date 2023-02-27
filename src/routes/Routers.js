@@ -24,7 +24,7 @@ const Routers = () => {
   return (
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Home />} />
-      {/* <Route path="/home" element={<Home />} /> */}
+      <Route path="/home" element={<Home />} />
       <Route path="/menu" element={<Allitems />} />
       <Route path="/menu/:id" element={<ItemDetails />} />
       <Route path="/cart" element={<Cart />} />
