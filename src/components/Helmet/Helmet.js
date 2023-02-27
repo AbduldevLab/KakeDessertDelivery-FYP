@@ -62,7 +62,6 @@ const Helmet = (props) => {
   return (
     <div className="w-100">
       <a href="/" onClick={handleClick}>
-        Home
       </a>
       {showTitle && <span> - {props.title}</span>}
       {props.children}
