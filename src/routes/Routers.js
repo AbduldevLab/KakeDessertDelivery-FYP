@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Allitems from "../pages/Allitems";
@@ -12,17 +12,6 @@ import Faqs from "../pages/Faqs";
 import Tc from "../pages/Tc";
 
 const Routers = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    const isHomePage = location.pathname === "/home";
-    const isAtTopOfHistory = window.history.state === null;
-    if (isHomePage && isAtTopOfHistory) {
-      navigate(-1);
-    }
-  }, [location.pathname, navigate]);
-
   return (
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />
