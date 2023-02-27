@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Allitems from "../pages/Allitems";
@@ -12,9 +12,15 @@ import Faqs from "../pages/Faqs";
 import Tc from "../pages/Tc";
 
 const Routers = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <Routes basename="/React-kake-dessert-delivery">
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/" element={<Navigate to = {handleGoBack} />} />
       <Route path="/home" element={<Home />} />
       <Route path="/menu" element={<Allitems />} />
       <Route path="/menu/:id" element={<ItemDetails />} />
