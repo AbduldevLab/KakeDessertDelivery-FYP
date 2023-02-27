@@ -1,11 +1,12 @@
-
-
 .feature__subtitle {
   color: #CD853F;
 }
 
 .feature__title span {
   color: #CD853F;
+}
+.w-100{
+  border-radius: 8px;
 }
 
 .feature__text {
