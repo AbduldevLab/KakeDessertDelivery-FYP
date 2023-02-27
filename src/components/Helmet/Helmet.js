@@ -31,43 +31,20 @@
 
 // export default Helmet;
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Helmet = (props) => {
-  const [showTitle, setShowTitle] = useState(false);
+  let title;
+  if (document.referrer && document.referrer.includes("google.com")) {
+    // Add " - Grab your kake today!" to the title when user comes from a search engine
+    title = `Kake Dessert Delivery - ${props.title} - Grab your kake today!`;
+  } else {
+    // Otherwise, show just the page title
+    title = `Kake Dessert Delivery - ${props.title}`;
+  }
+  document.title = title;
 
-  const handleClick = () => {
-    setShowTitle(true);
-    window.history.pushState(null, "", "/home"); // update URL when navigating to new page
-  };
-
-  useEffect(() => {
-    const handlePopState = () => {
-      if (window.location.pathname === "/") {
-        setShowTitle(false);
-      }
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
-
-  document.title =
-    "Kake Dessert Delivery - Grab your kake today!" +
-    (showTitle ? " - " + props.title : "");
-
-  return (
-    <div className="w-100">
-      <a href="/" onClick={handleClick}>
-      </a>
-      {showTitle && <span> - {props.title}</span>}
-      {props.children}
-    </div>
-  );
+  return <div className="w-100">{props.children}</div>;
 };
 
 export default Helmet;
-

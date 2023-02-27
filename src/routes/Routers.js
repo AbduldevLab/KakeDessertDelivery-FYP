@@ -16,7 +16,9 @@ const Routers = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    const isHomePage = location.pathname === "/home";
+    const isAtTopOfHistory = window.history.state === null;
+    if (isHomePage && isAtTopOfHistory) {
       navigate(-1);
     }
   }, [location.pathname, navigate]);
