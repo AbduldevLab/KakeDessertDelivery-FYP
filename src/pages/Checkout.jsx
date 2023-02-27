@@ -27,6 +27,14 @@ const Checkout = () => {
   const [closeModalOpen, setCloseModalOpen] = useState(false);
 
   const ordersRef = collection(db, "Orders");
+  const generateOrderNumber = () => {
+    const min = 1;
+    const max = 99999;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    const orderNumber = randomNumber.toString().padStart(5, '0');
+    return orderNumber;
+  };
+  const orderNumber = generateOrderNumber();
 
   const dispatch = useDispatch();
   const clearCart = () => {
@@ -44,11 +52,11 @@ const Checkout = () => {
     e.preventDefault();
 
     const currentTime = new Date().getHours();
-    const workHoursStart = 18;
-    const workHoursEnd = 22;
+    const workHoursStart = 0;
+    const workHoursEnd = 24;
     const currentDay = new Date().getDay();
-    const monday = 1;
-    const tuesday = 2;
+    const monday = 0;
+    const tuesday = 0;
 
     if (
       currentTime >= workHoursStart &&
@@ -74,6 +82,7 @@ const Checkout = () => {
         let userShippingAddress;
         if (deliveryOption === "delivery") {
           userShippingAddress = {
+            orderNumber: orderNumber,
             name: enterName,
             email: enterEmail,
             phone: enterNumber,
@@ -83,6 +92,7 @@ const Checkout = () => {
           };
         } else {
           userShippingAddress = {
+            orderNumber: orderNumber,
             name: enterName,
             email: enterEmail,
             phone: enterNumber,
@@ -97,7 +107,7 @@ const Checkout = () => {
 
         try {
           await addDoc(ordersRef, userShippingAddress);
-          alert("Thank you, Order has been placed!");
+          alert(`Thank you! Your order number is ${orderNumber}.`);
           clearCart();
           document.getElementById("checkout__form").reset();
         } catch (err) {
