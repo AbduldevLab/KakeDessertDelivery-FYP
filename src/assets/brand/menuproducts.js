@@ -70,6 +70,16 @@ const products = [
   },
 
   {
+    id: "09",
+    title: "Croissant",
+    price: 3,
+    image01: product_05_image_15,
+    category: "Desserts",
+
+    desc: "See faqs page for any allergy advice and ingrediants.",
+  },
+
+  {
     id: "20",
     title: "Red-velvet Slice",
     price: 5,
@@ -94,15 +104,6 @@ const products = [
     title: "Cheese Cake Tub",
     price: 6,
     image01: product_03_image_10,
-    category: "Desserts",
-
-    desc: "See faqs page for any allergy advice and ingrediants.",
-  },
-  {
-    id: "09",
-    title: "Croissant",
-    price: 3,
-    image01: product_05_image_15,
     category: "Desserts",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
