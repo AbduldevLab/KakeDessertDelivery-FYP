@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Helmet from "../components/Helmet/Helmet";
 import styled from "styled-components";
 
@@ -14,15 +14,11 @@ const Button = styled.button`
 `;
 
 const Contact = () => {
-  useEffect(() => {
-    document.getElementById("top").scrollIntoView({ behavior: "smooth" });
-  }, []);
+ 
 
   return (
-    <div id="top">
     <Helmet title="Contact">
-      <body>
-        
+      <body id="top">
         <div className="mapContainer">
           <iframe
             title="Kake"
@@ -52,7 +48,6 @@ const Contact = () => {
         </div>
       </body>
     </Helmet>
-    </div>
   );
 };
 
