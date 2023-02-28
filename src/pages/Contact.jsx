@@ -19,9 +19,10 @@ const Contact = () => {
   }, []);
 
   return (
+    <div id="top">
     <Helmet title="Contact">
       <body>
-        <div id="top"></div>
+        
         <div className="mapContainer">
           <iframe
             title="Kake"
@@ -51,6 +52,7 @@ const Contact = () => {
         </div>
       </body>
     </Helmet>
+    </div>
   );
 };
 
