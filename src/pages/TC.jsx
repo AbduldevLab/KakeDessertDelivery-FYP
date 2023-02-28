@@ -6,7 +6,6 @@ import "../styles/tc.css";
 
 const Tc = () => {
   return (
-    <div id="top1">
     <Helmet title="tc">
         <CommonSection title="Terms & Conditions" />
         <section className="content">
@@ -89,7 +88,6 @@ const Tc = () => {
           </p>
         </section>
     </Helmet>
-    </div>
   );
 };
 
