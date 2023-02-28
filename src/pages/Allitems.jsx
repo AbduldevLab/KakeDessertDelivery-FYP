@@ -41,8 +41,8 @@ const Allitems = () => {
   };
 
   return (
+    <div id="top1">
     <Helmet title="All Items">
-      <div id="top1">
       <CommonSection title="All Desserts" />
       <section>
         <Container>
@@ -96,8 +96,8 @@ const Allitems = () => {
           </Row>
         </Container>
       </section>
-      </div>
     </Helmet>
+    </div>
   );
 };
 

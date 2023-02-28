@@ -25,8 +25,8 @@ function Faqs() {
   }, []);
 
   return (
+    <div id="top1">
     <Helmet title="FAQs">
-      <div id="top1">
         <CommonSection title="FAQs" />
         <section>
           <div className="faq-one">
@@ -176,8 +176,8 @@ function Faqs() {
             </div>
           </div>
         </section>
-      </div>
     </Helmet>
+    </div>
   );
 }
 export default Faqs;
