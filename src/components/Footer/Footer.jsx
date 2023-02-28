@@ -1,4 +1,4 @@
-import React, {useRef, useEffect }from "react";
+import React, { useRef, useEffect } from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
 
@@ -12,6 +12,23 @@ const Footer = () => {
   const registerRef = useRef(null);
   const faqsRef = useRef(null);
   const tcRef = useRef(null);
+
+  const handleMapClick = () => {
+    window.scrollTo(0, mapRef.current.offsetTop);
+  };
+
+  const handleSubscribeClick = () => {
+    window.scrollTo(0, registerRef.current.offsetTop);
+  };
+
+  const handleFaqsClick = () => {
+    window.scrollTo(0, faqsRef.current.offsetTop);
+  };
+
+  const handleReadMoreClick = () => {
+    window.scrollTo(0, tcRef.current.offsetTop);
+  };
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
@@ -26,7 +43,6 @@ const Footer = () => {
 
     return () => window.removeEventListener("scroll");
   }, []);
-  
 
   return (
     <footer className="footer" ref={footerRef}>
@@ -43,7 +59,7 @@ const Footer = () => {
                 <span className="footer__title1" ref={mapRef}>
                   <Link
                     to="/contact"
-                    onClick={() => window.scrollTo(0, 0)}
+                    onClick={handleMapClick}
                   >
                     {" "}
                     here
@@ -97,7 +113,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/register"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={handleSubscribeClick}
               >
                 Subscribe to our newsletter
               </Link>
@@ -107,7 +123,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/faqs"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={handleFaqsClick}
               >
                 Common questions
               </Link>
@@ -117,7 +133,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/t&c"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={handleReadMoreClick}
               >
                 Read more
               </Link>
