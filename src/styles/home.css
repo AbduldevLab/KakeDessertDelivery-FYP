@@ -195,3 +195,8 @@
     letter-spacing: -0.04em;
   }
 }
+
+body{
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}

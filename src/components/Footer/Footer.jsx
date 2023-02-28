@@ -13,8 +13,7 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-              <Link to="/home" 
-              onClick={() => window.scrollTo(0, 0)}
+              <Link to="/home" onClick={() => window.scrollTo(0, 0)}
               >
                 <img src={logo} alt="logo" />
               </Link>
@@ -25,7 +24,7 @@ const Footer = () => {
                   <Link
                     to="/contact"
                     onClick={() => 
-                      document.getElementById("top").scrollIntoView({ behavior: "smooth" })}
+                      document.getElementById("top0").scrollIntoView({ behavior: "smooth" })}
                   >
                     {" "}
                     here

@@ -80,7 +80,7 @@ const Register = () => {
 
   return (
     <Helmet title="Signup">
-      <body id="top">
+      <body id="top1">
       <CommonSection title="Signup" />
       <section>
         <Container>

@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <Helmet title="Contact">
-      <body id="top">
+      <body id="top0">
         <div className="mapContainer">
           <iframe
             title="Kake"
