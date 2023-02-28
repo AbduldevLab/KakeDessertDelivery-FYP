@@ -7,6 +7,14 @@ import "../../styles/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="footer">
       <Container>
@@ -22,7 +30,7 @@ const Footer = () => {
                 <span className="footer__title1">
                   <Link
                     to="/contact"
-                   onClick={() => window.scrollTo(0, 0)}
+                   onClick={scrollToTop}
                   >
                     {" "}
                     here
@@ -76,7 +84,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/register"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={scrollToTop}
               >
                 Subscribe to our newsletter
               </Link>
@@ -86,7 +94,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/faqs"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={scrollToTop}
               >
                 Common questions
               </Link>
@@ -96,7 +104,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/t&c"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={scrollToTop}
               >
                 Read more
               </Link>
