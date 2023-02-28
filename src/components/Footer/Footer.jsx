@@ -22,11 +22,7 @@ const Footer = () => {
                 <span className="footer__title1">
                   <Link
                     to="/contact"
-                    onClick={() =>
-                      document
-                        .getElementById("top")
-                        .scrollIntoView({ behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     {" "}
                     here
@@ -80,11 +76,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/register"
-                onClick={() =>
-                  document
-                    .getElementById("top1")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Subscribe to our newsletter
               </Link>
@@ -94,11 +86,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/faqs"
-                onClick={() =>
-                  document
-                    .getElementById("top1")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Common questions
               </Link>
@@ -108,11 +96,7 @@ const Footer = () => {
             <p className="footer__title2">
               <Link
                 to="/t&c"
-                onClick={() =>
-                  document
-                    .getElementById("top1")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Read more
               </Link>

@@ -86,11 +86,7 @@ const Allitems = () => {
                 nextLabel={"Next"}
                 containerClassName=" paginationBttns "
                 activeClassName="active"
-                onClick={() => 
-                  document
-                    .getElementById("top1")
-                    .scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.scrollTo(0, 0)}
               />
             </div>
           </Row>
