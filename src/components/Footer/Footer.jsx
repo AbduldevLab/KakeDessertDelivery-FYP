@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
 
@@ -7,59 +7,24 @@ import "../../styles/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const footerRef = useRef(null);
-  const mapRef = useRef(null);
-  const registerRef = useRef(null);
-  const faqsRef = useRef(null);
-  const tcRef = useRef(null);
-
-  const handleMapClick = () => {
-    window.scrollTo(0, mapRef.current.offsetTop);
-  };
-
-  const handleSubscribeClick = () => {
-    window.scrollTo(0, registerRef.current.offsetTop);
-  };
-
-  const handleFaqsClick = () => {
-    window.scrollTo(0, faqsRef.current.offsetTop);
-  };
-
-  const handleReadMoreClick = () => {
-    window.scrollTo(0, tcRef.current.offsetTop);
-  };
-  
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        footerRef.current.classList.add("footer__shrink");
-      } else {
-        footerRef.current.classList.remove("footer__shrink");
-      }
-    });
-
-    return () => window.removeEventListener("scroll");
-  }, []);
-
   return (
-    <footer className="footer" ref={footerRef}>
+    <footer className="footer">
       <Container>
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-              <Link to="/home" onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/home" onClick={() => 
+                document.getElementById("top").scrollIntoView({ behavior: "smooth" })}
+              >
                 <img src={logo} alt="logo" />
               </Link>
               <h5>Your Kake</h5>
               <p>
                 By clicking
-                <span className="footer__title1" ref={mapRef}>
+                <span className="footer__title1">
                   <Link
                     to="/contact"
-                    onClick={handleMapClick}
+                   onClick={() => window.scrollTo(0, 0)}
                   >
                     {" "}
                     here
@@ -109,31 +74,34 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title" ref={registerRef}>Newsletter</h5>
+            <h5 className="footer__title">Newsletter</h5>
             <p className="footer__title2">
               <Link
                 to="/register"
-                onClick={handleSubscribeClick}
+                onClick={() => 
+                  document.getElementById("top1").scrollIntoView({ behavior: "smooth" })}
               >
                 Subscribe to our newsletter
               </Link>
             </p>
 
-            <h5 className="footer__title" ref={faqsRef}>Faq's</h5>
+            <h5 className="footer__title">Faq's</h5>
             <p className="footer__title2">
               <Link
                 to="/faqs"
-                onClick={handleFaqsClick}
+                onClick={() => 
+                  document.getElementById("top2").scrollIntoView({ behavior: "smooth" })}
               >
                 Common questions
               </Link>
             </p>
 
-            <h5 className="footer__title" ref={tcRef}>Terms and Conditions</h5>
+            <h5 className="footer__title">Terms and Conditions</h5>
             <p className="footer__title2">
               <Link
                 to="/t&c"
-                onClick={handleReadMoreClick}
+                onClick={() => 
+                  document.getElementById("top3").scrollIntoView({ behavior: "smooth" })}
               >
                 Read more
               </Link>
