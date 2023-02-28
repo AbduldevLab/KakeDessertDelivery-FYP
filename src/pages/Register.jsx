@@ -80,10 +80,11 @@ const Register = () => {
 
   return (
     <Helmet title="Signup">
-      <div id="top1">
+      <body id="top">
       <CommonSection title="Signup" />
       <section>
         <Container>
+          
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
               <form className="form mb-5">
@@ -128,7 +129,7 @@ const Register = () => {
           </Row>
         </Container>
       </section>
-      </div>
+      </body>
     </Helmet>
   );
 };

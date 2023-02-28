@@ -18,7 +18,7 @@ const Button = styled.button`
 const Contact = () => {
   return (
     <Helmet title="Contact">
-      <div id="top">
+      <body id="top">
         <div class="mapContainer">
           <iframe
             title="Kake"
@@ -47,7 +47,7 @@ const Contact = () => {
           </a>
           <div id="map"></div>
         </div>
-        </div>
+        </body>
     </Helmet>
   );
 };

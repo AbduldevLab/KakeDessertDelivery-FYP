@@ -7,7 +7,7 @@ import "../styles/tc.css";
 const Tc = () => {
   return (
     <Helmet title="tc">
-      <div id="top3">
+      <body id="top3">
         <CommonSection title="Terms & Conditions" />
         <section className="content">
           <h2 className="section-title">1. Acceptance of Terms</h2>
@@ -88,7 +88,7 @@ const Tc = () => {
             changes, you agree to be bound by the modified Terms.
           </p>
         </section>
-        </div>
+        </body>
     </Helmet>
   );
 };

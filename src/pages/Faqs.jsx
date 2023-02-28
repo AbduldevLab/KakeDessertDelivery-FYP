@@ -26,7 +26,7 @@ function Faqs() {
 
   return (
     <Helmet title="FAQs">
-      <div id="top2">
+      <body id="top2">
         <CommonSection title="FAQs" />
         <section>
           <div className="faq-one">
@@ -176,7 +176,7 @@ function Faqs() {
             </div>
           </div>
         </section>
-        </div>
+        </body>
     </Helmet>
   );
 }
