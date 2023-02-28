@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect }from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
 
@@ -7,16 +7,29 @@ import "../../styles/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  const footerRef = useRef(null);
+  const mapRef = useRef(null);
+  const registerRef = useRef(null);
+  const faqsRef = useRef(null);
+  const tcRef = useRef(null);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        footerRef.current.classList.add("footer__shrink");
+      } else {
+        footerRef.current.classList.remove("footer__shrink");
+      }
     });
-  };
+
+    return () => window.removeEventListener("scroll");
+  }, []);
+  
 
   return (
-    <footer className="footer">
+    <footer className="footer" ref={footerRef}>
       <Container>
         <Row>
           <Col lg="3" md="4" sm="6">
@@ -27,10 +40,10 @@ const Footer = () => {
               <h5>Your Kake</h5>
               <p>
                 By clicking
-                <span className="footer__title1">
+                <span className="footer__title1" ref={mapRef}>
                   <Link
                     to="/contact"
-                   onClick={scrollToTop}
+                    onClick={() => window.scrollTo(0, 0)}
                   >
                     {" "}
                     here
@@ -80,31 +93,31 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Newsletter</h5>
+            <h5 className="footer__title" ref={registerRef}>Newsletter</h5>
             <p className="footer__title2">
               <Link
                 to="/register"
-                onClick={scrollToTop}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Subscribe to our newsletter
               </Link>
             </p>
 
-            <h5 className="footer__title">Faq's</h5>
+            <h5 className="footer__title" ref={faqsRef}>Faq's</h5>
             <p className="footer__title2">
               <Link
                 to="/faqs"
-                onClick={scrollToTop}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Common questions
               </Link>
             </p>
 
-            <h5 className="footer__title">Terms and Conditions</h5>
+            <h5 className="footer__title" ref={tcRef}>Terms and Conditions</h5>
             <p className="footer__title2">
               <Link
                 to="/t&c"
-                onClick={scrollToTop}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 Read more
               </Link>
