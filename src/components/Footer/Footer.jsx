@@ -22,7 +22,7 @@ const Footer = () => {
                 <span className="footer__title1">
                   <Link
                     to="/contact"
-                    onClick={() => window.scrollTo(0, 0)}
+                   onClick={() => window.scrollTo(0, 0)}
                   >
                     {" "}
                     here
