@@ -28,4 +28,8 @@
   .paginationBttns a.active {
   background: #CD853F !important;
   }
+  body {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
   

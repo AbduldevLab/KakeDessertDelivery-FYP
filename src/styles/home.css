@@ -8,7 +8,6 @@
 .w-100{
   border-radius: 8px;
 }
-
 .feature__text {
   color: #777;
 }
@@ -147,6 +146,9 @@
   .testimonial__desc {
     font-size: 0.8rem;
   }
+  .rounded {
+    border-radius: 8px;
+  }
 }
 @media only screen and (max-width: 576px) {
   .hero__content {
@@ -174,6 +176,9 @@
   }
   .why__choose-us {
     padding-top: 0 !important;
+  }
+  .rounded {
+    border-radius: 8px;
   }
 }
 @media only screen and (max-width: 375px) {

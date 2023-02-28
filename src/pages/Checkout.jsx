@@ -18,7 +18,7 @@ const Checkout = () => {
   const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
   const [enterCity, setEnterCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
+  const [eirCode, setEirCode] = useState("");
   const [collectionTime, setCollectionTime] = useState("asap");
 
   const [emailError, setEmailError] = useState("");
@@ -87,7 +87,7 @@ const Checkout = () => {
             email: enterEmail,
             phone: enterNumber,
             address: enterCity,
-            postalCode: postalCode,
+            eirCode: eirCode,
             cartItems: cartItems,
           };
         } else {
@@ -214,9 +214,9 @@ const Checkout = () => {
                     <div className="form__group">
                       <input
                         type="text"
-                        placeholder="Enter your postal code"
+                        placeholder="Enter your eircode"
                         required
-                        onChange={(e) => setPostalCode(e.target.value)}
+                        onChange={(e) => setEirCode(e.target.value)}
                       />
                     </div>
                   </div>

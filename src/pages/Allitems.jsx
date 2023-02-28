@@ -17,7 +17,7 @@ const Allitems = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const searchedProduct = menuproducts.filter((item) => {
-    if (searchTerm.value === "") {
+    if (searchTerm.valueOf === "") {
       return item;
     }
     if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -42,6 +42,7 @@ const Allitems = () => {
 
   return (
     <Helmet title="All Items">
+      <div id="top1">
       <CommonSection title="All Desserts" />
       <section>
         <Container>
@@ -85,11 +86,17 @@ const Allitems = () => {
                 nextLabel={"Next"}
                 containerClassName=" paginationBttns "
                 activeClassName="active"
+                onClick={() => 
+                  document
+                    .getElementById("top1")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
               />
             </div>
           </Row>
         </Container>
       </section>
+      </div>
     </Helmet>
   );
 };

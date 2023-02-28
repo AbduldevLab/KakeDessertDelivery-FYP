@@ -12,6 +12,10 @@
   transition: 0.4s;
   width: 200px;
   height: 150px;
+  
+}
+.w-50{
+  border-radius: 8px;
 }
 
 .product__img:hover {

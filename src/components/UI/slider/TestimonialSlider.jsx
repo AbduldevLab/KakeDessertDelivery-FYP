@@ -21,18 +21,18 @@ const TestimonialSlider = () => {
   return (
     <Slider {...settings}>
       <div>
-        <div className=" slider__content d-flex align-items-center gap-3 ">
-          <img src={s01} alt="avatar" className=" rounded" />
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={s01} alt="avatar" className="w-100" style={{ objectFit: 'cover', borderRadius: '8px!important' }} />
         </div>
       </div>
       <div>
-        <div className="slider__content d-flex align-items-center gap-3 ">
-          <img src={s02} alt="avatar" className=" rounded" />
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={s02} alt="avatar" className="w-100" style={{ objectFit: 'cover', borderRadius: '8px!important' }} />
         </div>
       </div>
       <div>
-        <div className="slider__content d-flex align-items-center gap-3 ">
-          <img src={s03} alt="avatar" className=" rounded" />
+        <div className="slider__content d-flex align-items-center gap-3">
+          <img src={s03} alt="avatar" className="w-100" style={{ objectFit: 'cover', borderRadius: '8px!important' }} />
         </div>
       </div>
     </Slider>
