@@ -8,6 +8,9 @@
   .success-message {
     color: green;
   }  
+  .form{
+    background: #f3c6a0;
+  }
   body {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
