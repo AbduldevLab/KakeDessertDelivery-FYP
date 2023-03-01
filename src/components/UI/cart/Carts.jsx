@@ -79,10 +79,10 @@
 import React from "react";
 import { ListGroup } from "reactstrap";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
+import CartItem from "./CartItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
-import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice.jsx";
+import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx";
 import "../../../styles/shopping-cart.css";
 import EmptyCart from "../../../assets/images/emptyCart.png";
 

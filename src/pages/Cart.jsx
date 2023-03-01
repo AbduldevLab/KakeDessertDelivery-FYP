@@ -1,11 +1,11 @@
 import React from "react";
 
-import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";
+import Helmet from "../components/Helmet/Helmet.jsx";
 import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import { cartActions } from "../store/shopping-cart/cartSlice";
+import { cartActions } from "../store/shopping-cart/cartSlice.jsx";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);

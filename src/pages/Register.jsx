@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
+import Helmet from "../components/Helmet/Helmet.jsx";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";
 import { Container, Row, Col } from "reactstrap";
 import {
   auth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-} from "../config/firebase";
+} from "../config/firebase.jsx";
 
 import "../styles/register.css";
 

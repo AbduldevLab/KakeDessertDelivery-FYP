@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "../components/Helmet/Helmet";
+import Helmet from "../components/Helmet/Helmet.jsx";
 import styled from "styled-components";
 
 const Button = styled.button`

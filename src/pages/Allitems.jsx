@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
+import Helmet from "../components/Helmet/Helmet.jsx";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";
 
 import { Container, Row, Col } from "reactstrap";
 
-import menuproducts from "../assets/brand/menuproducts.js";
-import ProductCard from "../components/UI/product-card/ProductCard";
+import menuproducts from "../assets/brand/menuproducts.jsx";
+import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import ReactPaginate from "react-paginate";
 
 import "../styles/all-desserts.css";

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
-import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
-import CloseModal from "../components/Modal/ClosedModal";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";
+import Helmet from "../components/Helmet/Helmet.jsx";
+import CloseModal from "../components/Modal/ClosedModal.jsx";
 
-import { cartActions } from "../store/shopping-cart/cartSlice";
+import { cartActions } from "../store/shopping-cart/cartSlice.jsx";
 
-import { db } from "../config/firebase";
+import { db } from "../config/firebase.jsx";
 import { collection, addDoc } from "firebase/firestore";
 
 import "../styles/checkout.css";

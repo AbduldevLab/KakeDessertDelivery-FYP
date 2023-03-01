@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";
+import Helmet from "../components/Helmet/Helmet.jsx";
 
 import "../styles/faqs.css";
 

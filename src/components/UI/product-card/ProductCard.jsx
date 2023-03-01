@@ -9,7 +9,7 @@ import ReactModal2 from "../../Modal/Custom2Modal";
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx";
 
 const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;

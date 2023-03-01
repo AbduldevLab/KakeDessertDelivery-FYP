@@ -5,7 +5,7 @@ import logo from "../../assets/images/kake-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+import { cartUiActions } from "../../store/shopping-cart/cartUiSlice.jsx";
 
 import "../../styles/header.css";
 

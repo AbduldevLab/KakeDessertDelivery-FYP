@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Helmet from "../components/Helmet/Helmet.js";
+import Helmet from "../components/Helmet/Helmet.jsx";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
 import heroImg from "../assets/images/hero.jpeg";
@@ -16,7 +16,7 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
-import products from "../assets/brand/products.js";
+import products from "../assets/brand/products.jsx";
 
 import foodCategoryImg01 from "../assets/images/desserts.png";
 import foodCategoryImg02 from "../assets/images/drinks.png";

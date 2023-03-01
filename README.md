@@ -32,6 +32,7 @@
 9. react-icons
 10. react-rating-start
 11. Firebase
+12. boxicons
 
 ### Live domain link:
 
