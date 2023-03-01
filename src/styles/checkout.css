@@ -10,6 +10,15 @@
 .ui-dialog-buttonpane button {
   text-align: center;
 }
+.error-message{
+  justify-content: center;
+  text-align: center;
+
+}
+.centered-message{
+  justify-content: center;
+  text-align: center;
+}
 
 
 @media only screen and (max-width: 768px) {

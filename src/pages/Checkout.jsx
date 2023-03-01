@@ -23,6 +23,7 @@ const Checkout = () => {
 
   const [emailError, setEmailError] = useState("");
   const [numberError, setNumberError] = useState("");
+  const [emptyCartError, setEmptyCartError] = useState("");
 
   const [closeModalOpen, setCloseModalOpen] = useState(false);
 
@@ -64,21 +65,31 @@ const Checkout = () => {
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
-      // Check if email and phone number are valid
+      // Check if email,cart and phone number are valid
       let emailError = "";
       let numberError = "";
+      let emptyCartError= "";
+
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const phoneRegex = /^(\+353|0)\d{9}$/;
+      
       if (!emailRegex.test(enterEmail)) {
         emailError = "Invalid email address";
       }
       if (!phoneRegex.test(enterNumber)) {
         numberError = "Invalid phone number";
       }
+      if (cartItems.length === 0){
+        emptyCartError = "Your cart is empty, Please add items to your cart to place an order!";
+      }
       setEmailError(emailError);
       setNumberError(numberError);
+      setEmptyCartError(emptyCartError);
+
+      // place order if cart isnt empty
+      if (!emptyCartError) {
       // Place order if email and phone number are valid
-      if (!emailError && !numberError) {
+      if (!emailError && !numberError ) {
         let userShippingAddress;
         if (deliveryOption === "delivery") {
           userShippingAddress = {
@@ -107,14 +118,15 @@ const Checkout = () => {
 
         try {
           await addDoc(ordersRef, userShippingAddress);
-          alert(`Thank you for your order!\n\nOrder No: ${orderNumber}.`);
-  
+          const message = `Thank you for your order!\n      Order No: ${orderNumber}`;
+          alert(message);
           clearCart();
           document.getElementById("checkout__form").reset();
         } catch (err) {
           console.error(err);
         }
       }
+    }
     } else {
       setCloseModalOpen(true);
     }
@@ -251,6 +263,7 @@ const Checkout = () => {
                     >
                       Place Order
                     </button>
+                    
                   </div>
                   <div className="d-none d-sm-flex justify-content-start">
                     <button
@@ -261,6 +274,9 @@ const Checkout = () => {
                       Place Order
                     </button>
               </div>
+              {emptyCartError && (
+                    <p className="error-message">{emptyCartError}</p>
+                  )}
               </Form>
             </Col>
             <Col lg="4" md="6">
