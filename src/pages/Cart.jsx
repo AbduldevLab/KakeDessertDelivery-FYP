@@ -6,7 +6,6 @@ import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -39,21 +38,22 @@ const Cart = () => {
                 </table>
               )}
 
-              <div className="mt-4">
-                <h6>
-                  Subtotal: €
-                  <span className="cart__subtotal">{totalAmount}</span>
-                </h6>
-                <p>Delivery fee at checkout</p>
-                <div className="cart__page-btn">
-                  <button className="addTOCart__btn me-4">
-                    <Link to="/menu">Continue Shopping</Link>
-                  </button>
-                  <button className="addTOCart__btn">
-                    <Link to="/checkout">Proceed to checkout</Link>
-                  </button>
-                </div>
-              </div>
+        <div className="mt-4">
+          <h6>
+            Subtotal: €<span className="cart__subtotal">{totalAmount}</span>
+          </h6>
+          <p>Delivery fee at checkout</p>
+          <div>
+            <div className="d-sm-flex justify-content-start">
+            <button className="addTOCart__btn me-3" onClick={() => { window.location.href = "/menu"; }}>
+              Continue Shopping
+            </button>
+            <button className="addTOCart__btn" onClick={() => { window.location.href = "/checkout"; }}>
+              Proceed to checkout
+            </button>
+            </div> 
+          </div>
+        </div>
             </Col>
           </Row>
         </Container>

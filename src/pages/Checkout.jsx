@@ -107,7 +107,8 @@ const Checkout = () => {
 
         try {
           await addDoc(ordersRef, userShippingAddress);
-          alert(`Thank you! Your order number is ${orderNumber}.`);
+          alert(`Thank you for your order!\n\nOrder No: ${orderNumber}.`);
+  
           clearCart();
           document.getElementById("checkout__form").reset();
         } catch (err) {
@@ -242,13 +243,24 @@ const Checkout = () => {
                     </Input>
                   </div>
                 )}
-                <button
-                  className="btn"
-                  onClick={submitHandler}
-                  style={{ backgroundColor: "#CD853F", color: "white" }}
-                >
-                  Place Order
-                </button>
+               <div className="d-sm-none d-flex justify-content-center mb-3">
+                    <button
+                      className="addTOCart__btn"
+                      onClick={submitHandler}
+                      // style={{ backgroundColor: "#CD853F", color: "white" }}
+                    >
+                      Place Order
+                    </button>
+                  </div>
+                  <div className="d-none d-sm-flex justify-content-start">
+                    <button
+                      className="addTOCart__btn"
+                      onClick={submitHandler}
+                      // style={{ backgroundColor: "#CD853F", color: "white" }}
+                    >
+                      Place Order
+                    </button>
+              </div>
               </Form>
             </Col>
             <Col lg="4" md="6">

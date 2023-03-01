@@ -20,9 +20,8 @@ th {
 .cart__item-del i {
   cursor: pointer;
 }
-
-.cart__page-btn button a:hover {
-  color: #fff;
+.addTOCart__btn {
+  margin-left: 1px;;
 }
 
 .cart__subtotal {
