@@ -40,17 +40,14 @@
   font-weight: 600;
   font-size: 1.2rem;
   color: #CD853F;
-  margin-right:0px;
 }
 
 .addTOCart__btn {
   border: none;
-  padding: 7px 18px;
   background: #CD853F;
   color: #fff;
   border-radius: 5px;
   font-size: 0.9rem;
-  margin-left:5px;
 }
 
 .addTOCart__btn:hover {

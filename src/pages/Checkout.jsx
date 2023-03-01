@@ -53,11 +53,11 @@ const Checkout = () => {
     e.preventDefault();
 
     const currentTime = new Date().getHours();
-    const workHoursStart = 0;
-    const workHoursEnd = 24;
+    const workHoursStart = 18;
+    const workHoursEnd = 22;
     const currentDay = new Date().getDay();
-    const monday = 0;
-    const tuesday = 0;
+    const monday = 1;
+    const tuesday = 2;
 
     if (
       currentTime >= workHoursStart &&
@@ -257,7 +257,7 @@ const Checkout = () => {
                 )}
                <div className="d-sm-none d-flex justify-content-center mb-3">
                     <button
-                      className="addTOCart__btn"
+                      className="addTOCart__btn1"
                       onClick={submitHandler}
                       // style={{ backgroundColor: "#CD853F", color: "white" }}
                     >

@@ -52,11 +52,11 @@ const ProductCard = (props) => {
       "Chocolate Slice",
     ];
     const currentTime = new Date().getHours();
-    const workHoursStart = 0;
-    const workHoursEnd = 24;
+    const workHoursStart = 18;
+    const workHoursEnd = 22;
     const currentDay = new Date().getDay();
-    const monday = 0;
-    const tuesday = 0;
+    const monday = 1;
+    const tuesday = 2;
 
     if (
       coldDrinks.includes(title) &&
@@ -105,7 +105,7 @@ const ProductCard = (props) => {
           <Link to={`/foods/€{id}`}>{title}</Link>
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
-          <span className="product__price">€{price}</span>
+          <span className="product__price me-2">€{price}</span>
           <button className="addTOCart__btn" onClick={handleClick}>
             Add to Cart
           </button>
