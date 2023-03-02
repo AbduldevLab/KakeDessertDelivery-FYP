@@ -45,7 +45,7 @@ const Signin = () => {
                         </div>
                         <h1 className="auth-header-title">Welcome kake Employee</h1>
                         <p className="auth-header-subtitle">
-                            Sign-in to kake admin dashboard
+                            Sign-in to kake admin panel
                         </p>
                     </div>
                     <div className="auth-body">
