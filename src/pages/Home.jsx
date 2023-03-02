@@ -92,7 +92,7 @@ const Home = () => {
   }, [category]);
 
   return (
-    <Helmet title="Home">
+    <Helmet title="Grab your kake today!">
       <section>
         <Container>
           <Row>
