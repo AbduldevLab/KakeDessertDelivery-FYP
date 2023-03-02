@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import logo from "../.././assets/images/kake-logo.png";
+
 import { auth, signInWithEmailAndPassword } from "../../config/firebase.js";
 
 import "../../styles/AdminDash/signin.css";
@@ -22,11 +23,11 @@ const Signin = () => {
                 alert("Successfully logged in");
             } else {
                 // User ID does not match
-                setErrorMessage("Invalid email or password");
+                setErrorMessage("Wrong email-address or password!");
             }
         } catch (error) {
             // Handle errors here
-            setErrorMessage("Invalid email or password");
+            setErrorMessage("Error ocurred, please try again.");
         }
 
         // Clear error messages after 2 seconds
@@ -82,7 +83,7 @@ const Signin = () => {
                                 />
                             </div>
                             <div className="flex-end">
-                                <Link to={"/auth/forgot-password"} className="link-end">
+                                <Link to="/forgotPassword" className="link-end">
                                     Forgot password?
                                 </Link>
                             </div>

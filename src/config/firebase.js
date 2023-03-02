@@ -8,6 +8,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  fetchSignInMethodsForEmail,
 } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -39,4 +41,6 @@ export {
   GoogleAuthProvider,
   db,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  fetchSignInMethodsForEmail,
 };

@@ -14,11 +14,12 @@ const Layout = () => {
 
   // Check if the current route starts with "/admin"
   const isAdminRoute = location.pathname.startsWith("/admin");
+  const isAdminRoute1 = location.pathname.startsWith("/forgotPassword");
 
   return (
     <div>
       {/* Only render the header if it's not an admin route */}
-      {!isAdminRoute && <Header />}
+      {!isAdminRoute && !isAdminRoute1 && <Header />}
 
       {showCart && <Carts />}
 
@@ -27,7 +28,7 @@ const Layout = () => {
       </div>
 
       {/* Only render the footer if it's not an admin route */}
-      {!isAdminRoute && <Footer />}
+      {!isAdminRoute && !isAdminRoute1 && <Footer />}
     </div>
   );
 };

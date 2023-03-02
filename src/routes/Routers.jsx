@@ -12,7 +12,7 @@ import Faqs from "../pages/Faqs";
 import Tc from "../pages/Tc";
 
 import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
-
+import AdminDashForgot from "../pages/AdminDash/ForgotPassword.jsx";
 
 const Routers = () => {
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ const Routers = () => {
       <Route path="/faqs" element={<Faqs />} />
       <Route path="/t&c" element={<Tc />} />
       <Route path="/admin" element={<AdminDashSignIn />} />
+      <Route path="/forgotPassword" element={<AdminDashForgot />} />
     </Routes>
   );
 };
