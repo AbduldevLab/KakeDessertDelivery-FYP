@@ -41,7 +41,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const scrollHandler = () => {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
@@ -50,10 +50,15 @@ const Header = () => {
       } else {
         headerRef.current.classList.remove("header__shrink");
       }
-    });
-
-    return () => window.removeEventListener("scroll");
+    };
+  
+    window.addEventListener("scroll", scrollHandler);
+  
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
   }, []);
+  
 
   return (
     <header className="header" ref={headerRef}>
