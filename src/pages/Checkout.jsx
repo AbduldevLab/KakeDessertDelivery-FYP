@@ -7,7 +7,7 @@ import CloseModal from "../components/Modal/ClosedModal.jsx";
 
 import { cartActions } from "../store/shopping-cart/cartSlice.jsx";
 
-import { db } from "../config/firebase.jsx";
+import { db } from "../config/firebase.js";
 import { collection, addDoc } from "firebase/firestore";
 
 import "../styles/checkout.css";

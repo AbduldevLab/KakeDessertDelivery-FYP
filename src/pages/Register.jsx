@@ -7,7 +7,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-} from "../config/firebase.jsx";
+} from "../config/firebase.js";
 
 import "../styles/register.css";
 
@@ -114,7 +114,7 @@ const Register = () => {
                   onClick={handleEmailAndPasswordLogin}
                   className="addTOCart__btn"
                 >
-                  Sign Up
+                  Sign-up
                 </button>
                 {loggedIn && (
                   <div className="success-message">{successMessage}</div>
@@ -122,7 +122,7 @@ const Register = () => {
               </form>
               <div className="d-flex justify-content-center align-items-center mb-3">
                 <button className="addTOCart__btn" onClick={handleGoogleLogin}>
-                  Sign Up with Google
+                  Sign-up with Google
                 </button>
               </div>
             </Col>
