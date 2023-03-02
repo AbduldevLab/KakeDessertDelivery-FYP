@@ -52,8 +52,8 @@ const ProductCard = (props) => {
       "Chocolate Slice",
     ];
     const currentTime = new Date().getHours();
-    const workHoursStart = 18;
-    const workHoursEnd = 22;
+    const workHoursStart = 0;
+    const workHoursEnd = 24;
     const currentDay = new Date().getDay();
     const monday = 1;
     const tuesday = 2;
