@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.jsx";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import heroImg from "../assets/images/hero.jpeg";
+import trailor from "../assets/images/hero.jpg";
 import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";
@@ -141,7 +141,7 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="hero__img">
-                <img src={heroImg} alt="hero-img" className="w-100" />
+                <img src={trailor} alt="hero-img" className="w-100" />
               </div>
             </Col>
           </Row>
