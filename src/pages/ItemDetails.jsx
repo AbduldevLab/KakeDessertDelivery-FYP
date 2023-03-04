@@ -1,14 +1,15 @@
+// Description: This is the item details page
 import React, { useState, useEffect } from "react";
 
-import Helmet from "../components/Helmet/Helmet.jsx";
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is used to change the title of the page
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";// Reactstrap is used for the layout of the page
 
 import trailor from "../assets/images/hero.jpg";
 import "../styles/hero-section.css";
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";// Link is used to link to other pages
 
-import Category from "../components/UI/category/Category.jsx";
+import Category from "../components/UI/category/Category.jsx";// Category is used to display the category of the item
 
 import "../styles/home.css";
 import "../styles/product-details.css";
@@ -17,20 +18,21 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
-import products from "../assets/brand/products.jsx";
+import products from "../assets/brand/products.jsx";// products is used to display the products
 
 import foodCategoryImg01 from "../assets/images/desserts.png";
 import foodCategoryImg02 from "../assets/images/drinks.png";
 import foodCategoryImg03 from "../assets/images/snacks.png";
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import ProductCard from "../components/UI/product-card/ProductCard.jsx";// ProductCard is used to display the product card
 
 import whyImg from "../assets/images/location.png";
 
 import networkImg from "../assets/images/network.png";
 
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";// TestimonialSlider is used to display the testimonial slider
 
+// This is the data for the testimonials
 const featureData = [
   {
     title: "Quick Delivery",
@@ -50,24 +52,27 @@ const featureData = [
   },
 ];
 
+// This is the data for the testimonials
 const Home = () => {
-  const [category, setCategory] = useState("ALL");
-  const [allProducts, setAllProducts] = useState(products);
+  const [category, setCategory] = useState("ALL");// This is the state for the category
+  const [allProducts, setAllProducts] = useState(products);// This is the state for the products
 
-  const [hotDrink, sethotDrink] = useState([]);
+  const [hotDrink, sethotDrink] = useState([]);// This is the state for the hot drinks
 
+  // This is the function for the category
   useEffect(() => {
-    const filteredDrink = products.filter((item) => item.category === "Drinks");
-    const sliceCup = filteredDrink.slice(0, 4);
-    sethotDrink(sliceCup);
+    const filteredDrink = products.filter((item) => item.category === "Drinks");// This is the filter for the drinks
+    const sliceCup = filteredDrink.slice(0, 4);// This is the slice for the drinks
+    sethotDrink(sliceCup);// This is the set for the drinks
   }, []);
 
+  // This is the function for the category
   useEffect(() => {
-    if (category === "ALL") {
+    if (category === "ALL") {// This is the filter for the all
       setAllProducts(products);
     }
 
-    if (category === "DESSERT") {
+    if (category === "DESSERT") {// This is the filter for the desserts
       const filteredProducts = products.filter(
         (item) => item.category === "Desserts"
       );
@@ -75,7 +80,7 @@ const Home = () => {
       setAllProducts(filteredProducts);
     }
 
-    if (category === "DRINK") {
+    if (category === "DRINK") {// This is the filter for the drinks
       const filteredProducts = products.filter(
         (item) => item.category === "Drinks"
       );
@@ -83,20 +88,22 @@ const Home = () => {
       setAllProducts(filteredProducts);
     }
 
-    if (category === "SNACK") {
+    if (category === "SNACK") {// This is the filter for the snacks
       const filteredProducts = products.filter(
         (item) => item.category === "Snacks"
       );
 
       setAllProducts(filteredProducts);
     }
-  }, [category]);
+  }, [category]);// This is the dependency for the category
 
+// This is the return for the home page
   return (
     <Helmet title="Home">
       <section>
         <Container>
           <Row>
+            {/* // This is the hero section */}
             <Col lg="6" md="6">
               <div className="hero__content  ">
                 <h5 className="mb-3">
@@ -115,16 +122,19 @@ const Home = () => {
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-6">
                   <button className="order__btn d-flex align-items-center justify-content-between">
+                    {/* // This is the link to the menu page */}
                     <Link to="/menu">
                       Order Now <i class="ri-arrow-right-s-line"></i>{" "}
                     </Link>
                   </button>
                 </div>
 
+                {/* // This is the service section */}
                 <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-car-line"></i>
+                      {/* // This is the icon for the delivery */}
                     </span>{" "}
                     Delivery available
                   </p>
@@ -132,13 +142,14 @@ const Home = () => {
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-shield-check-line"></i>
+                      {/* // This is the icon for the in person payments */}
                     </span>{" "}
                     In-Person Payments Only
                   </p>
                 </div>
               </div>
             </Col>
-
+            {/* // This is the image section */}
             <Col lg="6" md="6">
               <div className="hero__img">
                 <img src={trailor} alt="hero-img" className="w-100" />
@@ -148,10 +159,12 @@ const Home = () => {
         </Container>
       </section>
 
+      {/* // This is the feature section */}
       <section className="pt-0">
         <Category />
       </section>
 
+    {/* // This is the feature section */}
       <section>
         <Container>
           <Row>
@@ -172,15 +185,17 @@ const Home = () => {
                 down below if you have any questions or concerns..{" "}
               </p>
             </Col>
-
+            {/* // This is the map for the feature section */}
             {featureData.map((item, index) => (
               <Col lg="4" md="6" sm="6" key={index} className="mt-5">
                 <div className="feature__item text-center px-5 py-3">
+                  {/* // This is the image for the feature section */}
                   <img
                     src={item.imgUrl}
                     alt="feature-img"
                     className="w-25 mb-3"
                   />
+                  {/* // This is the title for the feature section */}
                   <h5 className=" fw-bold mb-3">{item.title}</h5>
                   <p>{item.desc}</p>
                 </div>
@@ -190,15 +205,17 @@ const Home = () => {
         </Container>
       </section>
 
+      {/* // This is the popular section */}
       <section>
         <Container>
           <Row>
             <Col lg="12" className="text-center">
               <h2>Our Popular Choices</h2>
             </Col>
-
+{/* // This is the category section */}
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-3">
+                {/* // This is the button for all the food */}
                 <button
                   className={`all__btn  ${
                     category === "ALL" ? "foodBtnActive" : ""
@@ -207,6 +224,7 @@ const Home = () => {
                 >
                   All
                 </button>
+                {/* // This is the button for the desserts */}
                 <button
                   className={`d-flex align-items-center gap-2 ${
                     category === "DESSERT" ? "foodBtnActive" : ""
@@ -216,7 +234,7 @@ const Home = () => {
                   <img src={foodCategoryImg01} alt="" />
                   Desserts
                 </button>
-
+                  {/* // This is the button for the drinks */}
                 <button
                   className={`d-flex align-items-center gap-2 ${
                     category === "DRINK" ? "foodBtnActive" : ""
@@ -226,7 +244,7 @@ const Home = () => {
                   <img src={foodCategoryImg02} alt="" />
                   Beverages
                 </button>
-
+                  {/* // This is the button for the snacks */}
                 <button
                   className={`d-flex align-items-center gap-2 ${
                     category === "SNACK" ? "foodBtnActive" : ""
@@ -238,7 +256,7 @@ const Home = () => {
                 </button>
               </div>
             </Col>
-
+                  {/* // This is the map for the popular section */}
             {allProducts.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
@@ -247,14 +265,15 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
+      {/* // This is the why choose us section */}
       <section className="why__choose-us">
         <Container>
           <Row>
+            {/* // This is the image section */}
             <Col lg="6" md="6">
               <img src={whyImg} alt="why-tasty-treat" className="w-100" />
             </Col>
-
+{/* // This is the text section */}
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
                 <h2 className="tasty__treat-title mb-4">
@@ -308,14 +327,14 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
+{/* // This is the hot/cold drinks section */}
       <section className="pt-0">
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5 ">
               <h2>Hot/Cold Drinks</h2>
             </Col>
-
+{/* // This is the map for the hot/cold drinks section */}
             {hotDrink.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
                 <ProductCard item={item} />
@@ -324,7 +343,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
+{/* // This is the testimonial section */}
       <section>
         <Container>
           <Row>
@@ -344,7 +363,7 @@ const Home = () => {
                 <TestimonialSlider />
               </div>
             </Col>
-
+{/* // This is the image section */}
             <Col lg="6" md="6">
               <img src={networkImg} alt="testimonial-img" className="w-100" />
             </Col>

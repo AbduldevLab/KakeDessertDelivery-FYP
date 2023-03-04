@@ -1,20 +1,26 @@
+// This is the dashboard page for the admin panel
 import React, { useEffect } from "react";
 import "../../styles/AdminDash/panel.css";
 
+//This is used to import the react-router-dom components
 import { useNavigate } from "react-router-dom";
 
+//This is used to import the reactstrap components
 const Dashboard = () => {
 
+  //This is used to navigate to the admin page
   const navigate = useNavigate();
 
+  //This is used to check if the user is authenticated
   useEffect(() => {
     // Check if the user is authenticated
     const isAuthenticated = localStorage.getItem("isAuthenticated");
-    if (!isAuthenticated) {
-      navigate("/admin");
+    if (!isAuthenticated) { // If the user is not authenticated
+      navigate("/admin"); // Navigate to the admin page
     }
-  }, [navigate]);
+  }, [navigate]);// eslint-disable-line react-hooks/exhaustive-deps
 
+  //This is used to display the dashboard page
   return (
     <React.Fragment>
       <div className="admin-content">
@@ -57,6 +63,7 @@ const Dashboard = () => {
                   <i class='bx bx-user-circle'></i>
                   </div>
                   <div className="card-widget-body">
+                    {/* //This is used to display the number of users */}
                     <h1 className="widget-count">0</h1>
                     <p className="widget-name">Users</p>
                   </div>
@@ -70,6 +77,7 @@ const Dashboard = () => {
                     <i className="bx bx-file"></i>
                   </div>
                   <div className="card-widget-body">
+                    {/* //This is used to display the number of orders */}
                     <h1 className="widget-count">0</h1>
                     <p className="widget-name">Orders Received</p>
                   </div>

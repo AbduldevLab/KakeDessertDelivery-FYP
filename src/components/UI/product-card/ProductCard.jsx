@@ -1,3 +1,4 @@
+// This component is used to display the product card on the home page
 import React, { useState } from "react";
 
 // This imports the css file for the product card
@@ -40,6 +41,7 @@ const ProductCard = (props) => {
   };
   //This const is used to open the specific modal
   const handleClick = () => {
+    //These are the arrays used to check the title of the item
     const remainder = [
       "Smoothies",
       "Biscoff Shake",
@@ -47,8 +49,9 @@ const ProductCard = (props) => {
       "Chocolate Bars",
       "American Candy",
     ];
-    const hotDrinks = ["Hot Drinks"];
-    const coldDrinks = ["Cold Drinks"];
+    
+    const hotDrinks = ["Hot Drinks"]; //This is used to check the title of the item
+    const coldDrinks = ["Cold Drinks"]; //This is used to check the title of the item
     const desserts = [
       "Cheese Cake Tub",
       "Cookie Dough Tray",

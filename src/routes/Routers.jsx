@@ -1,6 +1,9 @@
+// Description: This file contains the routes for the website
 import React, { useEffect } from "react";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 
+// Importing pages
 import Home from "../pages/Home";
 import Allitems from "../pages/Allitems";
 import ItemDetails from "../pages/ItemDetails";
@@ -11,24 +14,29 @@ import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
 import Tc from "../pages/Tc";
 
+// Importing admin dashboard pages
 import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
 import AdminDashForgot from "../pages/AdminDash/ForgotPassword.jsx";
 import AdminDash from "../pages/AdminDash/Dashboard.jsx";
 
+// Importing 404 page
 import NotFound from "../pages/NotFound";
 
+// This is the routes
 const Routers = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate();// this is the navigate function
+  const location = useLocation();// this is the location function
 
+  // This is the useEffect hook
   useEffect(() => {
-    const isHomePage = location.pathname === "/home";
-    const isAtTopOfHistory = window.history.state === null;
-    if (isHomePage && isAtTopOfHistory) {
-      navigate(-1);
+    const isHomePage = location.pathname === "/home";// this is the home page
+    const isAtTopOfHistory = window.history.state === null;// this is the top of the history
+    if (isHomePage && isAtTopOfHistory) {// if the user is on the home page and at the top of the history
+      navigate(-1);// navigate back
     }
-  }, [location.pathname, navigate]);
+  }, [location.pathname, navigate]);// this is the dependencies
 
+  // Return the routes
   return (
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />

@@ -1,7 +1,9 @@
-// Import the functions you need from the SDKs you need
+// This file is used to initialize firebase and export the auth object
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+
+// Import the functions you need from the SDKs you need
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -17,6 +19,8 @@ import {
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+//This is the firebase config object. You can get this from your firebase console
 const firebaseConfig = {
   apiKey: "AIzaSyAS3OsC4Pm-84UIn2RMqGBIq-Ygcnso2Fg",
   authDomain: "kake-project.firebaseapp.com",
@@ -32,8 +36,10 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 // Get the authentication object
 const auth = getAuth(app);
+// Get the firestore object
 const db = getFirestore(app);
 
+// Export the objects
 export {
   auth,
   createUserWithEmailAndPassword,

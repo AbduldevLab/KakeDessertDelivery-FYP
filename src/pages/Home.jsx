@@ -1,14 +1,16 @@
+// Description: This is the home page of the website. It contains the hero section, the category section, the feature section, the product section, the why section, the network section and the testimonial section.
 import React, { useState, useEffect } from "react";
 
-import Helmet from "../components/Helmet/Helmet.jsx";
+import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
+// This is the common section component
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import trailor from "../assets/images/hero.jpg";
+import trailor from "../assets/images/hero.jpg";// This is the hero image
 import "../styles/hero-section.css";
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";// This is the link component that allows you to link to other pages
 
-import Category from "../components/UI/category/Category.jsx";
+import Category from "../components/UI/category/Category.jsx";// This is the category component
 
 import "../styles/home.css";
 
@@ -16,21 +18,21 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
-import products from "../assets/brand/products.jsx";
+import products from "../assets/brand/products.jsx";// This is the products array
 
 import foodCategoryImg01 from "../assets/images/desserts.png";
 import foodCategoryImg02 from "../assets/images/drinks.png";
 import foodCategoryImg03 from "../assets/images/snacks.png";
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import ProductCard from "../components/UI/product-card/ProductCard.jsx";// This is the product card component
 
 import whyImg from "../assets/images/location.png";
 
 import networkImg from "../assets/images/network.png";
 
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";// This is the testimonial slider component
 
-const featureData = [
+const featureData = [// This is the feature data array
   {
     title: "Quick Delivery",
     imgUrl: featureImg01,
@@ -49,53 +51,61 @@ const featureData = [
   },
 ];
 
+// This is the home page
 const Home = () => {
-  const [category, setCategory] = useState("ALL");
-  const [allProducts, setAllProducts] = useState(products);
+  const [category, setCategory] = useState("ALL");// This is the category state
+  const [allProducts, setAllProducts] = useState(products);// This is the all products state
 
-  const [hotDrink, sethotDrink] = useState([]);
+  const [hotDrink, sethotDrink] = useState([]);// This is the hot drink state
 
+  // This is the useEffect hook that runs once
   useEffect(() => {
-    const filteredDrink = products.filter((item) => item.category === "Drinks");
-    const sliceCup = filteredDrink.slice(0, 4);
-    sethotDrink(sliceCup);
-  }, []);
+    const filteredDrink = products.filter((item) => item.category === "Drinks");// This is the filtered drink variable
+    const sliceCup = filteredDrink.slice(0, 4);// This is the slice cup variable
+    sethotDrink(sliceCup);// This is the set hot drink function
+  }, []);// This is the dependency array
 
+  // This is the useEffect hook that runs when the category state changes
   useEffect(() => {
+    // This is the if statement that checks if the category state is equal to ALL
     if (category === "ALL") {
       setAllProducts(products);
     }
-
+    // This is the if statement that checks if the category state is equal to DESSERT
     if (category === "DESSERT") {
       const filteredProducts = products.filter(
         (item) => item.category === "Desserts"
       );
 
-      setAllProducts(filteredProducts);
+      setAllProducts(filteredProducts);// This is the set all products function
     }
 
+    // This is the if statement that checks if the category state is equal to DRINK
     if (category === "DRINK") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Drinks"
+        (item) => item.category === "Drinks" // This is the filtered products variable
       );
 
       setAllProducts(filteredProducts);
     }
 
+    // This is the if statement that checks if the category state is equal to SNACK
     if (category === "SNACK") {
       const filteredProducts = products.filter(
-        (item) => item.category === "Snacks"
+        (item) => item.category === "Snacks" // This is the filtered products variable
       );
 
       setAllProducts(filteredProducts);
     }
-  }, [category]);
+  }, [category]);// This is the dependency array
 
+  // This is the return statement
   return (
     <Helmet title="Grab your kake today!">
       <section>
         <Container>
           <Row>
+            {/* // This is the hero section */}
             <Col lg="6" md="6">
               <div className="hero__content  ">
                 <h5 className="mb-3">
@@ -114,6 +124,7 @@ const Home = () => {
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-6">
                   <button className="order__btn d-flex align-items-center justify-content-between">
+                    {/* // This is the link component that links to the menu page */}
                     <Link to="/menu">
                       Order Now <i class="ri-arrow-right-s-line"></i>{" "}
                     </Link>
@@ -140,6 +151,7 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="hero__img">
+                {/* // This is the image component that displays the hero image */}
                 <img src={trailor} alt="hero-img" className="w-100" />
               </div>
             </Col>
@@ -151,6 +163,7 @@ const Home = () => {
         <Category />
       </section>
 
+{/* // This is the section that displays the products */}
       <section>
         <Container>
           <Row>
@@ -172,6 +185,7 @@ const Home = () => {
               </p>
             </Col>
 
+{/* // This is the map function that maps through the featureData array */}
             {featureData.map((item, index) => (
               <Col lg="4" md="6" sm="6" key={index} className="mt-5">
                 <div className="feature__item text-center px-5 py-3">
@@ -196,10 +210,12 @@ const Home = () => {
               <h2>Our Popular Choices</h2>
             </Col>
 
+{/* // This is the map function that maps through the popularData array */}
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-3">
                 <button
-                  className={`all__btn  ${
+                //This is the button that displays all the products
+                  className={`all__btn  ${    
                     category === "ALL" ? "foodBtnActive" : ""
                   } `}
                   onClick={() => setCategory("ALL")}
@@ -207,6 +223,7 @@ const Home = () => {
                   All
                 </button>
                 <button
+                //This is the button that displays the dessert products on click from user
                   className={`d-flex align-items-center gap-2 ${
                     category === "DESSERT" ? "foodBtnActive" : ""
                   } `}
@@ -217,6 +234,7 @@ const Home = () => {
                 </button>
 
                 <button
+                //This is the button that displays the drink products on click from user
                   className={`d-flex align-items-center gap-2 ${
                     category === "DRINK" ? "foodBtnActive" : ""
                   } `}
@@ -227,6 +245,7 @@ const Home = () => {
                 </button>
 
                 <button
+                //This is the button that displays the snack products on click from user
                   className={`d-flex align-items-center gap-2 ${
                     category === "SNACK" ? "foodBtnActive" : ""
                   } `}
@@ -237,7 +256,7 @@ const Home = () => {
                 </button>
               </div>
             </Col>
-
+{/* //This is the map function that maps through the allProducts array */}
             {allProducts.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
@@ -253,7 +272,7 @@ const Home = () => {
             <Col lg="6" md="6">
               <img src={whyImg} alt="why-tasty-treat" className="w-100" />
             </Col>
-
+{/* //This is the section that displays the why choose us section */}
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
                 <h2 className="tasty__treat-title mb-4">
@@ -307,7 +326,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
+{/* //This is the section that displays the hot and cold drinks */}
       <section className="pt-0">
         <Container>
           <Row>
@@ -323,7 +342,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
+{/* //This is the section that displays the testimonial slider */}
       <section>
         <Container>
           <Row>
@@ -343,7 +362,7 @@ const Home = () => {
                 <TestimonialSlider />
               </div>
             </Col>
-
+{/* //This is the section that displays the network image */}
             <Col lg="6" md="6">
               <img src={networkImg} alt="testimonial-img" className="w-100" />
             </Col>

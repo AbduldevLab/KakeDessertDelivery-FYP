@@ -1,13 +1,17 @@
+// Description: Terms & Conditions page
 import React from "react";
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";
-import Helmet from "../components/Helmet/Helmet.jsx";
+import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
+import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
 
 import "../styles/tc.css";
 
+// This is the Terms & Conditions page
 const Tc = () => {
+  // Return the Terms & Conditions page
   return (
     <Helmet title="tc">
       <body id="top3">
+        {/* // This is the Terms & Conditions page */}
         <CommonSection title="Terms & Conditions" />
         <section className="content">
           <h2 className="section-title">1. Acceptance of Terms</h2>

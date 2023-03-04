@@ -1,6 +1,9 @@
+// Description: This file contains the routes for the sitemap
 import React, { useEffect } from "react";
+// this is the router
 import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 
+// this is the pages
 import Home from "../../pages/Home";
 import Allitems from "../../pages/Allitems";
 import ItemDetails from "../../pages/ItemDetails";
@@ -11,13 +14,16 @@ import Register from "../../pages/Register";
 import Faqs from "../../pages/Faqs";
 import Tc from "../../pages/Tc";
 
+// this is the admin pages
 import AdminDashSignIn from "../../pages/AdminDash/Signin.jsx";
 import AdminDashForgot from "../../pages/AdminDash/ForgotPassword.jsx";
 
+// this is the router
 const Routers = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // this is the function that makes the back button work
   useEffect(() => {
     const isHomePage = location.pathname === "/home";
     const isAtTopOfHistory = window.history.state === null;
@@ -26,6 +32,7 @@ const Routers = () => {
     }
   }, [location.pathname, navigate]);
 
+  // this is the router
   return (
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />

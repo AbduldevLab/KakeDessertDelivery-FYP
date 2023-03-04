@@ -1,70 +1,83 @@
+// Description: This file contains the redux slice for the shopping cart
 import { createSlice } from "@reduxjs/toolkit";
 
+// This is the initial state
 let items =
-  localStorage.getItem("cartItems") !== null
+// This is the initial state
+  localStorage.getItem("cartItems") !== null 
+  // This is the initial state
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
-const openingHour = 18;
-const closingHour = 22;
-const currentDate = new Date();
-const currentHour = currentDate.getHours();
+const openingHour = 18;// this is the opening hour
+const closingHour = 22;// this is the closing hour
+const currentDate = new Date();// this is the current date
+const currentHour = currentDate.getHours();// this is the current hour
 
+// This is the if statement for the opening and closing hours
 if (currentHour < openingHour || currentHour >= closingHour) {
-  localStorage.removeItem("cartItems");
-  localStorage.removeItem("totalAmount");
-  localStorage.removeItem("totalQuantity");
+  localStorage.removeItem("cartItems"); // remove the cart items
+  localStorage.removeItem("totalAmount"); // remove the total amount
+  localStorage.removeItem("totalQuantity"); // remove the total quantity
   items = [];
 }
 
+// This is the total amount for the cart
 const totalAmount =
   localStorage.getItem("totalAmount") !== null
     ? JSON.parse(localStorage.getItem("totalAmount"))
     : 0;
-
+// This is the total quantity for the cart
 const totalQuantity =
   localStorage.getItem("totalQuantity") !== null
     ? JSON.parse(localStorage.getItem("totalQuantity"))
     : 0;
 
+    // This is the setItem function for the cart
 const setItemFunc = (item, totalAmount, totalQuantity) => {
   localStorage.setItem("cartItems", JSON.stringify(item));
   localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
   localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
 };
 
+// This is the initial state
 const initialState = {
   cartItems: items,
   totalQuantity: totalQuantity,
   totalAmount: totalAmount,
 };
 
+// This is the cart slice that contains the reducers
 const cartSlice = createSlice({
   name: "cart",
   initialState,
 
+  // This is the reducers for the cart slice
   reducers: {
     // =========== add item ============
 
     addItem(state, action) {
-      const newItem = action.payload;
+      const newItem = action.payload; // this is the new item being added from user
 
+      // This is the existing item in the cart
       const existingItem = state.cartItems.find((item) => {
-        if (item.selection) {
+        if (item.selection) {// if the item has a selection
+          // This is the if statement for the existing item
           return (
-            item.title === newItem.title &&
-            item.selection.toppings === newItem.selection.toppings &&
-            item.selection.sauces === newItem.selection.sauces &&
-            item.selection.drink === newItem.selection.drink
+            item.title === newItem.title && // if the item title is the same as the new item title
+            item.selection.toppings === newItem.selection.toppings && // if the item toppings are the same as the new item toppings
+            item.selection.sauces === newItem.selection.sauces && // if the item sauces are the same as the new item sauces
+            item.selection.drink === newItem.selection.drink // if the item drink is the same as the new item drink
           );
-        } else {
-          return item.title === newItem.title;
+        } else {// if the item does not have a selection
+          return item.title === newItem.title; // if the item title is the same as the new item title
         }
       });
 
-      state.totalQuantity++;
+      state.totalQuantity++; // add one to the total quantity
 
+      // This is the if statement for the existing item
       if (!existingItem) {
-        state.cartItems.push({
+        state.cartItems.push({ // push the new item to the cart
           id: newItem.id,
           title: newItem.title,
           selection: newItem.selection,
@@ -73,17 +86,20 @@ const cartSlice = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
         });
-      } else {
-        existingItem.quantity++;
+      } else { // if the item already exists in the cart
+        existingItem.quantity++;// add one to the quantity
         existingItem.totalPrice =
-          Number(existingItem.totalPrice) + Number(newItem.price);
+          Number(existingItem.totalPrice) + Number(newItem.price);// add the price to the total price
       }
 
+      // This is the total amount for the cart
       state.totalAmount = state.cartItems.reduce(
+        // This is the reduce function for the cart that adds the price and quantity
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
 
+      //This is the setItem function for the cart
       setItemFunc(
         state.cartItems.slice(),
         state.totalAmount,
@@ -94,108 +110,118 @@ const cartSlice = createSlice({
     // ========= remove item ========
 
     removeItem(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.cartItems.find((item) => {
-        if (item.selection) {
+      const newItem = action.payload;// this is the new item being removed from user
+      const existingItem = state.cartItems.find((item) => {// this is the existing item in the cart
+        if (item.selection) {// if the item has a selection that is not null
+          // This is the if statement for the existing item
           return (
-            item.title === newItem.title &&
-            item.selection.toppings === newItem.selection.toppings &&
-            item.selection.sauces === newItem.selection.sauces &&
-            item.selection.drink === newItem.selection.drink
+            item.title === newItem.title && // if the item title is the same as the new item title
+            item.selection.toppings === newItem.selection.toppings &&// if the item toppings are the same as the new item toppings
+            item.selection.sauces === newItem.selection.sauces &&// and if the item sauces are the same as the new item sauces
+            item.selection.drink === newItem.selection.drink // and if the item drink is the same as the new item drink
           );
-        } else {
-          return item.title === newItem.title;
+        } else {// if the item does not have a selection
+          return item.title === newItem.title;// if the item title is the same as the new item title
         }
       });
-      state.totalQuantity--;
+      state.totalQuantity--; // remove one from the total quantity
 
-      if (existingItem.quantity === 1) {
-        state.cartItems = state.cartItems.filter((item) => {
-          if (item.selection) {
+      if (existingItem.quantity === 1) {// if the quantity is one
+        state.cartItems = state.cartItems.filter((item) => {// filter the item out of the cart
+          if (item.selection) {// if the item has a selection
+            // This is the if statement for the existing item
             return (
-              item.title === newItem.title &&
-              item.selection.toppings === newItem.selection.toppings &&
-              item.selection.sauces === newItem.selection.sauces &&
-              item.selection.drink === newItem.selection.drink
+              item.title === newItem.title && // if the item title is the same as the new item title
+              item.selection.toppings === newItem.selection.toppings &&// if the item toppings are the same as the new item toppings
+              item.selection.sauces === newItem.selection.sauces &&// and if the item sauces are the same as the new item sauces
+              item.selection.drink === newItem.selection.drink//
             );
-          } else {
-            return item.title === newItem.title;
+          } else {// if the item does not have a selection
+            return item.title === newItem.title;// if the item title is the same as the new item title
           }
         });
-      } else {
-        existingItem.quantity--;
+      } else {// if the quantity is more than one
+        existingItem.quantity--;// remove one from the quantity
         existingItem.totalPrice =
+        // remove the price from the total price
           Number(existingItem.totalPrice) - Number(existingItem.price);
       }
 
+      // This is the total amount for the cart
       state.totalAmount = state.cartItems.reduce(
+        // This is the reduce function for the cart that adds the price and quantity
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
 
+      //This is the setItem function for the cart
       setItemFunc(
-        state.cartItems.slice(),
-        state.totalAmount,
-        state.totalQuantity
+        state.cartItems.slice(),// slice the cart items so that it is not mutated
+        state.totalAmount, // set the total amount so that it is not mutated
+        state.totalQuantity // set the total quantity so that it is not mutated
       );
     },
 
     //============ delete item ===========
 
     deleteItem(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.cartItems.find((item) => {
-        if (item.selection) {
+      const newItem = action.payload;// this is the new item being deleted from user
+      const existingItem = state.cartItems.find((item) => {// this is the existing item in the cart
+        if (item.selection) {// if the item has a selection
+          // This is the if statement for the existing item
           return (
-            item.title === newItem.title &&
-            item.selection.toppings === newItem.selection.toppings &&
-            item.selection.sauces === newItem.selection.sauces &&
-            item.selection.drink === newItem.selection.drink
+            item.title === newItem.title &&// if the item title is the same as the new item title
+            item.selection.toppings === newItem.selection.toppings &&// if the item toppings are the same as the new item toppings
+            item.selection.sauces === newItem.selection.sauces &&// and if the item sauces are the same as the new item sauces
+            item.selection.drink === newItem.selection.drink// and if the item drink is the same as the new item drink
           );
-        } else {
-          return item.title === newItem.title;
+        } else {// if the item does not have a selection
+          return item.title === newItem.title;// if the item title is the same as the new item title
         }
       });
 
+      // This is the total amount for the cart if the item is deleted
       if (existingItem) {
-        state.cartItems = state.cartItems.filter((item) => {
-          if (item.selection && newItem.selection) {
+        state.cartItems = state.cartItems.filter((item) => {// filter the item out of the cart
+          if (item.selection && newItem.selection) {// if the item has a selection
+            // This is the if statement for the existing item
             return (
-              item.title !== newItem.title ||
-              item.selection.toppings !== newItem.selection.toppings ||
-              item.selection.sauces !== newItem.selection.sauces ||
-              item.selection.drink !== newItem.selection.drink
+              item.title !== newItem.title || // if the item title is not the same as the new item title
+              item.selection.toppings !== newItem.selection.toppings || //or if the item toppings are not the same as the new item toppings
+              item.selection.sauces !== newItem.selection.sauces || // or if the item sauces are not the same as the new item sauces
+              item.selection.drink !== newItem.selection.drink // or if the item drink is not the same as the new item drink
             );
-          } else {
-            return item.title !== newItem.title;
+          } else {// if the item does not have a selection
+            return item.title !== newItem.title;// if the item title is not the same as the new item title
           }
         });
-        state.totalQuantity = state.totalQuantity - existingItem.quantity;
+        state.totalQuantity = state.totalQuantity - existingItem.quantity;// remove the quantity from the total quantity
       }
 
-      state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity),
+      state.totalAmount = state.cartItems.reduce(// This is the reduce function for the cart that adds the price and quantity
+        (total, item) => total + Number(item.price) * Number(item.quantity),// This is the total amount for the cart if the item is deleted
         0
       );
+      //This is the setItem function for the cart
       setItemFunc(
-        state.cartItems.slice(),
-        state.totalAmount,
-        state.totalQuantity
+        state.cartItems.slice(), // slice the cart items so that it is not mutated
+        state.totalAmount, // set the total amount so that it is not mutated
+        state.totalQuantity // set the total quantity so that it is not mutated
       );
     },
-    // =========== clear cart ===========
+    // =========== clear cart altogether===========
 
-    clear(state) {
-      state.cartItems = [];
-      state.totalQuantity = 0;
-      state.totalAmount = 0;
-      localStorage.removeItem("cartItems");
-      localStorage.removeItem("totalAmount");
-      localStorage.removeItem("totalQuantity");
+    clear(state) {// this is the clear function for the cart
+      state.cartItems = []; // set the cart items to an empty array
+      state.totalQuantity = 0;// set the total quantity to zero
+      state.totalAmount = 0;// set the total amount to zero
+      localStorage.removeItem("cartItems");// remove the cart items from local storage
+      localStorage.removeItem("totalAmount");// remove the total amount from local storage
+      localStorage.removeItem("totalQuantity");// remove the total quantity from local storage
     },
   },
 });
 
-export const cartActions = cartSlice.actions;
+export const cartActions = cartSlice.actions; // export the cart actions
 
 export default cartSlice;

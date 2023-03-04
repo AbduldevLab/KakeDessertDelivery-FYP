@@ -1,26 +1,35 @@
+//This is the modal that pops up when the user clicks on the "Customize" button on the product card. 
+//This modal is used to select the toppings and sauces for the custom burger.
 import React, { useState } from "react";
 import "../../styles/product-card.css";
 
+//This is used to import the react-bootstrap components
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
+//This is the modal that pops up when the user clicks on the "Customize" button on the product card.
 const CustomModal = (props) => {
+  //This is the state for the selected toppings
   const [toppings, setToppings] = useState("default");
+  //This is the state for the selected sauces
   const [sauces, setSauces] = useState("default1");
+  //This is the state for the attempted submit
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
+  //This function is used to handle the submit event
   const handleSubmit = (e) => {
     e.preventDefault();
     setAttemptedSubmit(true);
-    if (toppings !== "default" && sauces !== "default1") {
-      props.addToCart({ toppings, sauces });
+    if (toppings !== "default" && sauces !== "default1") { //If the user has selected a topping and a sauce
+      props.addToCart({ toppings, sauces }); //Add the topping and sauce to the cart
       props.closeModal();
     }
   };
+  //This function is used to handle the change event
   return (
     <Modal
-      show={props.showModal}
-      onHide={props.closeModal}
+      show={props.showModal} //This is used to show the modal
+      onHide={props.closeModal} //This is used to close the modal
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -31,7 +40,8 @@ const CustomModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit}>
+      {/* This is the form that is used to select the toppings and sauces */}
+        <form onSubmit={handleSubmit}> 
           <div className="form-group">
             <label htmlFor="toppings">Toppings:</label>
             <select
@@ -39,6 +49,7 @@ const CustomModal = (props) => {
               style={{ color: "#F4A460" }}
               onChange={(e) => setToppings(e.target.value)}
             >
+              {/* //This is the list of toppings that the user can select from */}
               <option value="default">Select one topping</option>
               <option value="Kinder">Kinder</option>
               <option value="Caramel fredo">Caramel fredo</option>
@@ -57,8 +68,9 @@ const CustomModal = (props) => {
             <select
               id="sauces"
               style={{ color: "#F4A460" }}
-              onChange={(e) => setSauces(e.target.value)}
+              onChange={(e) => setSauces(e.target.value)} //This is the list of sauces that the user can select from
             >
+              {/* //This is the list of sauces that the user can select from */}
               <option value="default1">Select one sauce</option>
               <option value="Milk chocolate">Milk chocolate</option>
               <option value="White chocolate">White chocolate</option>
@@ -67,15 +79,15 @@ const CustomModal = (props) => {
               <option value="Caramel">Caramel</option>
             </select>
           </div>
-          {attemptedSubmit && sauces === "default1" && (
+          {attemptedSubmit && sauces === "default1" && ( //If the user has not selected a sauce or a topping, display an error message
             <p style={{ color: "red" }}>Please select a Sauce!</p>
           )}
-          {attemptedSubmit && toppings === "default" && (
+          {attemptedSubmit && toppings === "default" && ( //If the user has not selected a sauce or a topping, display an error message
             <p style={{ color: "red" }}>Please select a Topping!</p>
           )}
           <Modal.Footer className="modal-footer">
-            {attemptedSubmit === false ||
-            (sauces !== "default1" && toppings !== "default") ? (
+            {attemptedSubmit === false || //If the user has selected a sauce and a topping, enable the "Add" button
+            (sauces !== "default1" && toppings !== "default") ? ( //If the user has selected a sauce and a topping, enable the "Add" button
               <Button
                 type="submit"
                 variant="danger"
@@ -83,6 +95,7 @@ const CustomModal = (props) => {
               >
                 Add
               </Button>
+              //If the user has not selected a sauce or a topping, disable the "Add" button
             ) : (
               <Button
                 variant="danger"
@@ -92,6 +105,7 @@ const CustomModal = (props) => {
                 Add
               </Button>
             )}
+            {/* //This is the "Cancel" button */}
             <Button
               onClick={props.closeModal}
               style={{ backgroundColor: "#CD853F" }}
