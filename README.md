@@ -15,6 +15,9 @@
 - Register page
 - Modern  UI/UX
 - Admin Dashboard
+- Admin panel charts
+- Admin authentication and authorisation to access the panel
+- Private Routing
 - More to come .. In progress.
 
 ### Technologies Used:
