@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../.././assets/images/kake-logo.png";
 import { auth, fetchSignInMethodsForEmail, sendPasswordResetEmail } from "../../config/firebase.js";
-import "../../styles/AdminDash/forgotpass.css";
+import "../../styles/AdminDash/authentication.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -62,7 +62,7 @@ const ForgotPassword = () => {
                 />
               </div>
               <button type="submit" className="btn-submit">
-                Send Link Notification
+                Send Link Email
               </button>
               <Link to="/admin" className="btn-back-to-login">
                 Back to login

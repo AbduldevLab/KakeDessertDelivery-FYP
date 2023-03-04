@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// import "./assets/css/bootstrap-grid.min.css";
+import "./styles/AdminDash/icons/boxicons-2/css/boxicons.min.css";
 import "./index.css";
 
 import store from "./store/store.jsx";

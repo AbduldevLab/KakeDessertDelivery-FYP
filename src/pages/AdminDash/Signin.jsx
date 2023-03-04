@@ -1,16 +1,17 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../.././assets/images/kake-logo.png";
 
 import { auth, signInWithEmailAndPassword } from "../../config/firebase.js";
 
-import "../../styles/AdminDash/signin.css";
+import "../../styles/AdminDash/authentication.css";
 
 const Signin = () => {
      
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate(); // initialize useNavigate hook
     
     const handleEmailAndPasswordLogin = async (e) => {
         e.preventDefault();
@@ -21,13 +22,14 @@ const Signin = () => {
             if (userId === "CWILkMa7dzRtvWPdrk7AYm859w52") {
                 // The user has been signed in successfully
                 alert("Successfully logged in");
-            } else {
-                // User ID does not match
-                setErrorMessage("Wrong email-address or password!");
+                  
+                // Set the authentication status in localStorage
+                localStorage.setItem("isAuthenticated", true);
+                navigate("/admin/dashboard"); // redirect user to dashboard page
             }
         } catch (error) {
             // Handle errors here
-            setErrorMessage("Error ocurred, please try again.");
+            setErrorMessage("Wrong email-address or password!");
         }
 
         // Clear error messages after 2 seconds
@@ -83,7 +85,7 @@ const Signin = () => {
                                 />
                             </div>
                             <div className="flex-end">
-                                <Link to="/forgotPassword" className="link-end">
+                                <Link to="/admin/forgotPassword" className="link-end">
                                     Forgot password?
                                 </Link>
                             </div>

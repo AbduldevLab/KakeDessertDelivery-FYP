@@ -1,0 +1,17 @@
+[
+    {
+        "display_name": "Dashboard",
+        "route": "/admin/dashboard",
+        "icon": "bx bx-home-alt"
+    },
+    {
+        "display_name": "Orders",
+        "route": "/admin/orders",
+        "icon": "bx bx-package"
+    },
+    {
+        "display_name": "Users",
+        "route": "/admin/users",
+        "icon": "bx bx-user-pin"
+    }
+]
