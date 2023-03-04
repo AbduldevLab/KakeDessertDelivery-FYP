@@ -4,8 +4,9 @@ import sidebar_routes from "../../assets/json/sidebar_routes.json";
 import "../../styles/AdminDash/panel.css";
 import { Link } from "react-router-dom";
 
+//This component is used to display the sidebar on the admin dashboard
 const SidebarItem = (props) => {
-  const active = props.active ? "active" : "";
+  const active = props.active ? "active" : ""; //This is used to set the active class to the sidebar item
   return (
     <div className={`admin-sidebar-item ${active}`}>
       <div className="admin-sidebar-icon">
@@ -16,9 +17,10 @@ const SidebarItem = (props) => {
   );
 };
 
+//This component is used to display the sidebar on the admin dashboard
 const Sidebar = ({ location }) => {
   const activeItem = sidebar_routes.findIndex(
-    (item) => item.route === location?.pathname
+    (item) => item.route === location?.pathname //This is used to set the active class to the sidebar item
   );
   return (
     <div className="admin-content">
@@ -31,8 +33,8 @@ const Sidebar = ({ location }) => {
         </div>
       </div>
       <div className="admin-sidebar-menu">
-        {sidebar_routes.map((item, idx) => (
-          <Link className="admin-sidebar-link" key={idx} to={item.route}>
+        {sidebar_routes.map((item, idx) => ( //This is used to map through the sidebar routes
+          <Link className="admin-sidebar-link" key={idx} to={item.route}> 
             <SidebarItem
               name={item.display_name}
               icon={item.icon}

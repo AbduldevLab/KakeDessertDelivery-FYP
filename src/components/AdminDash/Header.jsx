@@ -1,9 +1,11 @@
 import React from "react";
 import Dropdown from "./Dropdown";
-import { Link, useNavigate } from "react-router-dom";
+// This imports the react router dom
+import { Link, useNavigate } from "react-router-dom"; 
 import trailor from "../../assets/images/hero.jpg";
 import "../../styles/AdminDash/panel.css";
 
+// This component is used to display the header on the admin dashboard
 const Header = () => {
   const navigate = useNavigate(); // initialize useNavigate hook
 
@@ -15,6 +17,7 @@ const Header = () => {
     navigate("/admin");
   };
 
+  // This is the return statement
   return (
     <div className="admin-header">
       <Dropdown
@@ -22,13 +25,13 @@ const Header = () => {
         menu={
           <>
             <li className="dropdown-list">
-              <Link to="/admin/dashboard" className="dropdown-link">
+              <Link to="/admin/dashboard" className="dropdown-link"> {/*  This is the link to the user's profile */}
                 <i className="bx bx-user dropdown-link-icon"></i>
                 Profile
               </Link>
             </li>
             <li className="dropdown-list">
-              <button className="dropdown-link" onClick={handleLogout}>
+              <button className="dropdown-link" onClick={handleLogout}> {/* This is the logout button */}
                 <i className="bx bx-power-off dropdown-link-icon"></i>
                 Logout
               </button>

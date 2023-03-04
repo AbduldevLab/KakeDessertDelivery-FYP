@@ -1,4 +1,4 @@
-// all images imported from images directory
+// These are the images used for the products
 import product_01_image_01 from "../images/Beverages/Strawberry smoothie.jpeg";
 import product_01_image_02 from "../images/Beverages/Biscoff shake.JPG";
 import product_01_image_03 from "../images/Beverages/Snapple.jpg";
@@ -14,7 +14,7 @@ import product_05_image_17 from "../images/Croissants/c3.jpg";
 
 import product_00_image_00 from "../images/Coming Soon.jpg";
 
-// The following array contains the product details for the category in home page
+// This is the array of products cards
 const products = [
   {
     id: "02",

@@ -1,4 +1,6 @@
+// This is the main layout component that wraps all the other components
 import React from "react";
+// import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
 import Header from "../Header/Header.jsx";
@@ -9,19 +11,20 @@ import AdminSidebar from "../AdminDash/Sidebar";
 import AdminHeader from "../AdminDash/Header.jsx";
 
 import Carts from "../UI/cart/Carts.jsx";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"; // This imports the react-redux hooks
 
-import NotFound from "../../pages/NotFound.jsx";
+import NotFound from "../../pages/NotFound.jsx"; // This imports the NotFound component
 
+// This component is used to display the header on the home page
 const Layout = () => {
-  const showCart = useSelector((state) => state.cartUi.cartIsVisible);
-  const location = useLocation();
+  const showCart = useSelector((state) => state.cartUi.cartIsVisible); // This is used to get the total quantity of items in the cart
+  const location = useLocation(); // This is used to get the current route
 
   // Check if the current route starts with "/admin"
   const isAdminRoute = location.pathname.startsWith("/admin");
   const isAdminRoute1 = location.pathname.startsWith("/admin/forgotPassword");
   const isAdminDash = location.pathname.startsWith("/admin/dashboard");
-  const isValidRoute = 
+  const isValidRoute =         // This is used to check if the current route is valid
   location.pathname === "/" || 
   location.pathname === "/home" ||
   location.pathname === "/menu" ||
@@ -37,24 +40,24 @@ const Layout = () => {
   location.pathname === "/admin/dashboard";
   return (
     <div>
-    {isValidRoute ? (
+    {isValidRoute ? ( // Only render the layout if the route is valid
     <div>
       {/* Only render the header if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Header />}
-      {isAdminDash && <AdminHeader/>}
+      {isAdminDash && <AdminHeader/>} {/*This is used to render the admin header*/}
 
-      {showCart && <Carts />}
+      {showCart && <Carts />} {/*This is used to render the cart*/}
       
       <div>
-        <Routes />
+        <Routes />  {/*This is used to render the routes*/}
       </div>
       
       {/* Only render the footer if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Footer />}
-      {isAdminDash && <AdminSidebar />}
+      {isAdminDash && <AdminSidebar />} {/*This is used to render the admin sidebar*/}
     </div>
     ) : (
-      <NotFound />
+      <NotFound />  // This is used to render the NotFound component
     )}
     </div>
   );

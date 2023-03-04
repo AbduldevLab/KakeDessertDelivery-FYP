@@ -33,18 +33,19 @@
 
 import React from "react";
 
+// This component is used to set the title of the page
 const Helmet = (props) => {
   let title;
-  if (document.referrer && document.referrer.includes("google.com")) {
+  if (document.referrer && document.referrer.includes("google.com")) { // Check if user came from a search engine
     // Add " - Grab your kake today!" to the title when user comes from a search engine
-    title = `Kake Dessert Delivery - ${props.title} - Grab your kake today!`;
+    title = `Kake Dessert Delivery - ${props.title} - Grab your kake today!`; // This is used to set the title of the page
   } else {
     // Otherwise, show just the page title
-    title = `Kake Dessert Delivery - ${props.title}`;
+    title = `Kake Dessert Delivery - ${props.title}`; // This is used to set the title of the page
   }
   document.title = title;
 
-  return <div className="w-100">{props.children}</div>;
+  return <div className="w-100">{props.children}</div>; // This is used to render the children of the component
 };
 
 export default Helmet;

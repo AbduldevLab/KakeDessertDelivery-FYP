@@ -18,6 +18,7 @@
 - Admin panel charts
 - Admin authentication and authorisation to access the panel
 - Private Routing
+- sitemaping gg
 - More to come .. In progress.
 
 ### Technologies Used:

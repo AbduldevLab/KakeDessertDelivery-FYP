@@ -1,11 +1,16 @@
+// This imports the react library
+
 import React from "react";
+// This imports the reactstrap components
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
 
 import "../../styles/footer.css";
 
+// This imports the react router dom
 import { Link } from "react-router-dom";
 
+// This component is used to display the footer on the home page
 const Footer = () => {
   return (
     <footer className="footer">
@@ -13,7 +18,7 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className=" footer__logo text-start">
-              <Link to="/home" onClick={() => window.scrollTo(0, 0)}
+              <Link to="/home" onClick={() => window.scrollTo(0, 0)} // This is used to scroll to the top of the page
               >
                 <img src={logo} alt="logo" />
               </Link>
@@ -24,7 +29,7 @@ const Footer = () => {
                   <Link
                     to="/contact"
                     onClick={() => 
-                      document.getElementById("top0").scrollIntoView({ behavior: "smooth" })}
+                      document.getElementById("top0").scrollIntoView({ behavior: "smooth" })} // This is used to scroll to the top of the page
                   >
                     {" "}
                     here
@@ -34,6 +39,7 @@ const Footer = () => {
               </p>
             </div>
           </Col>
+          {/*This is used to display the footer items*/}
 
           <Col lg="3" md="4" sm="6">
             <h5 className="footer__title">Delivery Time</h5>
@@ -116,7 +122,7 @@ const Footer = () => {
             </p>
           </Col>
           <Col lg="6" md="6">
-            <div className="social__links d-flex align-items-center gap-4 justify-content-end">
+             <div className="social__links d-flex align-items-center gap-4 justify-content-end"> {/* This is used to display the social media links */}
               <p className="m-0">Follow us: </p>
               <span>
                 {" "}

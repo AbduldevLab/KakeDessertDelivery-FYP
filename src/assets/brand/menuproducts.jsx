@@ -1,4 +1,4 @@
-// all images imported from images directory
+//The products are imported from the images folder and then exported to the menu page
 import product_01_image_01 from "../images/Beverages/Strawberry smoothie.jpeg";
 import product_01_image_02 from "../images/Beverages/Biscoff shake.JPG";
 import product_01_image_03 from "../images/Beverages/Snapple.jpg";
@@ -11,7 +11,6 @@ import product_02_image_07 from "../images/Brownie tray/bt3.jpg";
 import product_03_image_08 from "../images/CheeseCake tub/cct1.jpg";
 import product_03_image_09 from "../images/CheeseCake tub/cct2.jpg";
 import product_03_image_10 from "../images/CheeseCake tub/cct3.jpg";
-// import product_03_image_11 from "../images/CheeseCake tub/CheeseCake tub.jpg";
 
 import product_04_image_12 from "../images/Cookie dough tray/cdt1.jpg";
 import product_04_image_13 from "../images/Cookie dough tray/cdt2.jpg";
@@ -26,8 +25,8 @@ import product_06_image_19 from "../images/Chocolate cake slice.jpg";
 
 import product_00_image_00 from "../images/Coming Soon.jpg";
 
-// The following array contains the product details
 
+// all products imported from products directory
 const products = [
   {
     id: "01",

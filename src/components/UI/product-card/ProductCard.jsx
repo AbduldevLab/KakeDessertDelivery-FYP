@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 
+// This imports the css file for the product card
 import "../../../styles/product-card.css";
 import ReactModal from "../../Modal/CustomModal";
 import CloseModal from "../../Modal/ClosedModal";
 import ReactModal1 from "../../Modal/Custom1Modal";
 import ReactModal2 from "../../Modal/Custom2Modal";
 
+//This imports the react router dom
 import { Link } from "react-router-dom";
 
+//these imports are used to connect the redux store to the component
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx";
 
+// This component is used to display the product card on the home page
 const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;
   const dispatch = useDispatch();
-
+//These are the states used to open the modal
   const [modalOpen, setModalOpen] = useState(false);
   const [modal1Open, setModal1Open] = useState(false);
   const [modal2Open, setModal2Open] = useState(false);
   const [closeModalOpen, setCloseModalOpen] = useState(false);
 
+  //This const is used to add the items contents to the cart
   const addToCart = (toppings, sauces, drink) => {
     dispatch(
       cartActions.addItem({
@@ -33,6 +38,7 @@ const ProductCard = (props) => {
       })
     );
   };
+  //This const is used to open the specific modal
   const handleClick = () => {
     const remainder = [
       "Smoothies",
@@ -51,6 +57,7 @@ const ProductCard = (props) => {
       "Red-velvet Slice",
       "Chocolate Slice",
     ];
+    //These are the variables used to check the time and day
     const currentTime = new Date().getHours();
     const workHoursStart = 18;
     const workHoursEnd = 22;
@@ -58,6 +65,7 @@ const ProductCard = (props) => {
     const monday = 1;
     const tuesday = 2;
 
+    //These are the conditions used to open the modal
     if (
       coldDrinks.includes(title) &&
       currentTime >= workHoursStart &&
@@ -94,6 +102,7 @@ const ProductCard = (props) => {
       setCloseModalOpen(true);
     }
   };
+  //This is the return statement for the component
   return (
     <div className="product__item">
       <div className="product__img">
@@ -111,6 +120,7 @@ const ProductCard = (props) => {
           </button>
         </div>
       </div>
+      {/* These are the modals used to open the modal */}
       {modalOpen && (
         <ReactModal
           showModal={modalOpen}
@@ -132,6 +142,7 @@ const ProductCard = (props) => {
           addToCart={addToCart}
         />
       )}
+      {/* This is the modal used to close the modal */}
       {closeModalOpen && (
         <CloseModal
           showModal={closeModalOpen}
