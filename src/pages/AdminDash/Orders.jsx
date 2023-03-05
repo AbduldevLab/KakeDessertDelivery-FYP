@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+//This is used to import the react-router-dom components
+import React, { useState, useEffect } from "react";// eslint-disable-line no-unused-vars
 import "../../styles/AdminDash/panel.css";
 
 //This is used to import the react-router-dom components
 import { useNavigate } from "react-router-dom";
 
+//This is used to import the material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Table,
@@ -15,9 +17,10 @@ import {
   Paper,
   Button,
 } from "@material-ui/core";
-import { db } from "../../config/firebase.js";
-import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../config/firebase.js"; // Import the firebase database
+import { collection, onSnapshot  } from "firebase/firestore"; // Import the firebase firestore
 
+//This is used to style the material-ui components
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -27,6 +30,7 @@ const useStyles = makeStyles({
   },
 });
 
+//This is used to display the orders on the admin dashboard
 const Orders = () => {
 
   //This is used to navigate to the admin page
@@ -42,26 +46,29 @@ const Orders = () => {
   }, [navigate]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
-  const classes = useStyles();
-  const [orders, setOrders] = useState([]);
+  const classes = useStyles(); // Use the styles defined above
+  const [orders, setOrders] = useState([]);// eslint-disable-line no-unused-vars
 
+  const ordersRef = collection(db, "Orders");// eslint-disable-line no-unused-vars
   useEffect(() => {
-    // Fetch orders from Firebase Firestore and update the state
-    const fetchOrders = async () => {
-      const ordersRef = collection(db, "Orders");
-      const ordersSnapshot = await getDocs(ordersRef);
-      
-      const ordersData = ordersSnapshot.docs.map((doc) => ({
+    // Attach a real-time listener to orders collection , and update the orders state when the collection changes
+    // This will remove the need for users to refresh the page to see the latest orders manually
+    const unsubscribe = onSnapshot(ordersRef, (snapshot) => {
+      const ordersData = snapshot.docs.map((doc) => ({ // Map the orders collection to an array of objects
         id: doc.id,
         ...doc.data(),
       })).sort((a, b) => b.orderTime - a.orderTime); // Sort the orders by orderTime in descending order
       setOrders(ordersData);
-    };
-    fetchOrders();
-  }, []);
+    });
+    
+    // Detach the listener when the component unmounts
+    return () => unsubscribe();
+  }, [ordersRef]);
+  
 
-  const [expandedOrder, setExpandedOrder] = useState(null);
+  const [expandedOrder, setExpandedOrder] = useState(null);// eslint-disable-line no-unused-vars
 
+  //This is used to handle the expand order button
   const handleExpandOrder = (orderId) => {
     if (expandedOrder === orderId) {
       setExpandedOrder(null);
@@ -70,12 +77,13 @@ const Orders = () => {
     }
   };
 
+  //This is used to handle the delete order button
   return (
     <div className="admin-content">
       <div className="admin-wrapper">
         <div className="orders">
           <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="Orders table">
+            <Table className={classes.table} aria-label="Orders table"> 
               <TableHead>
                 <TableRow>
                   <TableCell style={{ width: "10%" }}>Order Number</TableCell>
@@ -115,7 +123,7 @@ const Orders = () => {
                       </TableCell>
                       <TableCell></TableCell>
                     </TableRow>
-                    {expandedOrder === order.id && (
+                    {expandedOrder === order.id && (//This is used to display the order details
                       <TableRow>
                         <TableCell colSpan={6}>
                           <span style={{ fontWeight: "bold" }}>Email:</span>{" "}
@@ -141,7 +149,7 @@ const Orders = () => {
                           )}
                           <span style={{ fontWeight: "bold" }}>Cart:</span>
                           <ul>
-                            {order.cartItems.map((item) => (
+                            {order.cartItems.map((item) => (//This is used to display the cart items
                               <li key={item.title}>
                                 {item.title}:
                                 {item.selection && (

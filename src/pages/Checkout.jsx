@@ -134,7 +134,7 @@ const Checkout = () => {
         // Add order to firestore
         try {
           await addDoc(ordersRef, userShippingAddress);// This is used to add the user shipping address to the orders collection
-          const message = `Thank you for your order ${enterName}!\n           Order No: ${orderNumber}`;// This is used to set the message
+          const message = `Thank you for your order ${enterName}!\n           Order No: ${orderNumber}`;// This is used to set the message "           "-> spacing needed for formatting
           alert(message);// This is used to alert the user
           clearCart();// This is used to clear the cart
           document.getElementById("checkout__form").reset();//  
