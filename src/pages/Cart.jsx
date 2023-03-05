@@ -89,7 +89,8 @@ const Tr = (props) => {
         <img src={image01} alt="" />
       </td>
       <td className="text-center">
-        {/* {title}// This is used to display the title */}
+    {/* This is used to display the title */}
+         {title}
         <div className="cart-item1">
           {/* // This is used to display the cart items */}
           {selection && Object.entries(selection).length !== 0
