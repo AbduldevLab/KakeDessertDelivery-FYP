@@ -1,17 +1,21 @@
 //this is the checkout page
 import React, { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";// This is used to import the react-redux
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";// This is used to import the reactstrap
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";// This is used to import the common section
 import Helmet from "../components/Helmet/Helmet.jsx";// This is used to import the helmet
 import CloseModal from "../components/Modal/ClosedModal.jsx";// This is used to import the close modal
 
+import "../styles/checkout.css";
 import { cartActions } from "../store/shopping-cart/cartSlice.jsx";// This is used to import the cart actions
+
 
 import { db } from "../config/firebase.js";// This is used to import the firebase
 import { collection, addDoc } from "firebase/firestore";// This is used to import the firebase/firestore
+const { Timestamp } = require("firebase/firestore");// This is used to import the firebase/firestore
 
-import "../styles/checkout.css";
+
 
 // This is used to display the checkout page
 const Checkout = () => {
@@ -56,6 +60,7 @@ const Checkout = () => {
   const submitHandler = async (e) => {
     e.preventDefault();// This is used to prevent the default behaviour
 
+    const timestamp = Timestamp.now();// This is used to get the timestamp
     const currentTime = new Date().getHours();// This is used to get the current time
     const workHoursStart = 18;// This is used to set the work hours start
     const workHoursEnd = 22;// This is used to set the work hours end
@@ -108,6 +113,7 @@ const Checkout = () => {
             address: enterCity,
             eirCode: eirCode,
             cartItems: cartItems,
+            orderTime: timestamp,
           };
         } else { // Check if delivery option is collection
           userShippingAddress = {
@@ -117,6 +123,7 @@ const Checkout = () => {
             phone: enterNumber,
             collectionTime: collectionTime,
             cartItems: cartItems,
+            orderTime: timestamp,
           };
         }
         shippingInfo.push(userShippingAddress);// This is used to push the user shipping address to the shipping info array
@@ -127,7 +134,7 @@ const Checkout = () => {
         // Add order to firestore
         try {
           await addDoc(ordersRef, userShippingAddress);// This is used to add the user shipping address to the orders collection
-          const message = `Thank you for your order!\n      Order No: ${orderNumber}`;// This is used to set the message
+          const message = `Thank you for your order ${enterName}!\n           Order No: ${orderNumber}`;// This is used to set the message
           alert(message);// This is used to alert the user
           clearCart();// This is used to clear the cart
           document.getElementById("checkout__form").reset();//  

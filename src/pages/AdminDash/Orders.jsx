@@ -50,10 +50,11 @@ const Orders = () => {
     const fetchOrders = async () => {
       const ordersRef = collection(db, "Orders");
       const ordersSnapshot = await getDocs(ordersRef);
+      
       const ordersData = ordersSnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }));
+      })).sort((a, b) => b.orderTime - a.orderTime); // Sort the orders by orderTime in descending order
       setOrders(ordersData);
     };
     fetchOrders();
@@ -87,6 +88,9 @@ const Orders = () => {
                   <TableCell style={{ width: "10%" }} align="right">
                     Order Type
                   </TableCell>
+                  <TableCell style={{ width: "20%" }} align="right">
+                    Date and Time
+                  </TableCell>
                   <TableCell style={{ width: "10%" }} align="right"></TableCell>
                   <TableCell style={{ width: "10%" }} align="right"></TableCell>
                 </TableRow>
@@ -103,6 +107,7 @@ const Orders = () => {
                       <TableCell align="right">
                         {order.collectionTime ? "Collection" : "Delivery"}
                       </TableCell>
+                      <TableCell align="right">{order.orderTime ? order.orderTime.toDate().toLocaleString() : ""}</TableCell>
                       <TableCell align="right">
                         <Button onClick={() => handleExpandOrder(order.id)}>
                           View Details
@@ -164,6 +169,7 @@ const Orders = () => {
                                     {(item.quantity * item.price).toFixed(2)}
                                   </li>
                                 </ul>
+                                ---------------------------------------------------------
                               </li>
                             ))}
                           </ul>
