@@ -6,12 +6,12 @@ import trailor from "../../assets/images/hero.jpg";
 import "../../styles/AdminDash/panel.css";
 
 // This component is used to display the header on the admin dashboard
-const Header = () => {
+const Header = ({ toggleSidebar }) => {
   const navigate = useNavigate(); // initialize useNavigate hook
 
   const handleLogout = () => {
     // Clear the user's session or token from storage here
-     // Remove the authentication status from localStorage
+    // Remove the authentication status from localStorage
     localStorage.removeItem("isAuthenticated");
     // Redirect the user to the login page
     navigate("/admin");
@@ -20,6 +20,9 @@ const Header = () => {
   // This is the return statement
   return (
     <div className="admin-header">
+      <button className="toggle-sidebar-button" onClick={toggleSidebar} >
+        <i className="bx bx-menu toggle-sidebar-icon"></i>
+      </button>
       <Dropdown
         avatar={trailor}
         menu={
@@ -39,6 +42,7 @@ const Header = () => {
           </>
         }
       />
+      
     </div>
   );
 };

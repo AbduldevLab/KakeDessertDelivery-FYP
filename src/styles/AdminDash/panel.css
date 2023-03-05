@@ -75,7 +75,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .admin-content {
-    padding-left: 0;
+    padding-left: 0%;
   }
   .admin-header {
     padding-left: 1.5rem;
@@ -84,6 +84,15 @@ body {
     left: -100%;
   }
 }
+.toggle-sidebar-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 0.5rem; /* position the button to the left of the header */
+  font-size: 2rem;
+}
+
 .admin-sidebar-header {
   position: relative;
   padding: 1.2rem 1.3rem;
@@ -113,6 +122,8 @@ body {
   user-select: none;
   width: 100%;
 }
+
+
 .admin-sidebar-link .admin-sidebar-item {
   position: relative;
   display: flex;
@@ -130,14 +141,13 @@ body {
   color: #2c2c30;
 }
 .admin-sidebar-link .admin-sidebar-item.active {
-  background: #F4A460;
+  background: #CD853F;
   color: #ffffff;
-  box-shadow: 0px 4px 15px #5960e6d7;
+  box-shadow: 0px 4px 15px #F4A460;
   transition: box-shadow 0.4s;
 }
 .admin-sidebar-link .admin-sidebar-item.active:hover {
-  background: #F4A460;
-  box-shadow: 0px 4px 10px #5960e6d7;
+  box-shadow: 0px 4px 10px #F4A460;
 }
 
 .admin-sidebar-item .admin-sidebar-icon {
@@ -336,4 +346,10 @@ body {
   margin: 0;
   color: #838385;
 }
+@media (max-width: 767px) {
+  .MuiTable-root {
+    overflow-x: auto;
+  }
+}
+
 

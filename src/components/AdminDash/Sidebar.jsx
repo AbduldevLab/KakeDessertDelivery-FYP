@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 //This component is used to display the sidebar on the admin dashboard
 const SidebarItem = (props) => {
   const active = props.active ? "active" : ""; //This is used to set the active class to the sidebar item
+  
   return (
     <div className={`admin-sidebar-item ${active}`}>
       <div className="admin-sidebar-icon">
@@ -20,7 +21,7 @@ const SidebarItem = (props) => {
 //This component is used to display the sidebar on the admin dashboard
 const Sidebar = ({ location }) => {
   const activeItem = sidebar_routes.findIndex(
-    (item) => item.route === location?.pathname //This is used to set the active class to the sidebar item
+    (item) => item.routes === location?.pathname //This is used to set the active class to the sidebar item
   );
   return (
     <div className="admin-content">

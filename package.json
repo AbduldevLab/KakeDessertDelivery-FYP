@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@reduxjs/toolkit": "^1.6.2",
     "@syncfusion/ej2-react-buttons": "^20.4.44",
     "@testing-library/jest-dom": "^5.15.0",
@@ -31,7 +32,7 @@
   },
   "files": [
     "**/*",
-    "!**/*.jpg" 
+    "!**/*.jpg"
   ],
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
