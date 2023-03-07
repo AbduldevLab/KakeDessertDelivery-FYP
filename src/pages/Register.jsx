@@ -65,6 +65,8 @@ const Register = () => {
         await addDoc(usersRef, userDetails);// This creates the user
         setLoggedIn(true);// This sets the loggedIn state to true
         setSuccessMessage(`${enterName}, you have successfully signed up!`);// This sets the success message
+        setEnterName(""); // Reset the name input field to an empty string
+      setEnterEmail(""); // Reset the email input field to an empty string
       } catch (error) {// If there is an error, set the error message
         const errorCode = error.code;// This gets the error code
         if (errorCode === "auth/email-already-in-use") {// If the error code is "auth/email-already-in-use", set the error message

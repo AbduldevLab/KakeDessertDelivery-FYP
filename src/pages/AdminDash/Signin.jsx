@@ -26,7 +26,7 @@ const Signin = () => {
             const userId = userCredential.user.uid;//This is used to get the user id
             if (userId === "CWILkMa7dzRtvWPdrk7AYm859w52") {//This is used to check if the user is admin or not
                 // The user has been signed in successfully
-                alert("Successfully logged in");
+                alert("Successfully logged in!");
                   
                 // Set the authentication status in localStorage
                 localStorage.setItem("isAuthenticated", true);
