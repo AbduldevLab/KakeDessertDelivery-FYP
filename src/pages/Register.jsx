@@ -1,5 +1,5 @@
 // This is the signup page
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
 import { Container, Row, Col } from "reactstrap";// Container, Row, Col are components that allow you to create a grid system
@@ -7,30 +7,35 @@ import { Container, Row, Col } from "reactstrap";// Container, Row, Col are comp
 // Importing firebase
 import {
   auth,
-  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  db,
 } from "../config/firebase.js";
 
+import { collection, addDoc } from "firebase/firestore";// This is used to import the firebase/firestore
+
 import "../styles/register.css";
+const { Timestamp } = require("firebase/firestore");// This is used to import the firebase/firestore
+
 
 // This is the signup page
 const Register = () => {
-  const signupNameRef = useRef();// useRef is a hook that allows you to create a reference to a DOM node
-  const signupEmailRef = useRef();// useRef is a hook that allows you to create a reference to a DOM node
-  const [loggedIn, setLoggedIn] = useState(false);// useState is a hook that allows you to create a state variable
+  const [enterName, setEnterName] = useState("");// This is used to set the enter name
+  const [enterEmail, setEnterEmail] = useState("");// This is used to set the enter email
+  
   const [setErrorMessage] = useState("");// useState is a hook that allows you to create a state variable
   const [successMessage, setSuccessMessage] = useState("");// useState is a hook that allows you to create a state variable
-
+  const [loggedIn, setLoggedIn] = useState(false);// useState is a hook that allows you to create a state variable
   const [emailError, setEmailError] = useState("");// useState is a hook that allows you to create a state variable
   const [nameError, setNameError] = useState("");// useState is a hook that allows you to create a state variable
 
+  const usersRef = collection(db, "Users");// This is used to get the orders reference
+
   // This function handles the signup with email and password
-  const handleEmailAndPasswordLogin = async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();// This prevents the page from reloading when the form is submitted
 
-    const name = signupNameRef.current.value;// This gets the value of the name input
-    const email = signupEmailRef.current.value;// This gets the value of the email input
+    const timestamp = Timestamp.now();// This is used to get the timestamp
     // Check if email and name are valid
     let emailError = "";
     let nameError = "";
@@ -38,10 +43,10 @@ const Register = () => {
     const nameRegex = /^[a-zA-Z]+(\s[a-zA-Z]+)+$/;// This is a regular expression that checks if the name is valid
 
     // Check if email and name are valid
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(enterEmail)) {
       emailError = "Invalid email address";
     }
-    if (!nameRegex.test(name)) {
+    if (!nameRegex.test(enterName)) {
       nameError = "Please enter your full name";
     }
     setEmailError(emailError);// This sets the email error
@@ -49,10 +54,17 @@ const Register = () => {
 
     // If there are no errors, create the user
     if (!emailError && !nameError) {
+      let userDetails;
+      userDetails = {
+        name: enterName,
+        email: enterEmail,
+        signupTime: timestamp,
+      }
+
       try {
-        await createUserWithEmailAndPassword(auth, email, name);// This creates the user
+        await addDoc(usersRef, userDetails);// This creates the user
         setLoggedIn(true);// This sets the loggedIn state to true
-        setSuccessMessage(`${name}, you have successfully signed up!`);// This sets the success message
+        setSuccessMessage(`${enterName}, you have successfully signed up!`);// This sets the success message
       } catch (error) {// If there is an error, set the error message
         const errorCode = error.code;// This gets the error code
         if (errorCode === "auth/email-already-in-use") {// If the error code is "auth/email-already-in-use", set the error message
@@ -102,7 +114,7 @@ const Register = () => {
                     type="text"
                     placeholder="Full name"
                     required
-                    ref={signupNameRef}
+                    onChange={(e) => setEnterName(e.target.value)}// This is used to handle the change
                   />
                   {/* // This displays the name error for the name. full name require* */}
                   {nameError && <p className="error-message">{nameError}</p>}
@@ -112,7 +124,15 @@ const Register = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    ref={signupEmailRef}
+                     // This is used to handle the change
+                     onChange={(e) => {
+                      const value = e.target.value.trim();// This is used to trim the value
+                      if (value.includes("@") && value.includes(".")) {// This is used to check if the email contains @ and .
+                        setEnterEmail(value);// This is used to set the email
+                      } else {
+                        setEnterEmail("");// This is used to set the email to empty
+                      }
+                    }}
                   />
                   {/* // This displays the email error for the email. email require* */}
                   {emailError && <p className="error-message">{emailError}</p>}
@@ -123,8 +143,8 @@ const Register = () => {
                 </p>
                 {/* // This is the signup button */}
                 <button
-                  onClick={handleEmailAndPasswordLogin}
-                  className="addTOCart__btn"
+                  onClick={submitHandler}
+                  className="addTOCart__btn2"
                 >
                   Sign-up
                   {/* // This displays the success message if the user is logged in */}
@@ -136,9 +156,10 @@ const Register = () => {
               
               <div className="d-flex justify-content-center align-items-center mb-3">
                 {/* // This is the signup with Google button */}
-                <button className="addTOCart__btn" onClick={handleGoogleLogin}>
-                  Sign-up with Google
+                <button className="addTOCart__btn21" onClick={handleGoogleLogin}>
+                  Sign-up with <img className="google"src="https://img.icons8.com/color/48/null/google-logo.png" alt="google"/>
                 </button>
+                
               </div>
             </Col>
           </Row>

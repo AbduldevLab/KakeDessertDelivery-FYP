@@ -62,11 +62,11 @@ const Checkout = () => {
 
     const timestamp = Timestamp.now();// This is used to get the timestamp
     const currentTime = new Date().getHours();// This is used to get the current time
-    const workHoursStart = 18;// This is used to set the work hours start
-    const workHoursEnd = 22;// This is used to set the work hours end
+    const workHoursStart = 0;// This is used to set the work hours start
+    const workHoursEnd = 24;// This is used to set the work hours end
     const currentDay = new Date().getDay();// This is used to get the current day
-    const monday = 1;// This is used to set the monday const
-    const tuesday = 2;// This is used to set the tuesday const
+    const monday = 0;// This is used to set the monday const
+    const tuesday = 0;// This is used to set the tuesday const
 
     // Check if order is placed between 6pm and 10pm on weekdays
     if (
@@ -140,6 +140,7 @@ const Checkout = () => {
           document.getElementById("checkout__form").reset();//  
         } catch (err) {// This is used to catch any errors
           console.error(err);
+          alert("Error placing order, please try again later");
         }
       }
     }

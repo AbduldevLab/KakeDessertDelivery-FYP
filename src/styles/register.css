@@ -1,3 +1,33 @@
+.addTOCart__btn2 {
+  border: none;
+  padding: 7px 18px;
+  background: #CD853F;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.addTOCart__btn2:hover {
+  color: #F4A460;
+}
+
+.google {
+  width: 20px;
+  height: 20px;
+}
+.addTOCart__btn21 {
+  border: none;
+  padding: 7px 18px;
+  background: #CD853F;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.addTOCart__btn21:hover {
+  color: #F4A460;
+}
+
 .link:hover {
     color: #F4A460;
   }

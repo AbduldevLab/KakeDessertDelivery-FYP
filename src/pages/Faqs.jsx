@@ -77,7 +77,7 @@ function Faqs() {
 
           <div className="faq-four">
             {/* FAQ question */}
-            <h1 className="faq-page">Delivery Times</h1>
+            <h1 className="faq-page">Where's my order</h1>
             {/* FAQ answer */}
             <div className="faq-body">
               <p>

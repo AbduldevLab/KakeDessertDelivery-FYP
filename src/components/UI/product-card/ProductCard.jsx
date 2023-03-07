@@ -62,11 +62,11 @@ const ProductCard = (props) => {
     ];
     //These are the variables used to check the time and day
     const currentTime = new Date().getHours();
-    const workHoursStart = 18;
-    const workHoursEnd = 22;
+    const workHoursStart = 0;
+    const workHoursEnd = 24;
     const currentDay = new Date().getDay();
-    const monday = 1;
-    const tuesday = 2;
+    const monday = 0;
+    const tuesday = 0;
 
     //These are the conditions used to open the modal
     if (
