@@ -23,8 +23,8 @@ const Dashboard = () => {
   //This is used to display the dashboard page
   return (
     <React.Fragment>
-      <div className="admin-content">
-      <div className="admin-wrapper">
+        <div className="admin-content">
+    <div className="admin-wrapper">
       <div className="dashboard-widgets row">
         <div className="col-lg-6">
           <div className="card-widget widget-user mb-2">

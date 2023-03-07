@@ -14,11 +14,12 @@ import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
 import Tc from "../pages/Tc";
 
-// Importing admin dashboard pages
+// Importing admin panel pages
 import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
 import AdminDashForgot from "../pages/AdminDash/ForgotPassword.jsx";
 import AdminDash from "../pages/AdminDash/Dashboard.jsx";
 import AdminOrders from "../pages/AdminDash/Orders.jsx";
+import AdminUsers from "../pages/AdminDash/Users.jsx";
 
 // Importing 404 page
 import NotFound from "../pages/NotFound";
@@ -54,6 +55,7 @@ const Routers = () => {
       <Route path="/admin/forgotPassword" element={<AdminDashForgot />} />
       <Route path="/admin/dashboard" element={<AdminDash />} />
       <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route path="/admin/users" element={<AdminUsers />} />
 
       <Route component={NotFound} />
     </Routes>

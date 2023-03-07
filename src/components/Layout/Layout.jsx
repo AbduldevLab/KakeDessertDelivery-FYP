@@ -25,8 +25,10 @@ const Layout = () => {
   const isAdminRoute1 = location.pathname.startsWith("/admin/forgotPassword");
   const isAdminDash = location.pathname.startsWith("/admin/dashboard");
   const isAdminOrders = location.pathname.startsWith("/admin/orders");
+  const isAdminUsers = location.pathname.startsWith("/admin/users");
+
   const isValidRoute =         // This is used to check if the current route is valid
-  location.pathname === "/" || 
+  location.pathname === "/" ||
   location.pathname === "/home" ||
   location.pathname === "/menu" ||
   location.pathname === "/menu/:id" ||
@@ -34,19 +36,21 @@ const Layout = () => {
   location.pathname === "/checkout" ||
   location.pathname === "/register" ||
   location.pathname === "/contact" ||
-  location.pathname === "/faqs" || 
+  location.pathname === "/faqs" ||
   location.pathname === "/t&c" ||
   location.pathname === "/admin" ||
   location.pathname === "/admin/forgotPassword" ||
   location.pathname === "/admin/dashboard" ||
-  location.pathname === "/admin/orders";
+  location.pathname === "/admin/orders" ||
+  location.pathname === "/admin/users";
+
   return (
     <div>
     {isValidRoute ? ( // Only render the layout if the route is valid
     <div>
       {/* Only render the header if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Header />}
-      {(isAdminDash || isAdminOrders) && <AdminHeader/>} {/*This is used to render the admin header*/}
+      {(isAdminDash || isAdminOrders || isAdminUsers) && <AdminHeader/>} {/*This is used to render the admin header*/}
 
       {showCart && <Carts />} {/*This is used to render the cart*/}
       
@@ -56,7 +60,7 @@ const Layout = () => {
       
       {/* Only render the footer if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Footer />}
-      {(isAdminDash || isAdminOrders)&& <AdminSidebar />} {/*This is used to render the admin sidebar*/}
+      {(isAdminDash || isAdminOrders || isAdminUsers)&& <AdminSidebar />} {/*This is used to render the admin sidebar*/}
     </div>
     ) : (
       <NotFound />  // This is used to render the NotFound component
