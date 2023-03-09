@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
-import { Container, Row, Col } from "reactstrap";// Container, Row, Col are components that allow you to create a grid system
+import { Container, Row, Col, } from "reactstrap";// Container, Row, Col are components that allow you to create a grid system
 
 // Importing firebase
 import {
@@ -12,7 +12,7 @@ import {
   db,
 } from "../config/firebase.js";
 
-import { collection, addDoc } from "firebase/firestore";// This is used to import the firebase/firestore
+import { collection, addDoc, getDocs, query, where  } from "firebase/firestore";// This is used to import the firebase/firestore
 
 import "../styles/register.css";
 const { Timestamp } = require("firebase/firestore");// This is used to import the firebase/firestore
@@ -23,7 +23,7 @@ const Register = () => {
   const [enterName, setEnterName] = useState("");// This is used to set the enter name
   const [enterEmail, setEnterEmail] = useState("");// This is used to set the enter email
   
-  const [setErrorMessage] = useState("");// useState is a hook that allows you to create a state variable
+  const [errorMessage, setErrorMessage] = useState("");// useState is a hook that allows you to create a state variable
   const [successMessage, setSuccessMessage] = useState("");// useState is a hook that allows you to create a state variable
   const [loggedIn, setLoggedIn] = useState(false);// useState is a hook that allows you to create a state variable
   const [emailError, setEmailError] = useState("");// useState is a hook that allows you to create a state variable
@@ -54,33 +54,38 @@ const Register = () => {
 
     // If there are no errors, create the user
     if (!emailError && !nameError) {
-      let userDetails;
-      userDetails = {
-        name: enterName,
-        email: enterEmail,
-        signupTime: timestamp,
-      }
-
-      try {
-        await addDoc(usersRef, userDetails);// This creates the user
-        setLoggedIn(true);// This sets the loggedIn state to true
-        setSuccessMessage(`${enterName}, you have successfully signed up!`);// This sets the success message
-        setEnterName(""); // Reset the name input field to an empty string
-      setEnterEmail(""); // Reset the email input field to an empty string
-      } catch (error) {// If there is an error, set the error message
-        const errorCode = error.code;// This gets the error code
-        if (errorCode === "auth/email-already-in-use") {// If the error code is "auth/email-already-in-use", set the error message
-          setErrorMessage("This email address is already in use.");
+      
+      const querySnapshot = await getDocs(
+        query(collection(db, "Users"), where("email", "==", enterEmail))
+      );
+  
+      if (!querySnapshot.empty) {
+        setErrorMessage("This email address is already in use!");
+      } else {
+        const userDetails = {
+          name: enterName,
+          email: enterEmail,
+          signupTime: timestamp,
+        };
+  
+        try {
+          await addDoc(usersRef, userDetails);// This creates the user
+          setLoggedIn(true);// This sets the loggedIn state to true
+          setSuccessMessage(`${enterName}, you have successfully signed up!`);// This sets the success message
+          document.getElementById("form").reset(); // Reset the name input field to an empty string
+        } catch (error) {// If there is an error, set the error message
+          setErrorMessage("Error occurred, please try again.");
+          setSuccessMessage(""); // Clear success message on error
+          console.log(error);
         }
-        setSuccessMessage(""); // Clear success message on error
-        console.log(error);
       }
-    }
+    } 
     // Clear error messages after 2 seconds
     setTimeout(() => {
       setEmailError("");
       setNameError("");
       setSuccessMessage("");
+      setErrorMessage("");
     }, 3000);
   };
 
@@ -93,6 +98,7 @@ const Register = () => {
       await signInWithPopup(auth, provider);// This signs the user in with Google
       setSuccessMessage("Successfully signed up!");
       setErrorMessage(""); // Clear error message on success
+      document.getElementById("form").reset();
     } catch (error) {// If there is an error, set the error message
       setErrorMessage("Error occurred, please try again.");
       setSuccessMessage(""); // Clear success message on error
@@ -110,7 +116,10 @@ const Register = () => {
           {/* // This is the signup form */}
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5">
+              <form className="form mb-5"
+                id="form"
+                onSubmit={submitHandler}
+              >
                 <div className="form__group">
                   <input
                     type="text"
@@ -153,6 +162,9 @@ const Register = () => {
                 </button>
                 {loggedIn && (
                   <div className="success-message">{successMessage}</div>
+                )}
+                {!loggedIn && (
+                  <div className="error-message">{errorMessage}</div>
                 )}
               </form>
               

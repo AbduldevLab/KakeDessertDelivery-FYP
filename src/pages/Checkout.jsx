@@ -134,7 +134,7 @@ const Checkout = () => {
           const message = `Thank you for your order ${enterName}!\n           Order No: ${orderNumber}`;// This is used to set the message "           "-> spacing needed for formatting
           alert(message);// This is used to alert the user
           clearCart();// This is used to clear the cart
-          document.getElementById("checkout__form").reset();//  
+          document.getElementById("checkout__form").reset();// clear form 
         } catch (err) {// This is used to catch any errors
           console.error(err);
           alert("Error placing order, please try again later");
