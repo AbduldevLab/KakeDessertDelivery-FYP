@@ -8,8 +8,8 @@ let items =
   // This is the initial state
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
-const openingHour = 0;// this is the opening hour
-const closingHour = 24;// this is the closing hour
+const openingHour = 18;// this is the opening hour
+const closingHour = 22;// this is the closing hour
 const currentDate = new Date();// this is the current date
 const currentHour = currentDate.getHours();// this is the current hour
 

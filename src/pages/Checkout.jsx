@@ -62,8 +62,8 @@ const Checkout = () => {
 
     const timestamp = Timestamp.now();// This is used to get the timestamp
     const currentTime = new Date().getHours();// This is used to get the current time
-    const workHoursStart = 0;// This is used to set the work hours start
-    const workHoursEnd = 24;// This is used to set the work hours end
+    const workHoursStart = 18;// This is used to set the work hours start
+    const workHoursEnd = 22;// This is used to set the work hours end
     const currentDay = new Date().getDay();// This is used to get the current day
     const monday = 1;// This is used to set the monday const
     const tuesday = 2;// This is used to set the tuesday const
