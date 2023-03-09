@@ -78,7 +78,7 @@ const Dashboard = () => {
                   </div>
                   <div className="card-widget-body">
                     {/* //This is used to display the number of users */}
-                    <h1 className="widget-count">{numOrders}</h1>
+                    <h1 className="widget-count">{numOrders}</h1> 
                     <p className="widget-name">Users</p>
                   </div>
                 </div>
