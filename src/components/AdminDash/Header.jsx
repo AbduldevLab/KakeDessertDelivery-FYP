@@ -8,7 +8,8 @@ const Header = ({ toggleSidebar }) => {
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated"); //This removes the token from the local storage
     alert("Successfully logged out!"); //This is an alert to notify the user that they have been logged out
-    navigate("/admin"); //This navigates the user to the login page
+    window.location.reload(); //This reloads the page
+    navigate("/admin", { replace: true });; //This navigates the user to the login page
   };
 
 
