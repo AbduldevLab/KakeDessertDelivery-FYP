@@ -23,22 +23,43 @@ const Dashboard = () => {
     if (!isAuthenticated) { // If the user is not authenticated
       navigate("/admin"); // Navigate to the admin page
     }
-// Subscribe to the Orders collection and update the number of orders when the data changes
-const unsubscribeOrders = onSnapshot(collection(db, "Orders"), (snapshot) => {
-    setNumOrders(snapshot.size);
-  });
+    
 
-  // Subscribe to the Users collection and update the number of users when the data changes
-  const unsubscribeUsers = onSnapshot(collection(db, "Users"), (snapshot) => {
-    setNumUsers(snapshot.size);
-  });
+    //This is used to get the number of users and orders
+    const usersRef = collection(db, "Users");
+    const ordersRef = collection(db, "Orders");
 
-  // Unsubscribe from the collections when the component unmounts
-  return () => {
-    unsubscribeOrders();
-    unsubscribeUsers();
-  };
-}, [navigate]);
+    //This is used to get the number of users
+    const unsubscribeUsers = onSnapshot(usersRef, (querySnapshot) => { //This is used to get the number of users
+      querySnapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          setNumUsers((prevCount) => prevCount + 1);//This is used to increment the number of users
+        }
+        if (change.type === "removed") {
+          setNumUsers((prevCount) => prevCount - 1);//This is used to decrement the number of users
+        }
+      });
+    });
+
+    //This is used to get the number of orders
+    const unsubscribeOrders = onSnapshot(ordersRef, (querySnapshot) => {//This is used to get the number of orders
+      querySnapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          setNumOrders((prevCount) => prevCount + 1);//This is used to increment the number of orders
+        }
+        if (change.type === "removed") {
+          setNumOrders((prevCount) => prevCount - 1);//This is used to decrement the number of orders
+        }
+      });
+    });
+
+    //This is used to unsubscribe the listeners
+    return () => {
+      unsubscribeUsers();
+      unsubscribeOrders();
+    };
+  }, [navigate]);
+
   //This is used to display the dashboard page
   return (
     <React.Fragment>
@@ -79,7 +100,7 @@ const unsubscribeOrders = onSnapshot(collection(db, "Orders"), (snapshot) => {
               <div className="card-widget mb-2">
                 <div className="widget-flex">
                   <div className="widget-icon">
-                  <i class='bx bx-user-circle'></i>
+                  <i className='bx bx-user-circle'></i>
                   </div>
                   <div className="card-widget-body">
                     {/* //This is used to display the number of users */}

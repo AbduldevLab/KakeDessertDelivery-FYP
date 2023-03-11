@@ -100,6 +100,11 @@ const Users = () => {
     return () => unsubscribe();
   }, [lastUserTimestamp]);
 
+  if (users === undefined) {
+    return <div>Loading...</div>;
+  }
+
+
   //This is used to return the users table
   return (
     <div className="admin-content">

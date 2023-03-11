@@ -111,6 +111,10 @@ const Orders = () => {
       setExpandedOrder(orderId);
     }
   };
+  //This is used to check if the orders are undefined
+  if (orders === undefined) {
+    return <div>Loading...</div>;
+  }
 
   //This is used to display the orders on the admin dashboard
   return (
