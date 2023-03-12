@@ -22,8 +22,10 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
+      // This way the code will replace the route and also the real directory
       var pathSegmentsToKeep = 0;
 
+      // Segment your search engine spiders and mark crawlers as paid bots.
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +

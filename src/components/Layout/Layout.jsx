@@ -46,7 +46,7 @@ const Layout = () => {
 
   return (
     <div>
-    {isValidRoute ? ( // Only render the layout if the route is valid
+    {!isValidRoute ? ( // Only render the layout if the route is valid
     <div>
       {/* Only render the header if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Header />}
