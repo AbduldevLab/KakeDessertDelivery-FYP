@@ -79,6 +79,10 @@ const Checkout = () => {
     setCouponError("Discount removed."); //  error message
     setCouponSucc(""); // remove the success message
   }
+   // Clear error messages after 3 seconds
+   setTimeout(() => {
+    setCouponError("");
+  }, 3000);
   
   const totalAmount = cartTotalAmount + Number(shippingCost) - discountAmount; // This is used to calculate the total amount
 
@@ -88,11 +92,11 @@ const Checkout = () => {
 
     const timestamp = Timestamp.now();// This is used to get the timestamp
     const currentTime = new Date().getHours();// This is used to get the current time
-    const workHoursStart = 0;// This is used to set the work hours start
-    const workHoursEnd = 24;// This is used to set the work hours end
+    const workHoursStart = 18;// This is used to set the work hours start
+    const workHoursEnd = 22;// This is used to set the work hours end
     const currentDay = new Date().getDay();// This is used to get the current day
-    const monday = 0;// This is used to set the monday const
-    const tuesday = 0;// This is used to set the tuesday const
+    const monday = 1;// This is used to set the monday const
+    const tuesday = 2;// This is used to set the tuesday const
 
     // Check if order is placed between 6pm and 10pm on weekdays
     if (
@@ -170,11 +174,6 @@ const Checkout = () => {
     } else {// This is used to alert the user if the order is placed outside of the working hours
       setCloseModalOpen(true);
     }
-
-     // Clear error messages after 3 seconds
-     setTimeout(() => {
-      setCouponError("");
-    }, 3000);
   };
 
 
@@ -323,7 +322,7 @@ const Checkout = () => {
                   {/* // This is used to display the delivery option */}
                   <div className="d-none d-sm-flex justify-content-start">
                     <button
-                      className="addTOCart__btn"
+                      className="addTOCart__btn1"
                       onClick={submitHandler}
                       // style={{ backgroundColor: "#CD853F", color: "white" }}
                     >
@@ -360,8 +359,8 @@ const Checkout = () => {
                   {/* // This is used to display the discount if the discount is applied */}
                   <div className="coupon">
                   <input type="text" placeholder="Enter coupon code" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
-                  <button className="addTOCart__btn" onClick={applyCoupon}>Apply</button>
-                  <button className="addTOCart__btn" onClick={removeDiscount}>Remove</button>
+                  <button className="addTOCart__btn1" onClick={applyCoupon}>Apply</button>
+                  <button className="addTOCart__btn1" onClick={removeDiscount}>Remove</button>
                   {couponError && <p style={{ color: "red" }}>{couponError}</p>}
                   {couponSucc && <p style={{ color: "green" }}>{couponSucc}</p>}
                 </div>
