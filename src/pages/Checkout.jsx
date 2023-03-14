@@ -27,6 +27,12 @@ const Checkout = () => {
   const [eirCode, setEirCode] = useState("");// This is used to set the eir code
   const [collectionTime, setCollectionTime] = useState("asap");// This is used to set the collection time
 
+  const [couponCode, setCouponCode] = useState("");
+  const [couponError, setCouponError] = useState("");
+  const [couponSucc, setCouponSucc] = useState("");
+  const [discountAmount, setDiscountAmount] = useState(0);
+
+
   const [emailError, setEmailError] = useState("");// This is used to set the email error
   const [numberError, setNumberError] = useState("");// This is used to set the number error
   const [emptyCartError, setEmptyCartError] = useState("");// This is used to set the empty cart error
@@ -54,7 +60,27 @@ const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);// This is used to get the cart total amount
   const shippingCost = 3;// This is used to set the shipping cost
 
-  const totalAmount = cartTotalAmount + Number(shippingCost);// This is used to calculate the total amount
+  const applyCoupon = () => {
+    // This is where you would check if the coupon code is valid
+    // For demonstration purposes, we will just assume that the code "SAVE10" gives a 10% discount
+    if (couponCode === "KAKE10") {
+      const discount = (totalAmount * 10) / 100;
+      setDiscountAmount(discount);
+      setCouponSucc("Discount applied!");
+      setCouponError("");
+    } else {
+      setCouponError("Invalid coupon code");
+      setCouponSucc("");
+    }
+  };
+
+  const removeDiscount = () => {
+    setDiscountAmount(0); // set the discount amount to 0
+    setCouponError("Discount removed."); //  error message
+    setCouponSucc(""); // remove the success message
+  }
+  
+  const totalAmount = cartTotalAmount + Number(shippingCost) - discountAmount; // This is used to calculate the total amount
 
   // This is used to handle the submit
   const submitHandler = async (e) => {
@@ -62,11 +88,11 @@ const Checkout = () => {
 
     const timestamp = Timestamp.now();// This is used to get the timestamp
     const currentTime = new Date().getHours();// This is used to get the current time
-    const workHoursStart = 18;// This is used to set the work hours start
-    const workHoursEnd = 22;// This is used to set the work hours end
+    const workHoursStart = 0;// This is used to set the work hours start
+    const workHoursEnd = 24;// This is used to set the work hours end
     const currentDay = new Date().getDay();// This is used to get the current day
-    const monday = 1;// This is used to set the monday const
-    const tuesday = 2;// This is used to set the tuesday const
+    const monday = 0;// This is used to set the monday const
+    const tuesday = 0;// This is used to set the tuesday const
 
     // Check if order is placed between 6pm and 10pm on weekdays
     if (
@@ -144,7 +170,14 @@ const Checkout = () => {
     } else {// This is used to alert the user if the order is placed outside of the working hours
       setCloseModalOpen(true);
     }
+
+     // Clear error messages after 3 seconds
+     setTimeout(() => {
+      setCouponError("");
+    }, 3000);
   };
+
+
 
   // This is used to handle the close modal
   return (
@@ -323,6 +356,16 @@ const Checkout = () => {
                       Delivery: <span>€{0}</span>
                     </p>
                   )}
+
+                  {/* // This is used to display the discount if the discount is applied */}
+                  <div className="coupon">
+                  <input type="text" placeholder="Enter coupon code" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
+                  <button className="addTOCart__btn" onClick={applyCoupon}>Apply</button>
+                  <button className="addTOCart__btn" onClick={removeDiscount}>Remove</button>
+                  {couponError && <p style={{ color: "red" }}>{couponError}</p>}
+                  {couponSucc && <p style={{ color: "green" }}>{couponSucc}</p>}
+                </div>
+
                   {/* // This is used to display the total amount */} 
                   {deliveryOption === "delivery" && (
                     <p className="checkout__total">

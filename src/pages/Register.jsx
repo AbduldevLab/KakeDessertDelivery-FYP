@@ -80,7 +80,7 @@ const Register = () => {
         }
       }
     } 
-    // Clear error messages after 2 seconds
+    // Clear error messages after 3 seconds
     setTimeout(() => {
       setEmailError("");
       setNameError("");
