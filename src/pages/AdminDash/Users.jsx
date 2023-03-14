@@ -8,6 +8,8 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Tooltip,
+  Typography,
 } from "@material-ui/core"; //This is the table component from material-ui
 import { db } from "../../config/firebase.js"; //This is used to import the firebase database
 import {
@@ -29,6 +31,14 @@ const useStyles = makeStyles({
   },
   tableContainer: {
     overflowX: "auto",
+  },
+  couponBanner: {
+    backgroundColor: "#CD853F",
+    color: "#000",
+    textAlign: "center",
+    padding: "8px",
+    fontWeight: "bold",
+    marginBottom: "16px",
   },
 });
 
@@ -109,13 +119,24 @@ const Users = () => {
   return (
     <div className="admin-content">
       <div className="admin-wrapper">
+      <Tooltip
+          title="Use coupon code KAKE10 for 10% discount on all products!"
+          arrow
+        >
+          <Typography variant="h6" className={classes.couponBanner}>
+            Current Coupon Code: KAKE10
+          </Typography>
+        </Tooltip>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="users table">
             <TableHead>
               <TableRow>
-                <TableCell>Email</TableCell>
-                <TableCell align="right">Name</TableCell>
-                <TableCell align="right">Signed-up At</TableCell>
+              <TableCell style={{ width: "10%" }} >
+                  Name</TableCell>
+                  <TableCell style={{ width: "10%" }} align="left">
+                  Email</TableCell>
+                <TableCell style={{ width: "15%" }} align="left">
+                  Signed-up At</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -123,12 +144,12 @@ const Users = () => {
                 (
                   user //This is used to match the users with the table
                 ) => (
-                  <TableRow key={user.email}>
+                  <TableRow key={user.name}>
                     <TableCell component="th" scope="row">
-                      {user.email}
+                      {user.name}
                     </TableCell>
-                    <TableCell align="right">{user.name}</TableCell>
-                    <TableCell align="right">
+                    <TableCell align="left">{user.email}</TableCell>
+                    <TableCell align="left">
                       {user.signupTime?.toDate().toLocaleString()}
                     </TableCell>
                   </TableRow>

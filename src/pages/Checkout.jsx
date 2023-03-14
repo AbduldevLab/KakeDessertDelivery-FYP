@@ -356,11 +356,11 @@ const Checkout = () => {
                     </p>
                   )}
 
-                  {/* // This is used to display the discount if the discount is applied */}
+                  {/* This is used to display the discount */}
                   <div className="coupon">
                   <input type="text" placeholder="Enter coupon code" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
-                  <button className="addTOCart__btn1" onClick={applyCoupon}>Apply</button>
-                  <button className="addTOCart__btn1" onClick={removeDiscount}>Remove</button>
+                  <button className="addTOCart__btn_AR" onClick={applyCoupon}>Apply</button>
+                  <button className="addTOCart__btn_AR" onClick={removeDiscount}>Remove</button>
                   {couponError && <p style={{ color: "red" }}>{couponError}</p>}
                   {couponSucc && <p style={{ color: "green" }}>{couponSucc}</p>}
                 </div>

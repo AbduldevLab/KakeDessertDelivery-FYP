@@ -126,19 +126,19 @@ const Orders = () => {
               <TableHead>
                 <TableRow>
                   <TableCell style={{ width: "10%" }}>Order Number</TableCell>
-                  <TableCell style={{ width: "10%" }} align="right">
+                  <TableCell style={{ width: "10%" }} align="left">
                     Name
                   </TableCell>
-                  <TableCell style={{ width: "10%" }} align="right">
+                  <TableCell style={{ width: "10%" }} align="left">
                     Phone Number
                   </TableCell>
-                  <TableCell style={{ width: "10%" }} align="right">
+                  <TableCell style={{ width: "10%" }} align="left">
                     Order Type
                   </TableCell>
-                  <TableCell style={{ width: "20%" }} align="right">
+                  <TableCell style={{ width: "15%" }} align="left">
                     Date and Time
                   </TableCell>
-                  <TableCell style={{ width: "10%" }} align="right"></TableCell>
+                  <TableCell style={{ width: "10%" }} align="left"></TableCell>
                   <TableCell style={{ width: "10%" }} align="right"></TableCell>
                 </TableRow>
               </TableHead>
@@ -152,17 +152,17 @@ const Orders = () => {
                         <TableCell component="th" scope="row">
                           {order.orderNumber}
                         </TableCell>
-                        <TableCell align="right">{order.name}</TableCell>
-                        <TableCell align="right">{order.phone}</TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">{order.name}</TableCell>
+                        <TableCell align="left">{order.phone}</TableCell>
+                        <TableCell align="left">
                           {order.collectionTime ? "Collection" : "Delivery"}
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">
                           {order.orderTime
                             ? order.orderTime.toDate().toLocaleString()
                             : ""}
                         </TableCell>
-                        <TableCell align="right">
+                        <TableCell align="left">
                           <Button onClick={() => handleExpandOrder(order.id)}>
                             View Details
                           </Button>

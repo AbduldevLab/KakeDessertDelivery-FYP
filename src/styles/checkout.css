@@ -28,8 +28,21 @@
   font-size: 0.9rem;
   margin-left:5px;
 }
+.addTOCart__btn_AR{
+  border: none;
+  padding: 5px 15px;
+  background: #CD853F;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left:5px;
+  margin-bottom: 2px;
+}
 
 .addTOCart__btn1:hover {
+  color: #F4A460;
+}
+.addTOCart__btn_AR:hover {
   color: #F4A460;
 }
 
