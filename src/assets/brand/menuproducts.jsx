@@ -34,6 +34,7 @@ export const menuproducts = [
     price: 6,
     image01: product_03_image_08,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -44,6 +45,7 @@ export const menuproducts = [
     price: 7,
     image01: product_04_image_12,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -54,6 +56,7 @@ export const menuproducts = [
     price: 1.5,
     image01: product_01_image_03,
     category: "Drinks",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -64,6 +67,7 @@ export const menuproducts = [
     price: 1.5,
     image01: product_00_image_00,
     category: "Snacks",
+    stock: "Not In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -74,6 +78,7 @@ export const menuproducts = [
     price: 3,
     image01: product_05_image_15,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -84,6 +89,7 @@ export const menuproducts = [
     price: 5,
     image01: product_06_image_18,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -94,6 +100,7 @@ export const menuproducts = [
     price: 7,
     image01: product_04_image_14,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -104,6 +111,7 @@ export const menuproducts = [
     price: 6,
     image01: product_03_image_10,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -114,6 +122,7 @@ export const menuproducts = [
     price: 7,
     image01: product_02_image_07,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -124,6 +133,7 @@ export const menuproducts = [
     price: 3,
     image01: product_05_image_17,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -133,6 +143,7 @@ export const menuproducts = [
     price: 1.5,
     image01: product_00_image_00,
     category: "Snacks",
+    stock: "Not In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -142,6 +153,7 @@ export const menuproducts = [
     price: 3,
     image01: product_01_image_01,
     category: "Drinks",
+    stock: "Not In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -151,6 +163,7 @@ export const menuproducts = [
     price: 7,
     image01: product_02_image_06,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -161,6 +174,7 @@ export const menuproducts = [
     price: 3,
     image01: product_01_image_02,
     category: "Drinks",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -171,6 +185,7 @@ export const menuproducts = [
     price: 6,
     image01: product_03_image_09,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -181,6 +196,7 @@ export const menuproducts = [
     price: 7,
     image01: product_04_image_13,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -191,6 +207,7 @@ export const menuproducts = [
     price: 3,
     image01: product_01_image_04,
     category: "Drinks",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -201,6 +218,7 @@ export const menuproducts = [
     price: 2.5,
     image01: product_00_image_00,
     category: "Snacks",
+    stock: "Not In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -211,6 +229,7 @@ export const menuproducts = [
     price: 7,
     image01: product_02_image_05,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -221,6 +240,7 @@ export const menuproducts = [
     price: 3,
     image01: product_05_image_16,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
@@ -231,6 +251,7 @@ export const menuproducts = [
     price: 5,
     image01: product_06_image_19,
     category: "Desserts",
+    stock: "In Stock",
 
     desc: "See faqs page for any allergy advice and ingrediants.",
   },
