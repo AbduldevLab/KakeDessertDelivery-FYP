@@ -59,6 +59,7 @@ const Users = () => {
   const classes = useStyles();
   const [users, setUsers] = useState([]); //This is used to store the users
   const [lastUserTimestamp, setLastUserTimestamp] = useState(null); //This is used to store the last user timestamp
+  
   //This is used to get the users from the database
   useEffect(() => {
     let q = query(
