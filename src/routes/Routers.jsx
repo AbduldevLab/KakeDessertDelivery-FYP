@@ -20,6 +20,8 @@ import AdminDashForgot from "../pages/AdminDash/ForgotPassword.jsx";
 import AdminDash from "../pages/AdminDash/Dashboard.jsx";
 import AdminOrders from "../pages/AdminDash/Orders.jsx";
 import AdminUsers from "../pages/AdminDash/Users.jsx";
+import Inventory from "../pages/AdminDash/Inventory.jsx";
+
 
 // Importing 404 page
 import NotFound from "../pages/NotFound";
@@ -56,6 +58,7 @@ const Routers = () => {
       <Route path="/admin/dashboard" element={<AdminDash />} />
       <Route path="/admin/orders" element={<AdminOrders />} />
       <Route path="/admin/users" element={<AdminUsers />} />
+      <Route path="/admin/inventory" element={<Inventory />} />
 
       <Route component={NotFound} />
     </Routes>

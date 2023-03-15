@@ -26,6 +26,7 @@ const Layout = () => {
   const isAdminDash = location.pathname.startsWith("/admin/dashboard");
   const isAdminOrders = location.pathname.startsWith("/admin/orders");
   const isAdminUsers = location.pathname.startsWith("/admin/users");
+  const isAdminInventory = location.pathname.startsWith("/admin/inventory");
 
   const isValidRoute =         // This is used to check if the current route is valid
   location.pathname === "/" ||
@@ -42,7 +43,8 @@ const Layout = () => {
   location.pathname === "/admin/forgotPassword" ||
   location.pathname === "/admin/dashboard" ||
   location.pathname === "/admin/orders" ||
-  location.pathname === "/admin/users";
+  location.pathname === "/admin/users" ||
+  location.pathname === "/admin/inventory";
 
   return (
     <div>
@@ -50,7 +52,7 @@ const Layout = () => {
     <div>
       {/* Only render the header if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Header />}
-      {(isAdminDash || isAdminOrders || isAdminUsers) && <AdminHeader/>} {/*This is used to render the admin header*/}
+      {(isAdminDash || isAdminOrders || isAdminUsers || isAdminInventory) && <AdminHeader/>} {/*This is used to render the admin header*/}
 
       {showCart && <Carts />} {/*This is used to render the cart*/}
       
@@ -60,7 +62,7 @@ const Layout = () => {
       
       {/* Only render the footer if it's not an admin route */}
       {!isAdminRoute && !isAdminRoute1 && <Footer />}
-      {(isAdminDash || isAdminOrders || isAdminUsers)&& <AdminSidebar />} {/*This is used to render the admin sidebar*/}
+      {(isAdminDash || isAdminOrders || isAdminUsers || isAdminInventory)&& <AdminSidebar />} {/*This is used to render the admin sidebar*/}
     </div>
     ) : (
       <NotFound />  // This is used to render the NotFound component

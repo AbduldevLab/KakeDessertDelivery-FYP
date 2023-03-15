@@ -27,7 +27,7 @@ import product_00_image_00 from "../images/Coming Soon.jpg";
 
 
 // all products imported from products directory
-const products = [
+export const menuproducts = [
   {
     id: "01",
     title: "Cheese Cake Tub",
@@ -236,4 +236,4 @@ const products = [
   },
 ];
 
-export default products;
+export default menuproducts;

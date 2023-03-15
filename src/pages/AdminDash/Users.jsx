@@ -73,11 +73,12 @@ const Users = () => {
     setTooltipOpen(true);
     setTimeout(() => {
       setTooltipOpen(false);
-    }, 3000); // set the time in milliseconds after which the tooltip should disappear
+    }, 5000); // set the time in milliseconds after which the tooltip should disappear
   };
-  
+
   //This is used to get the users from the database
-  useEffect(() => {//This is used to get the users from the database
+  useEffect(() => {
+    //This is used to get the users from the database
     let q = query(
       collection(db, "Users"),
       where(
@@ -88,7 +89,7 @@ const Users = () => {
       orderBy("signupTime", "desc")
     );
     if (lastUserTimestamp) {
-      q = query(q, startAfter(lastUserTimestamp));//This is used to get the users from the database signed up after the last user timestamp
+      q = query(q, startAfter(lastUserTimestamp)); //This is used to get the users from the database signed up after the last user timestamp
     }
 
     //This is used to get the users from the database using snapshot
@@ -103,19 +104,21 @@ const Users = () => {
           !lastUserTimestamp ||
           signupTime.toMillis() > lastUserTimestamp.toMillis() //This is used to check if the user timestamp is greater than the last user timestamp
         ) {
-          setLastUserTimestamp(signupTime);//This is used to set the last user timestamp
+          setLastUserTimestamp(signupTime); //This is used to set the last user timestamp
         }
       });
 
       //This is used to update the users
       setUsers((existingUsers) => {
-        const updatedUsers = [...existingUsers]; 
-        users.forEach((user) => { //This is used to update the users if they already exist
+        const updatedUsers = [...existingUsers];
+        users.forEach((user) => {
+          //This is used to update the users if they already exist
           const existingUserIndex = existingUsers.findIndex(
             (u) => u.email === user.email //This is used to check if the user already exists
           );
-          if (existingUserIndex !== -1) { //This is used to update the user if they already exist
-            updatedUsers[existingUserIndex] = user; 
+          if (existingUserIndex !== -1) {
+            //This is used to update the user if they already exist
+            updatedUsers[existingUserIndex] = user;
           } else {
             updatedUsers.push(user); //This is used to add the user if they do not exist
           }
@@ -131,12 +134,11 @@ const Users = () => {
     return <div>Loading...</div>;
   }
 
-
   //This is used to return the users table
   return (
     <div className="admin-content">
       <div className="admin-wrapper">
-      <Tooltip
+        <Tooltip
           title="Send email coupon code KAKE10 for 10% discount on all products! to the users below"
           arrow
           open={tooltipOpen} // pass the state to the open prop
@@ -144,20 +146,23 @@ const Users = () => {
           onClick={handleTooltipOpen} // pass the function to the onClick prop
         >
           {/* //This is used to display the coupon code */}
-          <Typography variant="h6" className={classes.couponBanner} >
+          <Typography variant="h6" className={classes.couponBanner}>
             Current Coupon Code: KAKE10
           </Typography>
         </Tooltip>
-        <TableContainer component={Paper}> {/**This is used to display the table */}
+        <TableContainer component={Paper}>
+          {" "}
+          {/**This is used to display the table */}
           <Table className={classes.table} aria-label="users table">
             <TableHead>
               <TableRow>
-              <TableCell style={{ width: "10%" }} >
-                  Name</TableCell>
-                  <TableCell style={{ width: "10%" }} align="left">
-                  Email</TableCell>
+                <TableCell style={{ width: "10%" }}>Name</TableCell>
+                <TableCell style={{ width: "10%" }} align="left">
+                  Email
+                </TableCell>
                 <TableCell style={{ width: "15%" }} align="left">
-                  Signed-up At</TableCell>
+                  Signed-up At
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -165,13 +170,17 @@ const Users = () => {
                 (
                   user //This is used to match the users with the table
                 ) => (
-                  <TableRow key={user.name}> {/**This is used to display the users in the table */}
+                  <TableRow key={user.name}>
+                    {" "}
+                    {/**This is used to display the users in the table */}
                     <TableCell component="th" scope="row">
                       {user.name} {/**This is used to display the user name */}
                     </TableCell>
-                    <TableCell align="left">{user.email}</TableCell> {/**This is used to display the user email */}
+                    <TableCell align="left">{user.email}</TableCell>{" "}
+                    {/**This is used to display the user email */}
                     <TableCell align="left">
-                      {user.signupTime?.toDate().toLocaleString()} {/**This is used to display the user signup time */}
+                      {user.signupTime?.toDate().toLocaleString()}{" "}
+                      {/**This is used to display the user signup time */}
                     </TableCell>
                   </TableRow>
                 )
