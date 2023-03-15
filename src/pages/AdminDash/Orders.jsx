@@ -17,6 +17,8 @@ import {
   TableRow,
   Paper,
   Button,
+  Typography,
+  Tooltip,
 } from "@material-ui/core";
 import { db } from "../../config/firebase.js"; //This is used to import the firebase database
 //This is used to import the firebase components for fetching data from the database
@@ -38,6 +40,14 @@ const useStyles = makeStyles({
   tableContainer: {
     overflowX: "auto",
   },
+   banner: {
+    backgroundColor: "#CD853F",
+    color: "#000",
+    textAlign: "center",
+    padding: "8px",
+    fontWeight: "bold",
+    marginBottom: "16px",
+  },
 });
 
 //This is used to display the orders on the admin dashboard
@@ -46,6 +56,19 @@ const Orders = () => {
   const classes = useStyles();
   const [orders, setOrders] = useState([]); //This is used to store the orders
   const [lastOrderTimestamp, setLastOrderTimestamp] = useState(null); //This is used to store the last order timestamp
+  const [tooltipOpen, setTooltipOpen] = useState(false); // add a state to keep track of tooltip open status
+
+  //This is used to handle the tooltip close
+  const handleTooltipClose = () => {
+    setTooltipOpen(false);
+  };
+  //This is used to handle the tooltip open
+  const handleTooltipOpen = () => {
+    setTooltipOpen(true);
+    setTimeout(() => {
+      setTooltipOpen(false);
+    }, 5000); // set the time in milliseconds after which the tooltip should disappear
+  };
 
   useEffect(() => {
     // Check if the user is authenticated
@@ -120,6 +143,19 @@ const Orders = () => {
   return (
     <div className="admin-content">
       <div className="admin-wrapper">
+         <Tooltip
+            title="Here you will see all the orders to date 
+                      ***Only the 20 most recent***" // pass the tooltip text as a prop
+            arrow
+            open={tooltipOpen} // pass the state to the open prop
+            onClose={handleTooltipClose} // pass the function to the onClose prop
+            onClick={handleTooltipOpen} // pass the function to the onClick prop
+          >
+            {/* //This is used to display the coupon code */}
+            <Typography variant="h6" className={classes.banner}>
+              Orders
+            </Typography>
+            </Tooltip>
         <div className="orders">
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="Orders table">
