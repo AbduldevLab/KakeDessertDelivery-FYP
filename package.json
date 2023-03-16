@@ -1,5 +1,6 @@
 {
   "homepage": "https://kakedessertdelivery.com",
+  "adminpage": "https://kakedessertdelivery.com/admin",
   "name": "kake-dessert-delivery",
   "version": "0.1.0",
   "private": true,
@@ -41,7 +42,8 @@
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sitemap": "babel-node ./src/routes/sitemap-generator.js"
+    "sitemap": "babel-node ./src/routes/sitemap-generator.js",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": [
@@ -70,5 +72,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "gh-pages": "^4.0.0"
+  },
+  "react-snap": {
+    "skipThirdPartyRequests": true,
+    "pages": [
+      "/",
+      "/admin"
+    ]
   }
 }

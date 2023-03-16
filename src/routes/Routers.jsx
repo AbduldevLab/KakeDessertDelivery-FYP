@@ -26,6 +26,9 @@ import Inventory from "../pages/AdminDash/Inventory.jsx";
 // Importing 404 page
 import NotFound from "../pages/NotFound";
 
+//sitemap
+import Sitemap from "./siteMap/sitemap.xml";
+
 // This is the routes
 const Routers = () => {
   const navigate = useNavigate();// this is the navigate function
@@ -61,6 +64,7 @@ const Routers = () => {
       <Route path="/admin/inventory" element={<Inventory />} />
 
       <Route component={NotFound} />
+      <Route path="/sitemap.xml" element={<Sitemap />} />
     </Routes>
   );
 };

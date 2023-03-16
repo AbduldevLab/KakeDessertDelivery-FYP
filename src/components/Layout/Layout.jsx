@@ -15,6 +15,7 @@ import { useSelector } from "react-redux"; // This imports the react-redux hooks
 
 import NotFound from "../../pages/NotFound.jsx"; // This imports the NotFound component
 
+
 // This component is used to display the header on the home page
 const Layout = () => {
   const showCart = useSelector((state) => state.cartUi.cartIsVisible); // This is used to get the total quantity of items in the cart
@@ -44,7 +45,8 @@ const Layout = () => {
   location.pathname === "/admin/dashboard" ||
   location.pathname === "/admin/orders" ||
   location.pathname === "/admin/users" ||
-  location.pathname === "/admin/inventory";
+  location.pathname === "/admin/inventory" ||
+  location.pathname === "/sitemap.xml";
 
   return (
     <div>

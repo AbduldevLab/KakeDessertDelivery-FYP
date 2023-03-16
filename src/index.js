@@ -1,6 +1,6 @@
 //This file is the entry point of the whole application that is the main component of the whole application
 import React from "react";
-import { createRoot } from "react-dom/client"; // import createRoot from react-dom/client to use createRoot instead of ReactDOM.render
+//import { createRoot } from "react-dom/client"; // import createRoot from react-dom/client to use createRoot instead of ReactDOM.render
 import App from "./App"; // import App from App.js
 import "bootstrap/dist/css/bootstrap.css"; // import bootstrap css libary
 import "remixicon/fonts/remixicon.css"; // import remixicon css libary for icons
@@ -14,19 +14,32 @@ import store from "./store/store.jsx"; // import store from store.js file
 import { Provider } from "react-redux"; // import Provider from react-redux
 
 import { BrowserRouter as Router } from "react-router-dom"; // import BrowserRouter as Router from react-router-dom
+import { hydrate, render } from "react-dom";
 
 // use createRoot instead of ReactDOM.render
-createRoot(document.getElementById("root")).render(
+const rootElement = document.getElementById("root");
   // use StrictMode to check for any potential problems in an application
-  <React.StrictMode>
-    {/* // use Router to wrap the whole application */}
-    <Router> 
-    {/* // use Provider to wrap the whole application */}
-      <Provider store={store}> 
-      {/* // render App component */}
-        <App /> 
-        {/* // close Provider */}
-      </Provider> 
-    </Router>
-  </React.StrictMode>
-);
+  if (rootElement.hasChildNodes()) {//this is to check if the root element has any child nodes
+    hydrate(//use hydrate instead of render
+      <React.StrictMode>
+        <Router> 
+          <Provider store={store}> 
+            <App /> 
+          </Provider> 
+        </Router>
+      </React.StrictMode>,
+      rootElement
+    );
+  } else {
+    render(//use render instead of createRoot
+      <React.StrictMode>
+        <Router> 
+          <Provider store={store}> 
+            <App /> 
+          </Provider> 
+        </Router>
+      </React.StrictMode>,
+      rootElement
+    );
+  }
+
