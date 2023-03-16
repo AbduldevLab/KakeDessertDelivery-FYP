@@ -14,7 +14,7 @@ import store from "./store/store.jsx"; // import store from store.js file
 import { Provider } from "react-redux"; // import Provider from react-redux
 
 import { BrowserRouter as Router } from "react-router-dom"; // import BrowserRouter as Router from react-router-dom
-import { hydrate, render } from "react-dom";
+import { hydrate, render } from "react-dom"; // import hydrate and render from react-dom to index the application
 
 // use createRoot instead of ReactDOM.render
 const rootElement = document.getElementById("root");
