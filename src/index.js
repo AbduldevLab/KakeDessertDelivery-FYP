@@ -19,7 +19,6 @@ if (rootElement.hasChildNodes()) {
   createRoot(rootElement).hydrate(// use hydrate instead of render
     <React.StrictMode>
       <Router>
-      {/* // use Provider to wrap the App component to use redux in react */}
         <Provider store={store}>
           <App />
         </Provider>
@@ -30,7 +29,6 @@ if (rootElement.hasChildNodes()) {
   createRoot(rootElement).render(// use render instead of hydrate
     <React.StrictMode>
       <Router>
-        {/* // use Provider to wrap the App component to use redux in react */}
         <Provider store={store}>
           <App />
         </Provider>

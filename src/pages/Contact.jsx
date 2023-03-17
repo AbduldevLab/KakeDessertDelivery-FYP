@@ -20,8 +20,8 @@ const Contact = () => {// This is the contact page
 
   // This is the return statement that returns the contact page
   return (
+    <div id="top0">
     <Helmet title="Contact">
-      <body id="top0">
         <div className="mapContainer">
           {/* // This is the iframe that contains the google map */}
           <iframe
@@ -52,8 +52,9 @@ const Contact = () => {// This is the contact page
             </div>
           </a>
         </div>
-      </body>
+      
     </Helmet>
+    </div>
   );
 };
 

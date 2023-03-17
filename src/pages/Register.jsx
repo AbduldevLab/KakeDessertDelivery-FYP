@@ -108,8 +108,8 @@ const Register = () => {
 
   // This is the signup page
   return (
+    <div  id="top1">
     <Helmet title="Signup">
-      <body id="top1">
       <CommonSection title="Signup" />
       <section>
         <Container>
@@ -179,8 +179,9 @@ const Register = () => {
           </Row>
         </Container>
       </section>
-      </body>
+      
     </Helmet>
+    </div>
   );
 };
 

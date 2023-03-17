@@ -9,8 +9,9 @@ import "../styles/tc.css";
 const Tc = () => {
   // Return the Terms & Conditions page
   return (
-    <Helmet title="tc">
-      <body id="top3">
+    <div id="top3">
+    <Helmet title="t&c">
+      
         {/* // This is the Terms & Conditions page */}
         <CommonSection title="Terms & Conditions" />
         <section className="content">
@@ -92,8 +93,9 @@ const Tc = () => {
             changes, you agree to be bound by the modified Terms.
           </p>
         </section>
-        </body>
+        
     </Helmet>
+    </div>
   );
 };
 

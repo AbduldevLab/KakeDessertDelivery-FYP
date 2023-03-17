@@ -30,8 +30,9 @@ function Faqs() {
 
   // This is the return statement that returns the FAQs page
   return (
+    <div id="top2">
     <Helmet title="FAQs">
-      <body id="top2">
+      
         <CommonSection title="FAQs" />
         <section>
           <div className="faq-one">
@@ -181,8 +182,9 @@ function Faqs() {
             </div>
           </div>
         </section>
-        </body>
+        
     </Helmet>
+    </div>
   );
 }
 export default Faqs;

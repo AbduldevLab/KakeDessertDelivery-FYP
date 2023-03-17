@@ -120,6 +120,7 @@ const ProductCard = (props) => {
           <span className="product__price me-2">€{price}</span>
           <button className="addTOCart__btn" onClick={handleClick}>
             Add to Cart
+            
           </button>
         </div>
       </div>
