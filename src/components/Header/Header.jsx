@@ -73,7 +73,6 @@ const Header = () => {
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
           <Link to="/home" onClick={() => window.scrollTo(0, 0)}><img src={logo} alt="logo" /></Link> {/*This is used to link the logo to the home page*/}
-            {/* <h5>Happy kake</h5> */}
           </div>
 
           {/* ======= menu ======= */}
