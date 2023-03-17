@@ -67,20 +67,11 @@ const Allitems = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}// This is used to set the search term
                 />
                 <span>
-                  <i class="ri-search-line"></i>
+                  <i className="ri-search-line"></i>
                 </span>
               </div>
             </Col>
             <Col lg="6" md="6" sm="6" xs="12" className="mb-5">
-              {/* <div className="sorting__widget text-end">
-                <select className="w-50">
-                  <option>Default</option>
-                  <option value="ascending">Alphabetically, A-Z</option>
-                  <option value="descending">Alphabetically, Z-A</option>
-                  <option value="high-price">High Price</option>
-                  <option value="low-price">Low Price</option>
-                </select>
-              </div> */}
             </Col>
               {/* // This is used to display the products */}
             {displayPage.map((item) => (

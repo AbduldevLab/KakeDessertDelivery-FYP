@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom"; // import createRoot from react-dom to use createRoot instead of ReactDOM.render
+import { createRoot } from "react-dom/client"; // import createRoot from react-dom to use createRoot instead of ReactDOM.render
 import App from "./App"; // import App component that will be rendered
 import "bootstrap/dist/css/bootstrap.css"; // this is the bootstrap css library
 import "remixicon/fonts/remixicon.css"; //this is for the icons library

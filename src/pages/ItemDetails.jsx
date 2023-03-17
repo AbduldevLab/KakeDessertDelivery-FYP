@@ -124,7 +124,7 @@ const Home = () => {
                   <button className="order__btn d-flex align-items-center justify-content-between">
                     {/* // This is the link to the menu page */}
                     <Link to="/menu">
-                      Order Now <i class="ri-arrow-right-s-line"></i>{" "}
+                      Order Now <i className="ri-arrow-right-s-line"></i>{" "}
                     </Link>
                   </button>
                 </div>
@@ -133,7 +133,7 @@ const Home = () => {
                 <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
-                      <i class="ri-car-line"></i>
+                      <i className="ri-car-line"></i>
                       {/* // This is the icon for the delivery */}
                     </span>{" "}
                     Delivery available
@@ -141,7 +141,7 @@ const Home = () => {
 
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
-                      <i class="ri-shield-check-line"></i>
+                      <i className="ri-shield-check-line"></i>
                       {/* // This is the icon for the in person payments */}
                     </span>{" "}
                     In-Person Payments Only
@@ -288,7 +288,7 @@ const Home = () => {
                 <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i> Fresh and tasty
+                      <i className="ri-checkbox-circle-line"></i> Fresh and tasty
                       desserts
                     </p>
                     <p className="choose__us-desc">
@@ -300,7 +300,7 @@ const Home = () => {
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i> Quality support
+                      <i className="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
                       We are engaged across all of our social media channels.
@@ -312,7 +312,7 @@ const Home = () => {
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i>Delivery and
+                      <i className="ri-checkbox-circle-line"></i>Delivery and
                       collection{" "}
                     </p>
                     <p className="choose__us-desc">

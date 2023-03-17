@@ -102,18 +102,18 @@ const Header = () => {
             toggleCart();
             window.scrollTo(0, 0);
           }}>
-              <i class="ri-shopping-basket-line"></i>
+              <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span> 
             </span>
 
             <span className="user">
               <Link to="/register">
-                <i class="ri-user-line"></i>
+                <i className="ri-user-line"></i>
               </Link>
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
-              <i class="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>

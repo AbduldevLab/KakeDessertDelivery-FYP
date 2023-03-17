@@ -149,7 +149,7 @@ const Register = () => {
                   {emailError && <p className="error-message">{emailError}</p>}
                 </div>
                 <p>
-                  For special discounts/coupon codes <i class='bx bxs-offer bx-tada' ></i>, make sure to hit that sign
+                  For special discounts/coupon codes <i className='bx bxs-offer bx-tada' ></i>, make sure to hit that sign
                   up button to be subscribed to our newsletter.
                 </p>
                 {/* // This is the signup button */}
