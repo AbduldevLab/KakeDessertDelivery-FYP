@@ -121,7 +121,7 @@ const Tr = (props) => {
       <td className="text-center">{quantity}</td>
       <td className="text-center cart__item-del">
         {/* // This is used to display the delete button */}
-        <i class="ri-delete-bin-line" onClick={deleteItem}></i>
+        <i className="ri-delete-bin-line" onClick={deleteItem}></i>
       </td>
     </tr>
   );
