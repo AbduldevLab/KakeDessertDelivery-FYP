@@ -4,6 +4,12 @@ import React from "react";
 // This imports the reactstrap components
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/kake-logo.png";
+import { faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 import "../../styles/footer.css";
 
@@ -130,14 +136,17 @@ const Footer = () => {
                   rel="external"
                   href="https://www.facebook.com/kakedessertdelivery"
                 >
-                  <i className="ri-facebook-line"></i>
+                   <i><FontAwesomeIcon icon={faFacebook} className="social__icon" /></i>
                 </a>{" "}
               </span>
 
               <span>
-                <a rel="external" href="https://github.com/AbdulHaouit">
-                  <i class="ri-github-line"></i>
-                </a>
+              {" "}
+                <a 
+                rel="external" 
+                href="https://www.tiktok.com/@kakedessertdelivery?_t=8aihi4zwmww&_r=1">
+                 <i><FontAwesomeIcon icon={faTiktok} className="social__icon" /></i>
+                </a>{" "}
               </span>
 
               <span>
@@ -146,7 +155,7 @@ const Footer = () => {
                   rel="external"
                   href="https://instagram.com/kake_dessertdelivery?igshid=YmMyMTA2M2Y="
                 >
-                  <i className="ri-instagram-line"></i>
+                  <i><FontAwesomeIcon icon={faInstagram} className="social__icon" /></i>
                 </a>{" "}
               </span>
 
@@ -154,9 +163,9 @@ const Footer = () => {
                 {" "}
                 <a
                   rel="external"
-                  href="https://www.linkedin.com/in/yusuf-shushan/"
+                  href="https://wa.link/2pu340"
                 >
-                  <i class="ri-linkedin-line"></i>
+                  <i><FontAwesomeIcon icon={faWhatsapp} className="social__icon" /></i>
                 </a>{" "}
               </span>
             </div>
