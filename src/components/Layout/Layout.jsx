@@ -46,6 +46,7 @@ const Layout = () => {
   location.pathname === "/admin/orders" ||
   location.pathname === "/admin/users" ||
   location.pathname === "/admin/inventory" ||
+  
   location.pathname === "/sitemap.xml";
 
   return (
