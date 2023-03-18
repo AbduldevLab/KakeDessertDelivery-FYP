@@ -34,10 +34,13 @@ th {
   td {
     font-size: 0.6rem;
   }
+  .cart-item1-title{
+    font-size: 0.75rem;
+  }
   .cart-item1 li {
     font-size: 0.6rem;
   }
-  
+
 }
 
 
@@ -46,10 +49,12 @@ th {
   td {
     font-size: 0.5rem;
   }
+  .cart-item1-title{
+    font-size: 0.65rem;
+  }
   .cart-item1 li {
     font-size: 0.5rem;
   }
-  
 }
 
 

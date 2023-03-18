@@ -101,7 +101,7 @@ const Home = () => {
 
   // This is the return statement
   return (
-    <Helmet title="Home">
+    <Helmet title="Grab your kake today!">
       <section>
         <Container>
           <Row>

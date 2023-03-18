@@ -90,23 +90,23 @@ const Tr = (props) => {
       </td>
       <td className="text-center">
     {/* This is used to display the title */}
-         {title}
+         <div className="cart-item1-title">{title}</div>
         <div className="cart-item1">
           {/* // This is used to display the cart items */}
           {selection && Object.entries(selection).length !== 0
             ? Object.entries(selection).map(([key, value], index) => (// This is used to display the cart items
                 // This is used to display the cart items
                 <React.Fragment key={key}>
-                  {/* // This is used to display the cart item title */}
+                  {/* // This is used to display the cart item selection */}
                   {title !== "Cold Drinks" && title !== "Hot Drinks" && (
                     <li>
-                      {/* // This is used to display the cart item title */}
+                      {/* // This is used to display the cart item selection */}
                       {index === 0 ? "toppings: " : "sauces: "}
                       {/* // This is used to display the cart item selection */}
                       {value}
                     </li>
                   )}
-                  {/* // This is used to display the cart item title */}
+                  {/* // This is used to display the cart item selection */}
                   {(title === "Cold Drinks" || title === "Hot Drinks") && (
                     <li>{value}</li>
                   )}

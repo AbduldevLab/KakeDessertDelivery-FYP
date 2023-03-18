@@ -144,7 +144,8 @@ const Footer = () => {
               {" "}
                 <a 
                 rel="external" 
-                href="https://www.tiktok.com/@kakedessertdelivery">
+                href="https://www.tiktok.com/@kakedessertdelivery"
+                >
                  <i><FontAwesomeIcon icon={faTiktok} className="social__icon" /></i>
                 </a>{" "}
               </span>

@@ -45,7 +45,8 @@
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sitemap": "babel-node ./src/routes/sitemap-generator.js"
+    "sitemap": "babel-node ./src/routes/sitemap-generator.js",
+    "build:sitemap": "react-sitemap-generator --config-path=sitemap.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -73,6 +74,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "react-sitemap-generator": "^1.1.4"
   }
 }

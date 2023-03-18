@@ -36,9 +36,6 @@ import React from "react";
 // This component is used to set the title of the page
 const Helmet = (props) => {
   let title;
-  <Helmet>
-        <title>Kake Dessert Delivery - Grab your kake today!</title>
-  </Helmet>
   if (document.referrer && document.referrer.includes("google.com")) { // Check if user came from a search engine
     // Add " - Grab your kake today!" to the title when user comes from a search engine
     title = `Kake Dessert Delivery - ${props.title} - Grab your kake today!`; // This is used to set the title of the page

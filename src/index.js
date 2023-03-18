@@ -12,7 +12,7 @@ import store from "./store/store.jsx";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const container = document.getElementById("root"); // pass the ID of the root DOM element
+const container = document.getElementById("app"); // pass the ID of the root DOM element
 
 // Use ReactDOM.render instead of createRoot() and hydrateRoot()
 ReactDOM.render(

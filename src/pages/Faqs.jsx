@@ -1,5 +1,5 @@
 // Description: This is the FAQs page
-import React, { useEffect } from "react";
+import React, { useEffect, useRef  } from "react";
 // This is the common section component
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";
 import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
@@ -8,29 +8,22 @@ import "../styles/faqs.css";
 
 // This is the FAQs page
 function Faqs() {
+  const containerRef = useRef(null);
   // This is the useEffect hook that runs when the component mounts
   useEffect(() => {
-    var faq = document.getElementsByClassName("faq-page");// This is the FAQ question
-    var i;// This is the iterator
-    for (i = 0; i < faq.length; i++) {// This is the loop that adds an event listener to each FAQ question
-      faq[i].addEventListener("click", function () {// This is the event listener that toggles the FAQ answer
-        /* Toggle between adding and removing the "active" class,
-          to highlight the button that controls the panel */
-        this.classList.toggle("active1");
-        /* Toggle between hiding and showing the active panel */
-        var body = this.nextElementSibling;
-        if (body.style.display === "block") {// This is the if statement that checks if the FAQ answer is displayed
-          body.style.display = "none";
-        } else {// This is the else statement that displays the FAQ answer
-          body.style.display = "block";
-        }
+    const faqs = containerRef.current.querySelectorAll('.faq-page');
+    faqs.forEach((faq) => {
+      faq.addEventListener('click', () => {
+        faq.classList.toggle('active1');
+        const body = faq.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
       });
-    }
+    });
   }, []);// This is the empty array that ensures that the useEffect hook only runs once
 
   // This is the return statement that returns the FAQs page
   return (
-    <div id="top2">
+    <div id="top2" ref={containerRef}>
     <Helmet title="FAQs">
       
         <CommonSection title="FAQs" />
