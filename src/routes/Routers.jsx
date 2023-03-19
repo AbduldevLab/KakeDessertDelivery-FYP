@@ -43,7 +43,7 @@ const Routers = () => {
     }
   }, [location.pathname, navigate]);// this is the dependencies
 
-  // Return the routes
+  // Return the routes to the app
   return (
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />

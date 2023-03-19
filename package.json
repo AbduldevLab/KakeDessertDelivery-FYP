@@ -4,6 +4,7 @@
   "name": "kake-dessert-delivery",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
@@ -17,6 +18,8 @@
     "bootstrap": "^5.2.3",
     "firebase": "^9.17.1",
     "framer-motion": "^9.0.4",
+    "generate-sitemap": "^1.0.7",
+    "puppeteer": "^19.7.5",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
@@ -29,6 +32,7 @@
     "react-slick": "^0.29.0",
     "reactstrap": "^9.0.1",
     "remixicon": "^2.5.0",
+    "sitemap-generator-cli": "^7.5.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "typescript": "^4.9.5",
@@ -45,8 +49,7 @@
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sitemap": "babel-node ./src/routes/sitemap-generator.js",
-    "build:sitemap": "react-sitemap-generator --config-path=sitemap.config.js"
+    "sitemap": "babel-node ./src/routes/sitemap-generator.js"
   },
   "eslintConfig": {
     "extends": [

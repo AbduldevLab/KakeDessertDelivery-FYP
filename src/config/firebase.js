@@ -39,7 +39,7 @@ const auth = getAuth(app);
 // Get the firestore object
 const db = getFirestore(app);
 
-// Export the objects
+// Export the objects which are used in the app to use firebase
 export {
   auth,
   createUserWithEmailAndPassword,
