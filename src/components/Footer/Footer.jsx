@@ -118,6 +118,17 @@ const Footer = () => {
                 Read more
               </Link>
             </p>
+
+            <h5 className="footer__title">Kake App</h5>
+            <p className="footer__title2">
+              <Link
+                to="/app"
+                onClick={() => 
+                  document.getElementById("top4").scrollIntoView({ behavior: "smooth" })}
+              >
+                Add our app
+              </Link>
+            </p>
           </Col>
         </Row>
 

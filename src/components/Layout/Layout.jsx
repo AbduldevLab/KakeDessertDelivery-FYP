@@ -40,6 +40,7 @@ const Layout = () => {
   location.pathname === "/contact" ||
   location.pathname === "/faqs" ||
   location.pathname === "/t&c" ||
+  location.pathname === "/app" ||
   location.pathname === "/admin" ||
   location.pathname === "/admin/forgotPassword" ||
   location.pathname === "/admin/dashboard" ||

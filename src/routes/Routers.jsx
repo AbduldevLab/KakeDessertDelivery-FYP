@@ -12,6 +12,7 @@ import Contact from "../pages/Contact";
 import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
 import Tc from "../pages/T&C";
+import App from "../pages/App";
 
 // Importing admin panel pages
 import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
@@ -55,6 +56,7 @@ const Routers = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/faqs" element={<Faqs />} />
       <Route path="/t&c" element={<Tc />} />
+      <Route path="/app" element={<App />} />
       <Route path="/admin" element={<AdminDashSignIn />} />
       <Route path="/admin/forgotPassword" element={<AdminDashForgot />} />
       <Route path="/admin/dashboard" element={<AdminDash />} />
