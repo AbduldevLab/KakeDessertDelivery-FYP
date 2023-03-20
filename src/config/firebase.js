@@ -22,8 +22,8 @@ import {
 
 //This is the firebase config object. You can get this from your firebase console
 const firebaseConfig = {
-  apiKey: "AIzaSyAS3OsC4Pm-84UIn2RMqGBIq-Ygcnso2Fg",
-  authDomain: "kake-project.firebaseapp.com",
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
   projectId: "kake-project",
   storageBucket: "kake-project.appspot.com",
   messagingSenderId: "671879726441",
