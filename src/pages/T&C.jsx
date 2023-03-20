@@ -3,7 +3,7 @@ import React from "react";
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
 import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
 
-import "../styles/tc.css";
+import "../styles/t&c.css";
 
 // This is the Terms & Conditions page
 const Tc = () => {

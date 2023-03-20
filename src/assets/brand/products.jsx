@@ -59,7 +59,7 @@ const products = [
 
   {
     id: "05",
-    title: "Smoothies",
+    title: "Smoothie",
     price: 3,
     image01: product_01_image_01,
     category: "Drinks",
@@ -115,7 +115,7 @@ const products = [
   },
   {
     id: "11",
-    title: "American candy",
+    title: "American Candy",
     price: 2.5,
     image01: product_00_image_00,
     category: "Snacks",

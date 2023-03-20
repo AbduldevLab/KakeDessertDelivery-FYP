@@ -1,5 +1,5 @@
 // This is the page where all the products are displayed
-import React, { useState } from "react";
+import React, { useState, useRef  } from "react";
 // import Decoreleft from "../../assets/images/decore-left.png";
 import Helmet from "../components/Helmet/Helmet.jsx";
 // import Decoreright from "../../assets/images/decore-right.png";
@@ -19,9 +19,10 @@ import "../styles/pagination.css";
 // This is used to display the all items page
 const Allitems = () => {
   const [searchTerm, setSearchTerm] = useState("");// This is used to set the search term
+  const searchInputRef = useRef(null);
 
   const [pageNumber, setPageNumber] = useState(0);// This is used to set the page number
-
+  
   const searchedProduct = menuproducts.filter((item) => {// This is used to filter the products
     if (searchTerm.valueOf === "") {// This is used to check if the search term is empty
       return item;
@@ -65,9 +66,10 @@ const Allitems = () => {
                   placeholder="I'm looking for...."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}// This is used to set the search term
+                  ref={searchInputRef} //This is used to set the search input reference
                 />
                 <span>
-                  <i className="ri-search-line"></i>
+                  <i className="ri-search-line" onClick={() => searchInputRef.current.focus()}></i> 
                 </span>
               </div>
             </Col>

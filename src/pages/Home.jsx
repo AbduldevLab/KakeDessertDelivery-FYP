@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";// This is the link component that allow
 import Category from "../components/UI/category/Category.jsx";// This is the category component
 
 import "../styles/home.css";
+import "../styles/product-details.css";
 
 import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";

@@ -5,14 +5,13 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-
 
 // Importing pages
 import Home from "../pages/Home";
-import Allitems from "../pages/Allitems";
-import ItemDetails from "../pages/ItemDetails";
+import Menu from "../pages/Menu";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Contact from "../pages/Contact";
 import Register from "../pages/Register";
 import Faqs from "../pages/Faqs";
-import Tc from "../pages/Tc";
+import Tc from "../pages/T&C";
 
 // Importing admin panel pages
 import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
@@ -48,8 +47,8 @@ const Routers = () => {
     <Routes basename="/React-kake-dessert-delivery">
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/menu" element={<Allitems />} />
-      <Route path="/menu/:id" element={<ItemDetails />} />
+      <Route path="/menu" element={<Menu />} />
+      <Route path="/menu/:id" element={<Menu />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/register" element={<Register />} />

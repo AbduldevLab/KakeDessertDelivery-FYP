@@ -1,12 +1,14 @@
 // This component is used to display the product card on the home page
 import React, { useState } from "react";
 
+
 // This imports the css file for the product card
 import "../../../styles/product-card.css";
-import ReactModal from "../../Modal/CustomModal";
-import CloseModal from "../../Modal/ClosedModal";
-import ReactModal1 from "../../Modal/Custom1Modal";
-import ReactModal2 from "../../Modal/Custom2Modal";
+import ReactModal from "../../Modals/CustomModal";
+import ReactModal1 from "../../Modals/Custom1Modal";
+import ReactModal2 from "../../Modals/Custom2Modal";
+import CloseModal from "../../Modals/ClosedModal";
+import UnavailableModal from "../../Modals/UnavailableModal";
 
 //This imports the react router dom
 import { Link } from "react-router-dom";
@@ -24,6 +26,7 @@ const ProductCard = (props) => {
   const [modal1Open, setModal1Open] = useState(false);
   const [modal2Open, setModal2Open] = useState(false);
   const [closeModalOpen, setCloseModalOpen] = useState(false);
+  const [unavailableModalOpen, setUnavailableModalOpen] = useState(false);
 
   //This const is used to add the items contents to the cart
   const addToCart = (toppings, sauces, drink) => {
@@ -43,8 +46,10 @@ const ProductCard = (props) => {
   const handleClick = () => {
     //These are the arrays used to check the title of the item
     const remainder = [
-      "Smoothies",
+      "Smoothie",
       "Biscoff Shake",
+    ];
+    const unavailable = [
       "Crisps",
       "Chocolate Bars",
       "American Candy",
@@ -99,8 +104,17 @@ const ProductCard = (props) => {
       currentTime < workHoursEnd &&
       currentDay !== monday &&
       currentDay !== tuesday
-    ) {
+    ) 
+    {
       addToCart(null, null);
+    } else if (
+      unavailable.includes(title) &&
+      currentTime >= workHoursStart &&
+      currentTime < workHoursEnd &&
+      currentDay !== monday &&
+      currentDay !== tuesday
+    ) {
+      setUnavailableModalOpen(true);
     } else {
       setCloseModalOpen(true);
     }
@@ -117,7 +131,7 @@ const ProductCard = (props) => {
           <Link to={`/foods/€{id}`}>{title}</Link>
         </h5>
         <div className=" d-flex align-items-center justify-content-between ">
-          <span className="product__price me-2">€{price}</span>
+          <span className="product__price me-1">€{price}</span>
           <button className="addTOCart__btn" onClick={handleClick}>
             Add to Cart
             
@@ -146,6 +160,19 @@ const ProductCard = (props) => {
           addToCart={addToCart}
         />
       )}
+      {/* This is the modal used to show unavailablility modal */}
+      {unavailableModalOpen && (
+        <UnavailableModal
+          showModal={unavailableModalOpen}
+          closeModal={() => setUnavailableModalOpen(false)}
+          message={
+            <div className = "closed" style={{ textAlign: "center", color: "red" }}>
+              Sorry, this item will be available<br /> soon.<br />
+            </div>
+          }
+        />
+      )}
+
       {/* This is the modal used to close the modal */}
       {closeModalOpen && (
         <CloseModal
@@ -154,7 +181,7 @@ const ProductCard = (props) => {
           message={
             <div className = "closed" style={{ textAlign: "center", color: "red" }}>
               Sorry, we are currently closed.<br /> Please come back between <br />{" "}
-              (6:00 pm - 10:00 pm) from (Wed-Sun).
+              (6:00pm - 10:00pm) from (Wed-Sun).
             </div>
           }
         />

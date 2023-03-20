@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";// This is used to import
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";// This is used to import the reactstrap
 import CommonSection from "../components/UI/common-section/CommonSection.jsx";// This is used to import the common section
 import Helmet from "../components/Helmet/Helmet.jsx";// This is used to import the helmet
-import CloseModal from "../components/Modal/ClosedModal.jsx";// This is used to import the close modal
+import CloseModal from "../components/Modals/ClosedModal.jsx";// This is used to import the close modal
 
 import "../styles/checkout.css";
 import { cartActions } from "../store/shopping-cart/cartSlice.jsx";// This is used to import the cart actions
