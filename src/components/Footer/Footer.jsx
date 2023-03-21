@@ -84,7 +84,7 @@ const Footer = () => {
               </ListGroupItem>
               <ListGroupItem className=" delivery__time-item border-0 ps-0">
               <p className="footer__title2">
-                <span>Survey:</span> <a href="https://forms.gle/93RjTnssS2gieNQ16">Click here to take our survey, Thanks!</a>
+                <span>Survey:</span> Click<a className="footer__title2" href="https://forms.gle/93RjTnssS2gieNQ16"> here, </a>to take our survey thanks!
               </p>
             </ListGroupItem>
             </ListGroup>
