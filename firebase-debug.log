@@ -12,3 +12,19 @@
 [debug] [2023-03-21T12:18:21.947Z] > refreshing access token with scopes: []
 [debug] [2023-03-21T12:18:21.949Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
 [debug] [2023-03-21T12:18:21.949Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-21T12:18:24.257Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-03-21T12:18:24.258Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-21T12:18:24.265Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kake-project:testIamPermissions [none]
+[debug] [2023-03-21T12:18:24.266Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kake-project:testIamPermissions x-goog-quota-user=projects/kake-project
+[debug] [2023-03-21T12:18:24.266Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kake-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-03-21T12:18:24.442Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kake-project:testIamPermissions 200
+[debug] [2023-03-21T12:18:24.442Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kake-project:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-03-21T12:18:24.443Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kake-project [none]
+[debug] [2023-03-21T12:18:24.759Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kake-project 200
+[debug] [2023-03-21T12:18:24.759Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kake-project {"projectId":"kake-project","projectNumber":"671879726441","displayName":"Kake Project","name":"projects/kake-project","resources":{"hostingSite":"kake-project","realtimeDatabaseInstance":"kake-project-default-rtdb"},"state":"ACTIVE","etag":"1_ceec433e-5af8-495f-a633-d23905c2424e"}
+[info] 
+[info] === Deploying to 'kake-project'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-03-21T12:18:24.765Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kake-project/versions [none]
+[debug] [2023-03-21T12:18:24.765Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/kake-project/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
