@@ -82,6 +82,11 @@ const Footer = () => {
                   <span>Email:</span> kakedessertdelivery@gmail.com
                 </p>
               </ListGroupItem>
+              <ListGroupItem className=" delivery__time-item border-0 ps-0">
+              <p className="footer__title2">
+                <span>Survey:</span> <a href="https://forms.gle/93RjTnssS2gieNQ16">Click here to take our survey, Thanks!</a>
+              </p>
+            </ListGroupItem>
             </ListGroup>
           </Col>
 

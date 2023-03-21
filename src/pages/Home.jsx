@@ -57,13 +57,13 @@ const Home = () => {
   const [category, setCategory] = useState("ALL");// This is the category state
   const [allProducts, setAllProducts] = useState(products);// This is the all products state
 
-  const [hotDrink, sethotDrink] = useState([]);// This is the hot drink state
+  const [Drink, setDrink] = useState([]);// This is the hot drink state
 
   // This is the useEffect hook that runs once
   useEffect(() => {
     const filteredDrink = products.filter((item) => item.category === "Drinks");// This is the filtered drink variable
     const sliceCup = filteredDrink.slice(0, 4);// This is the slice cup variable
-    sethotDrink(sliceCup);// This is the set hot drink function
+    setDrink(sliceCup);// This is the set hot drink function
   }, []);// This is the dependency array
 
   // This is the useEffect hook that runs when the category state changes
@@ -335,7 +335,7 @@ const Home = () => {
               <h2>Hot/Cold Drinks</h2>
             </Col>
 
-            {hotDrink.map((item) => (
+            {Drink.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
                 <ProductCard item={item} />
               </Col>
