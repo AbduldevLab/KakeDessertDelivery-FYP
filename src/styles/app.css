@@ -1,0 +1,38 @@
+.step-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .step-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+  
+  .step-img {
+    width: 100%;
+    height: auto;
+    max-width: 80%;
+  }
+  
+  
+  @media only screen and (min-width: 600px) {
+    .step-img {
+      max-width: 50%;
+    }
+  }
+  
+  @media only screen and (min-width: 900px) {
+    .step-img {
+      max-width: 33.33%;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .step-img {
+      max-width: 25%;
+    }
+  }
+  
