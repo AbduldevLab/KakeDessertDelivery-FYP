@@ -1,16 +1,16 @@
 // This is the page where all the products are displayed
 import React, { useState, useRef  } from "react";
 // import Decoreleft from "../../assets/images/decore-left.png";
-import Helmet from "../components/Helmet/Helmet.jsx";
+import Helmet from "../components/Helmet/Helmet";
 // import Decoreright from "../../assets/images/decore-right.png";
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";
+import CommonSection from "../components/UI/common-section/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";// This is used to import the reactstrap components
 
 // This is used to import the product data
-import menuproducts from "../assets/brand/menuproducts.jsx";
+import menuproducts from "../assets/brand/menuproducts";
 // This is used to import the product card
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";// This is used to import the react-paginate
 
 import "../styles/all-desserts.css";

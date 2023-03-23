@@ -3,15 +3,15 @@ import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";// This is used to import the react-redux
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";// This is used to import the reactstrap
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";// This is used to import the common section
-import Helmet from "../components/Helmet/Helmet.jsx";// This is used to import the helmet
-import CloseModal from "../components/Modals/ClosedModal.jsx";// This is used to import the close modal
+import CommonSection from "../components/UI/common-section/CommonSection";// This is used to import the common section
+import Helmet from "../components/Helmet/Helmet";// This is used to import the helmet
+import CloseModal from "../components/Modals/ClosedModal";// This is used to import the close modal
 
 import "../styles/checkout.css";
-import { cartActions } from "../store/shopping-cart/cartSlice.jsx";// This is used to import the cart actions
+import { cartActions } from "../store/shopping-cart/cartSlice";// This is used to import the cart actions
 
 
-import { db } from "../config/firebase.js";// This is used to import the firebase
+import { db } from "../config/firebase";// This is used to import the firebase
 import { collection, addDoc } from "firebase/firestore";// This is used to import the firebase/firestore
 const { Timestamp } = require("firebase/firestore");// This is used to import the firebase/firestore
 

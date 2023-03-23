@@ -6,7 +6,7 @@ import "../../styles/AdminDash/panel.css";
 import { useNavigate } from "react-router-dom";
 
 import { collection, onSnapshot } from "firebase/firestore";
-import { db } from "../../config/firebase.js";
+import { db } from "../../config/firebase";
 
 //This is used to import the reactstrap components
 const Dashboard = () => {

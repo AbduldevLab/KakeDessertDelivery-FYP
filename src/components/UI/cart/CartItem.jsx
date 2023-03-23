@@ -6,7 +6,7 @@ import "../../../styles/cart-item.css";
 
 //This is used to import the react-redux components
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx"; //This is used to import the cart actions
+import { cartActions } from "../../../store/shopping-cart/cartSlice"; //This is used to import the cart actions
 
 //This is the CartItem component
 const CartItem = ({ item }) => {

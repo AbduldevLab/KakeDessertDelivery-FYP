@@ -8,7 +8,7 @@ import logo from "../../assets/images/kake-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux"; // This imports the react-redux hooks
 
-import { cartUiActions } from "../../store/shopping-cart/cartUiSlice.jsx"; // This imports the cartUiActions from the cartUiSlice.jsx file
+import { cartUiActions } from "../../store/shopping-cart/cartUiSlice"; // This imports the cartUiActions from the cartUiSlice.jsx file
 
 import "../../styles/header.css";
 

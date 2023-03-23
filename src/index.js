@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css"; // this is the carousel library u
 import "./styles/AdminDash/icons/boxicons-2/css/boxicons.min.css";// this is the icon library used in the app
 import "./index.css";// this is the css file used in the app
 
-import store from "./store/store.jsx"; // import the store that is used to store the state of the app
+import store from "./store/store"; // import the store that is used to store the state of the app
 import { Provider } from "react-redux"; // import the provider that is used to provide the store to the app
 import { BrowserRouter as Router } from "react-router-dom"; // import the router that is used to route the app
 

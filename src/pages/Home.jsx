@@ -1,7 +1,7 @@
 // Description: This is the home page of the website. It contains the hero section, the category section, the feature section, the product section, the why section, the network section and the testimonial section.
 import React, { useState, useEffect } from "react";
 
-import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
+import Helmet from "../components/Helmet/Helmet";// Helmet is a component that allows you to change the title of the page
 // This is the common section component
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
@@ -10,7 +10,7 @@ import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";// This is the link component that allows you to link to other pages
 
-import Category from "../components/UI/category/Category.jsx";// This is the category component
+import Category from "../components/UI/category/Category";// This is the category component
 
 import "../styles/home.css";
 import "../styles/product-details.css";
@@ -25,13 +25,13 @@ import foodCategoryImg01 from "../assets/images/desserts.png";
 import foodCategoryImg02 from "../assets/images/drinks.png";
 import foodCategoryImg03 from "../assets/images/snacks.png";
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";// This is the product card component
+import ProductCard from "../components/UI/product-card/ProductCard";// This is the product card component
 
 import whyImg from "../assets/images/location.png";
 
 import networkImg from "../assets/images/network.png";
 
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";// This is the testimonial slider component
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider";// This is the testimonial slider component
 
 const featureData = [// This is the feature data array
   {

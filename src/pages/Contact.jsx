@@ -1,6 +1,6 @@
 // This is the contact page
 import React from "react";
-import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
+import Helmet from "../components/Helmet/Helmet";// Helmet is a component that allows you to change the title of the page
 import styled from "styled-components";// styled-components is a library that allows you to style components
 
 // This is the styled component that styles the button

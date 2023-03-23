@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 //This is used to import the react-router-dom components
 import { useNavigate } from "react-router-dom";
-import { menuproducts } from "../../assets/brand/menuproducts.jsx";
+import { menuproducts } from "../../assets/brand/menuproducts";
 
 import {
   Table,

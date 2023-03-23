@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../.././assets/images/kake-logo.png";
 
 //This is used to import the firebase components
-import { auth, signInWithEmailAndPassword } from "../../config/firebase.js";
+import { auth, signInWithEmailAndPassword } from "../../config/firebase";
 
 import "../../styles/AdminDash/authentication.css";
 

@@ -12,7 +12,7 @@ import {
   Tooltip,
   Typography,
 } from "@material-ui/core"; //This is the table component from material-ui
-import { db } from "../../config/firebase.js"; //This is used to import the firebase database
+import { db } from "../../config/firebase"; //This is used to import the firebase database
 //This is used to import the firebase firestore components
 import {
   collection,

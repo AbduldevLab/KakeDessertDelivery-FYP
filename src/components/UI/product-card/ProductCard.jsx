@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 //these imports are used to connect the redux store to the component
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx";
+import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 // This component is used to display the product card on the home page
 const ProductCard = (props) => {

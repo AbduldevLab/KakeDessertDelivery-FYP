@@ -1,5 +1,5 @@
 // This file is the entry point of the wholeapplication
-import Layout from "./components/Layout/Layout.jsx";
+import Layout from "./components/Layout/Layout";
 
 // This is the main component of the whole application
 function App() {

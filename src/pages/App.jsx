@@ -1,6 +1,6 @@
 import React from 'react';
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
-import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
+import CommonSection from "../components/UI/common-section/CommonSection";// CommonSection is a component that allows you to change the title of the page
+import Helmet from "../components/Helmet/Helmet";// Helmet is a component that allows you to change the title of the page
 
 import "../styles/app.css"
 

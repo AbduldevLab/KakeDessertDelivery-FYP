@@ -15,12 +15,12 @@ import Tc from "../pages/T&C";
 import App from "../pages/App";
 
 // Importing admin panel pages
-import AdminDashSignIn from "../pages/AdminDash/Signin.jsx";
-import AdminDashForgot from "../pages/AdminDash/ForgotPassword.jsx";
-import AdminDash from "../pages/AdminDash/Dashboard.jsx";
-import AdminOrders from "../pages/AdminDash/Orders.jsx";
-import AdminUsers from "../pages/AdminDash/Users.jsx";
-import Inventory from "../pages/AdminDash/Inventory.jsx";
+import AdminDashSignIn from "../pages/AdminDash/Signin";
+import AdminDashForgot from "../pages/AdminDash/ForgotPassword";
+import AdminDash from "../pages/AdminDash/Dashboard";
+import AdminOrders from "../pages/AdminDash/Orders";
+import AdminUsers from "../pages/AdminDash/Users";
+import Inventory from "../pages/AdminDash/Inventory";
 
 
 // Importing 404 page

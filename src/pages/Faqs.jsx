@@ -1,8 +1,8 @@
 // Description: This is the FAQs page
 import React, { useEffect, useRef  } from "react";
 // This is the common section component
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";
-import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
+import CommonSection from "../components/UI/common-section/CommonSection";
+import Helmet from "../components/Helmet/Helmet";// Helmet is a component that allows you to change the title of the page
 
 import "../styles/faqs.css";
 

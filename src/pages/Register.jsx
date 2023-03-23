@@ -1,7 +1,7 @@
 // This is the signup page
 import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet.jsx";// Helmet is a component that allows you to change the title of the page
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";// CommonSection is a component that allows you to change the title of the page
+import Helmet from "../components/Helmet/Helmet";// Helmet is a component that allows you to change the title of the page
+import CommonSection from "../components/UI/common-section/CommonSection";// CommonSection is a component that allows you to change the title of the page
 import { Container, Row, Col, } from "reactstrap";// Container, Row, Col are components that allow you to create a grid system
 
 // Importing firebase
@@ -10,7 +10,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   db,
-} from "../config/firebase.js";
+} from "../config/firebase";
 
 import { collection, addDoc, getDocs, query, where  } from "firebase/firestore";// This is used to import the firebase/firestore
 

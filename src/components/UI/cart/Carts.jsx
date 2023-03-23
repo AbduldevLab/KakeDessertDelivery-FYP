@@ -2,12 +2,12 @@
 import React from "react";
 import { ListGroup } from "reactstrap"; //This is used to import the reactstrap components
 import { Link } from "react-router-dom"; //This is used to import the react-router-dom components
-import CartItem from "./CartItem.jsx"; //This is used to import the CartItem component
+import CartItem from "./CartItem"; //This is used to import the CartItem component
 import { useDispatch, useSelector } from "react-redux"; //This is used to import the react-redux components
 
 //This is used to import the cart actions
-import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice.jsx";
-import { cartActions } from "../../../store/shopping-cart/cartSlice.jsx";//This is used to import the cart actions
+import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
+import { cartActions } from "../../../store/shopping-cart/cartSlice";//This is used to import the cart actions
 import "../../../styles/shopping-cart.css";
 import EmptyCart from "../../../assets/images/emptyCart.png";
 

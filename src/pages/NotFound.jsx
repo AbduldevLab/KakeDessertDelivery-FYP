@@ -1,7 +1,7 @@
 // This is the 404 page
 import React from "react";
 import logo from ".././assets/images/kake-logo.png";
-import Helmet from "../components/Helmet/Helmet.jsx";// This is used to import the Helmet component
+import Helmet from "../components/Helmet/Helmet";// This is used to import the Helmet component
 
 import "../styles/notfound.css";
 // This is the 404 page

@@ -3,17 +3,17 @@ import React from "react";
 // import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
-import Header from "../Header/Header.jsx";
-import Footer from "../Footer/Footer.jsx";
-import Routes from "../../routes/Routers.jsx";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Routes from "../../routes/Routers";
 
 import AdminSidebar from "../AdminDash/Sidebar";
-import AdminHeader from "../AdminDash/Header.jsx";
+import AdminHeader from "../AdminDash/Header";
 
-import Carts from "../UI/cart/Carts.jsx";
+import Carts from "../UI/cart/Carts";
 import { useSelector } from "react-redux"; // This imports the react-redux hooks
 
-import NotFound from "../../pages/NotFound.jsx"; // This imports the NotFound component
+import NotFound from "../../pages/NotFound"; // This imports the NotFound component
 
 
 // This component is used to display the header on the home page

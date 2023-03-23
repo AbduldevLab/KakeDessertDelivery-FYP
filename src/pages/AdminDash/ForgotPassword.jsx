@@ -3,7 +3,7 @@ import React, { useState } from "react"; //This is used to import the react
 import { Link } from "react-router-dom"; //This is used to import the react-router-dom components
 import logo from "../.././assets/images/kake-logo.png";
 //This is used to import the firebase components
-import { auth, fetchSignInMethodsForEmail, sendPasswordResetEmail } from "../../config/firebase.js";
+import { auth, fetchSignInMethodsForEmail, sendPasswordResetEmail } from "../../config/firebase";
 import "../../styles/AdminDash/authentication.css";
 
 //This is the ForgotPassword component

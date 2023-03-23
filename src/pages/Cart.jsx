@@ -2,12 +2,12 @@
 import React from "react";
 
 // import Decoreleft from "../../assets/images/decore-left.png";
-import CommonSection from "../components/UI/common-section/CommonSection.jsx";
-import Helmet from "../components/Helmet/Helmet.jsx";// This is used to import the Helmet component
+import CommonSection from "../components/UI/common-section/CommonSection";
+import Helmet from "../components/Helmet/Helmet";// This is used to import the Helmet component
 import "../styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";// This is used to import the react-redux
 import { Container, Row, Col } from "reactstrap";// This is used to import the reactstrap components
-import { cartActions } from "../store/shopping-cart/cartSlice.jsx";// This is used to import the cart actions
+import { cartActions } from "../store/shopping-cart/cartSlice";// This is used to import the cart actions
 
 // This is used to display the cart page
 const Cart = () => {
