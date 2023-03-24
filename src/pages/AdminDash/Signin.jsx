@@ -67,8 +67,9 @@ const Signin = () => {
                                 {/* //This is used to set the email */}
                                 <input
                                     type="text"
+                                    name="email"
                                     className="input-control"
-                                    id="email"
+                                    id="email-input"
                                     placeholder="example@gmail.com"
                                     autoComplete="off"
                                     required
@@ -84,7 +85,7 @@ const Signin = () => {
                                 <input
                                     type="password"
                                     name="password"
-                                    id="password"
+                                    id="password-input"
                                     className="input-control"
                                     placeholder="Password"
                                     autoComplete="off"
