@@ -50,7 +50,7 @@ const CustomModal = (props) => {
               onChange={(e) => setToppings(e.target.value)}
             >
               {/* //This is the list of toppings that the user can select from */}
-              <option value="default">Select one topping</option>
+              <option data-testid="toppings" value="default">Select one topping</option>
               <option value="Kinder">Kinder</option>
               <option value="Caramel fredo">Caramel fredo</option>
               <option value="Milky bar">Milky bar</option>
@@ -71,7 +71,7 @@ const CustomModal = (props) => {
               onChange={(e) => setSauces(e.target.value)} //This is the list of sauces that the user can select from
             >
               {/* //This is the list of sauces that the user can select from */}
-              <option value="default1">Select one sauce</option>
+              <option data-testid="sauces" value="default1">Select one sauce</option>
               <option value="Milk chocolate">Milk chocolate</option>
               <option value="White chocolate">White chocolate</option>
               <option value="Kinder">Kinder</option>
@@ -90,6 +90,7 @@ const CustomModal = (props) => {
             (sauces !== "default1" && toppings !== "default") ? ( //If the user has selected a sauce and a topping, enable the "Add" button
               <Button
                 type="submit"
+                data-testid="submit-button" // add this line
                 variant="danger"
                 style={{ backgroundColor: "#CD853F" }}
               >
@@ -108,6 +109,7 @@ const CustomModal = (props) => {
             {/* //This is the "Cancel" button */}
             <Button
               onClick={props.closeModal}
+              data-testid="close-button"
               style={{ backgroundColor: "#CD853F" }}
             >
               Cancel
