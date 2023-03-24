@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import CartItem from '../UI/cart/CartItem';
 import { cartActions } from "../../store/shopping-cart/cartSlice";
 
+//This component tests the CartItem component
+
 jest.mock("react-redux", () => ({
     useDispatch: jest.fn(),
   }));

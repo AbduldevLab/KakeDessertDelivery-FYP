@@ -7,6 +7,8 @@ import Custom2Modal from '../modals/Custom2Modal';
 import CustomModal from '../Modals/CustomModal';
 import UnavailableModal from '../Modals/UnavailableModal';
 
+//This component tests the modals
+
 //closed modal
 describe('ClosedModal', () => {
   it('renders with a message and a close button', () => {
