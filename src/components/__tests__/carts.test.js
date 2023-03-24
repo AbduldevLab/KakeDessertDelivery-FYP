@@ -1,84 +1,126 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { useDispatch } from "react-redux";
-import CartItem from '../UI/cart/CartItem';
-import { cartActions } from "../../store/shopping-cart/cartSlice";
+import { addItem, removeItem } from '../../store/shopping-cart/cartSlice';
 
-//This component tests the CartItem component
-
-jest.mock("react-redux", () => ({
-    useDispatch: jest.fn(),
-  }));
-  
-  describe("CartItem component", () => {
-    const mockDispatch = jest.fn();
-    useDispatch.mockReturnValue(mockDispatch);
-  
-    const item = {
+describe('Cart Slice', () => {
+  const initialCartItems = [
+    {
       id: 1,
-      title: "Product",
+      title: 'Pizza',
+      selection: { toppings: ['cheese'], sauces: ['tomato'], drink: null },
+      image01: 'pizza.jpg',
       price: 10,
-      image01: "image01.jpg",
       quantity: 2,
-      totalPrice: 20,
-      selection: { topping: "Cheese", sauce: "Mayo" },
+      totalPrice: 20
+    },
+    {
+      id: 2,
+      title: 'Burger',
+      selection: null,
+      image01: 'burger.jpg',
+      price: 5,
+      quantity: 1,
+      totalPrice: 5
+    }
+  ];
+
+  const initialState = {
+    cartItems: initialCartItems,
+    totalQuantity: 3,
+    totalAmount: 25
+  };
+
+  it('should add a new item to the cart', () => {
+    const newItem = {
+      id: 3,
+      title: 'Drink',
+      selection: null,
+      image01: 'drink.jpg',
+      price: 2,
+      quantity: 1,
+      totalPrice: 2
     };
-  
-    beforeEach(() => {
-      render(<CartItem item={item} />);
-    });
-  
-    test("renders item title", () => {
-      const titleElement = screen.getByText("Product");
-      expect(titleElement).toBeInTheDocument();
-    });
-  
-    test("renders item toppings and sauces", () => {
-      const toppingsElement = screen.getByText("toppings: Cheese");
-      expect(toppingsElement).toBeInTheDocument();
-  
-      const saucesElement = screen.getByText("sauces: Mayo");
-      expect(saucesElement).toBeInTheDocument();
-    });
-  
-    test("renders item price and quantity", () => {
-      const priceElement = screen.getByText("2x €20");
-      expect(priceElement).toBeInTheDocument();
-  
-      const quantityElement = screen.getByText("2");
-      expect(quantityElement).toBeInTheDocument();
-    });
-  
-    test("calls incrementItem when increase button is clicked", () => {
-      const increaseButton = screen.getByTitle("increase quantity");
-      fireEvent.click(increaseButton);
-  
-      expect(mockDispatch).toHaveBeenCalledWith(
-        cartActions.addItem({
-          id: 1,
-          title: "Product",
-          price: 10,
-          selection: { topping: "Cheese", sauce: "Mayo" },
-          image01: "image01.jpg",
-        })
-      );
-    });
-  
-    test("calls decreaseItem when decrease button is clicked", () => {
-      const decreaseButton = screen.getByTitle("decrease quantity");
-      fireEvent.click(decreaseButton);
-  
-      expect(mockDispatch).toHaveBeenCalledWith(
-        cartActions.removeItem({ title: "Product", selection: { topping: "Cheese", sauce: "Mayo" } })
-      );
-    });
-  
-    test("calls deleteItem when delete button is clicked", () => {
-      const deleteButton = screen.getByTitle("delete item");
-      fireEvent.click(deleteButton);
-  
-      expect(mockDispatch).toHaveBeenCalledWith(
-        cartActions.deleteItem({ title: "Product", selection: { topping: "Cheese", sauce: "Mayo" } })
-      );
-    });
+
+    const expectedState = {
+      cartItems: [
+        ...initialCartItems,
+        newItem
+      ],
+      totalQuantity: 4,
+      totalAmount: 27
+    };
+
+    const action = addItem(newItem);
+
+    const newState = cartSlice(initialState, action);
+
+    expect(newState).toEqual(expectedState);
+  });
+
+  it('should update an existing item in the cart', () => {
+    const newItem = {
+      id: 1,
+      title: 'Pizza',
+      selection: { toppings: ['cheese', 'pepperoni'], sauces: ['tomato'], drink: null },
+      image01: 'pizza.jpg',
+      price: 10,
+      quantity: 3,
+      totalPrice: 30
+    };
+
+    const expectedState = {
+      cartItems: [
+        newItem,
+        {
+          id: 2,
+          title: 'Burger',
+          selection: null,
+          image01: 'burger.jpg',
+          price: 5,
+          quantity: 1,
+          totalPrice: 5
+        }
+      ],
+      totalQuantity: 4,
+      totalAmount: 35
+    };
+
+    const action = addItem(newItem);
+
+    const newState = cartSlice(initialState, action);
+
+    expect(newState).toEqual(expectedState);
+  });
+
+  it('should remove an item from the cart', () => {
+    const itemToRemove = {
+      id: 1,
+      title: 'Pizza',
+      selection: { toppings: ['cheese'], sauces: ['tomato'], drink: null },
+      image01: 'pizza.jpg',
+      price: 10,
+      quantity: 2,
+      totalPrice: 20
+    };
+
+    const expectedState = {
+      cartItems: [
+        {
+          id: 2,
+          title: 'Burger',
+          selection: null,
+          image01: 'burger.jpg',
+          price: 5,
+          quantity: 1,
+          totalPrice: 5
+        }
+      ],
+      totalQuantity: 1,
+      totalAmount: 5
+    };
+
+    const action = removeItem(itemToRemove);
+
+    const newState = cartSlice(initialState, action);
+
+    expect(newState).toEqual(expectedState);
+  });
 });
