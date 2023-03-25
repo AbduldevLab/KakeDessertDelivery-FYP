@@ -30,6 +30,7 @@ const Checkout = () => {
   const [couponError, setCouponError] = useState("");
   const [couponSucc, setCouponSucc] = useState("");
   const [discountAmount, setDiscountAmount] = useState(0);
+  const [discountApplied, setDiscountApplied] = useState(false); // keep track of whether discount has been applied or not
 
 
   const [emailError, setEmailError] = useState("");// This is used to set the email error
@@ -62,26 +63,34 @@ const Checkout = () => {
   const applyCoupon = () => {
     // This is where you would check if the coupon code is valid
     // For demonstration purposes, we will just assume that the code "SAVE10" gives a 10% discount
-    if (couponCode === "KAKE10") {
+    if (!discountApplied && couponCode === "KAKE10") {
       const discount = (totalAmount * 10) / 100;
       setDiscountAmount(discount);
       setCouponSucc("Discount applied!");
       setCouponError("");
+      setDiscountApplied(true); // set the flag to true to indicate that discount has been applied
     } else {
       setCouponError("Invalid coupon code");
       setCouponSucc("");
+      setTimeout(() => {
+        setCouponError("");
+      }, 4000); // 4-second delay before removing the error message
     }
+    
   };
 
   const removeDiscount = () => {
-    setDiscountAmount(0); // set the discount amount to 0
-    setCouponError("Discount removed."); //  error message
-    setCouponSucc(""); // remove the success message
-  }
-   // Clear error messages after 5 seconds
-   setTimeout(() => {
-    setCouponError("");
-  }, 5000);
+    if (discountApplied) { // check if discount has been applied
+      setDiscountAmount(0); // set the discount amount to 0
+      setCouponError("Discount removed"); // error message
+      setCouponSucc(""); // remove the success message
+      setDiscountApplied(false); // set the flag to false to indicate that discount has been removed
+      setTimeout(() => {
+        setCouponError("");
+      }, 4000); // Clear error messages after 4 seconds
+    }
+  };
+   
   
   const totalAmount = cartTotalAmount + Number(shippingCost) - discountAmount; // This is used to calculate the total amount
 
@@ -358,7 +367,7 @@ const Checkout = () => {
                   {/* This is used to display the discount */}
                   <div className="coupon">
                   <input type="text" placeholder="Enter coupon code" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
-                  <button className="addTOCart__btn_AR" onClick={applyCoupon}>Apply</button>
+                  <button className="addTOCart__btn_AR" onClick={applyCoupon} disabled={discountApplied}>Apply</button>
                   <button className="addTOCart__btn_AR" onClick={removeDiscount}>Remove</button>
                   {couponError && <p style={{ color: "red" }}>{couponError}</p>}
                   {couponSucc && <p style={{ color: "green" }}>{couponSucc}</p>}
