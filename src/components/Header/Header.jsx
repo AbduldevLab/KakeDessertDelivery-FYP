@@ -106,7 +106,9 @@ const Header = () => {
             </span>
 
             <span className="user">
-              <Link to="/register">
+              <Link to="/register" onClick={() => 
+                  document.getElementById("top1").scrollIntoView({ behavior: "smooth" })}
+              >
                 <i className="ri-user-line"></i>
               </Link>
             </span>
