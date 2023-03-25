@@ -12,14 +12,17 @@
 - Product page
 - Cart and checkout page
 - Contact page
-- Register page
+- Register/sign-up page
 - Modern  UI/UX
 - Admin Dashboard
-- Admin panel charts
+- Admin panel pages
 - Admin authentication and authorisation to access the panel
 - Private Routing
 - sitemaping gg
-- More to come .. In progress.
+- App icon page
+- Survey/feedback link 
+- other social media links such as tiktok, whatsapp etc
+- direction/location google map redirect/link
 
 ### Technologies Used:
 
