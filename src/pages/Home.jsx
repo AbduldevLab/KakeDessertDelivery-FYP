@@ -208,7 +208,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Our Popular Choices</h2>
+              <h2>Our Most-loved Favorites</h2>
             </Col>
 
 {/* // This is the map function that maps through the popularData array */}
