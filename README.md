@@ -34,9 +34,12 @@
 7. react-router-dom
 8. react-google-charts
 9. react-icons
-10. react-rating-start
+10. TypeScript
 11. Firebase
 12. boxicons
+13. Jest
+14. Firestore
+15. react sitemapping
 
 ### Live domain link:
 
