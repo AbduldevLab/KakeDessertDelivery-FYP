@@ -30,9 +30,10 @@ const ForgotPassword = () => {
       setError("Error occureed, please try again.");
     }
 
-    // Clear error messages after 2 seconds
+    // Clear error messages after 3 seconds
     setTimeout(() => {
       setError("");
+      setSuccess("");
     }, 3000);
   };
 

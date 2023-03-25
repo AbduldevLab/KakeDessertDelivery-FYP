@@ -74,7 +74,7 @@ const Checkout = () => {
       setCouponSucc("");
       setTimeout(() => {
         setCouponError("");
-      }, 4000); // 4-second delay before removing the error message
+      }, 3000); // 3-second delay before removing the error message
     }
     
   };
@@ -87,7 +87,7 @@ const Checkout = () => {
       setDiscountApplied(false); // set the flag to false to indicate that discount has been removed
       setTimeout(() => {
         setCouponError("");
-      }, 4000); // Clear error messages after 4 seconds
+      }, 3000); // Clear error messages after 3 seconds
     }
   };
    

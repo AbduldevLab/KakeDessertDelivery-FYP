@@ -86,7 +86,7 @@ const Register = () => {
       setNameError("");
       setSuccessMessage("");
       setErrorMessage("");
-    }, 5000);
+    }, 3000);
   };
 
   // This function handles the signup with Google

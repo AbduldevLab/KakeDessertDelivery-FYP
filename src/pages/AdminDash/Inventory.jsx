@@ -48,7 +48,7 @@ function Inventory() {
     setTooltipOpen(true);
     setTimeout(() => {
       setTooltipOpen(false);
-    }, 4000); // set the time in milliseconds after which the tooltip should disappear
+    }, 5000); // set the time in milliseconds after which the tooltip should disappear
   };
 
   //This is used to check if the user is authenticated
