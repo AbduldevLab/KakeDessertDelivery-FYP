@@ -80,7 +80,7 @@ const Register = () => {
         }
       }
     } 
-    // Clear error messages after 5 seconds
+    // Clear error messages after 3 seconds
     setTimeout(() => {
       setEmailError("");
       setNameError("");
@@ -91,26 +91,45 @@ const Register = () => {
 
   // This function handles the signup with Google
   const handleGoogleLogin = async (e) => {
-    e.preventDefault();// This prevents the page from reloading when the form is submitted
-
-    const provider = new GoogleAuthProvider();// This creates a new GoogleAuthProvider
+    e.preventDefault(); // This prevents the page from reloading when the form is submitted
+  
+    const provider = new GoogleAuthProvider(); // This creates a new GoogleAuthProvider
     try {
-      const result = await signInWithPopup(auth, provider);// This signs the user in with Google and returns the user credentials
+      const result = await signInWithPopup(auth, provider); // This signs the user in with Google and returns the user credentials
       const { user } = result;
+  
+      // Check if email address is already in use
+      const querySnapshot = await getDocs(query(collection(db, "Users"), where("email", "==", user.email)));
+      if (!querySnapshot.empty) {
+        setErrorMessage("This email address is already in use!");
+        setSuccessMessage("");
+        setLoggedIn(false);
+        return;
+      }
+  
       const userDetails = {
         name: user.displayName,
         email: user.email,
         signupTime: Timestamp.now(),
       };
-      await addDoc(usersRef, userDetails);// This adds the user details to the Firestore collection
+      await addDoc(usersRef, userDetails); // This adds the user details to the Firestore collection
       setSuccessMessage(`${user.displayName}, you have successfully signed up!`);
       setErrorMessage(""); // Clear error message on success
       document.getElementById("form").reset();
-    } catch (error) {// If there is an error, set the error message
+      setLoggedIn(true); // set loggedIn to true on successful login
+    } catch (error) {
+      // If there is an error, set the error message
       setErrorMessage("Error occurred, please try again.");
       setSuccessMessage(""); // Clear success message on error
       console.log(error);
+      setLoggedIn(false); // set loggedIn to false on error
     }
+  
+    // Clear error messages after 3 seconds
+    setTimeout(() => {
+      setSuccessMessage("");
+      setErrorMessage("");
+    }, 3000);
   };
 
   // This is the signup page
@@ -180,7 +199,6 @@ const Register = () => {
                 <button className="addTOCart__btn21" onClick={handleGoogleLogin}>
                   Sign-up with <img className="google"src="https://img.icons8.com/color/48/null/google-logo.png" alt="google"/>
                 </button>
-                
               </div>
             </Col>
           </Row>
