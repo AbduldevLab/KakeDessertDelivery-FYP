@@ -80,13 +80,13 @@ const Register = () => {
         }
       }
     } 
-    // Clear error messages after 3 seconds
+    // Clear error messages after 5 seconds
     setTimeout(() => {
       setEmailError("");
       setNameError("");
       setSuccessMessage("");
       setErrorMessage("");
-    }, 3000);
+    }, 5000);
   };
 
   // This function handles the signup with Google
@@ -95,8 +95,15 @@ const Register = () => {
 
     const provider = new GoogleAuthProvider();// This creates a new GoogleAuthProvider
     try {
-      await signInWithPopup(auth, provider);// This signs the user in with Google
-      setSuccessMessage("Successfully signed up!");
+      const result = await signInWithPopup(auth, provider);// This signs the user in with Google and returns the user credentials
+      const { user } = result;
+      const userDetails = {
+        name: user.displayName,
+        email: user.email,
+        signupTime: Timestamp.now(),
+      };
+      await addDoc(usersRef, userDetails);// This adds the user details to the Firestore collection
+      setSuccessMessage(`${user.displayName}, you have successfully signed up!`);
       setErrorMessage(""); // Clear error message on success
       document.getElementById("form").reset();
     } catch (error) {// If there is an error, set the error message

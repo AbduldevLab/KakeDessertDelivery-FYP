@@ -16,7 +16,6 @@ import { collection, addDoc } from "firebase/firestore";// This is used to impor
 const { Timestamp } = require("firebase/firestore");// This is used to import the firebase/firestore
 
 
-
 // This is used to display the checkout page
 const Checkout = () => {
   const [deliveryOption, setDeliveryOption] = useState("delivery");// This is used to set the delivery option
@@ -79,10 +78,10 @@ const Checkout = () => {
     setCouponError("Discount removed."); //  error message
     setCouponSucc(""); // remove the success message
   }
-   // Clear error messages after 3 seconds
+   // Clear error messages after 5 seconds
    setTimeout(() => {
     setCouponError("");
-  }, 3000);
+  }, 5000);
   
   const totalAmount = cartTotalAmount + Number(shippingCost) - discountAmount; // This is used to calculate the total amount
 
