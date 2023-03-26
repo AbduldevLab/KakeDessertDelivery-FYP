@@ -88,6 +88,9 @@ const Header = () => {
                   className={(navClass) =>
                     navClass.isActive ? "active__menu" : "" // This is used to add the active__menu class to the active link
                   }
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   {item.display}
                 </NavLink> // This is used to display the nav__links array
