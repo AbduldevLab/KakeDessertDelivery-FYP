@@ -67,8 +67,8 @@ const ProductCard = (props) => {
     ];
     //These are the variables used to check the time and day
     const currentTime = new Date().getHours();
-    const workHoursStart = 18;
-    const workHoursEnd = 22;
+    const openingHour = 18;
+    const closingHour = 22;
     const currentDay = new Date().getDay();
     const monday = 1;
     const tuesday = 2;
@@ -76,32 +76,32 @@ const ProductCard = (props) => {
     //These are the conditions used to open the modal
     if (
       coldDrinks.includes(title) &&
-      currentTime >= workHoursStart &&
-      currentTime < workHoursEnd &&
+      currentTime >= openingHour &&
+      currentTime < closingHour &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
       setModal2Open(true);
     } else if (
       hotDrinks.includes(title) &&
-      currentTime >= workHoursStart &&
-      currentTime < workHoursEnd &&
+      currentTime >= openingHour &&
+      currentTime < closingHour &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
       setModal1Open(true);
     } else if (
       desserts.includes(title) &&
-      currentTime >= workHoursStart &&
-      currentTime < workHoursEnd &&
+      currentTime >= openingHour &&
+      currentTime < closingHour &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
       setModalOpen(true);
     } else if (
       remainder.includes(title) &&
-      currentTime >= workHoursStart &&
-      currentTime < workHoursEnd &&
+      currentTime >= openingHour &&
+      currentTime < closingHour &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) 
@@ -109,8 +109,8 @@ const ProductCard = (props) => {
       addToCart(null, null);
     } else if (
       unavailable.includes(title) &&
-      currentTime >= workHoursStart &&
-      currentTime < workHoursEnd &&
+      currentTime >= openingHour &&
+      currentTime < closingHour &&
       currentDay !== monday &&
       currentDay !== tuesday
     ) {
