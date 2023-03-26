@@ -15,6 +15,7 @@ const Cart = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);// This is used to get the total amount
   // This is used to display the cart page
   return (
+    <div id="topC">
     <Helmet title="Cart">
       <CommonSection title="Your Cart" />
       <section>
@@ -70,6 +71,7 @@ const Cart = () => {
         </Container>
       </section>
     </Helmet>
+    </div>
   );
 };
 

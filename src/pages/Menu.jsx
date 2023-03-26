@@ -53,6 +53,7 @@ const Allitems = () => {
 
   // This is used to display the all items page
   return (
+    <div id="topM">
     <Helmet title="All Items">
       <CommonSection title="All Desserts" />
       <section>
@@ -99,6 +100,7 @@ const Allitems = () => {
         </Container>
       </section>
     </Helmet>
+    </div>
   );
 };
 

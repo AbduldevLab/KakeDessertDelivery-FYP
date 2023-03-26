@@ -102,6 +102,7 @@ const Home = () => {
 
   // This is the return statement
   return (
+    <div id="topH">
     <Helmet title="Grab your kake today!">
       <section>
         <Container>
@@ -371,6 +372,7 @@ const Home = () => {
         </Container>
       </section>
     </Helmet>
+    </div>
   );
 };
 

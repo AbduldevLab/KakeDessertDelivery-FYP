@@ -17,18 +17,30 @@ const nav__links = [
   {
     display: "Home",
     path: "/home",
+    onClick: () => {// This is used to scroll to the top of the page
+      document.getElementById("topH").window.scrollTo(0, 0)({ behavior: "smooth" });
+    },
   },
   {
     display: "Menu",
     path: "/menu",
+    onClick: () => {// This is used to scroll to the top of the page
+      document.getElementById("topM").window.scrollTo(0, 0)({ behavior: "smooth" });
+    },
   },
   {
     display: "Cart",
     path: "/cart",
+    onClick: () => {// This is used to scroll to the top of the page
+      document.getElementById("topC").window.scrollTo(0, 0)({ behavior: "smooth" });
+    },
   },
   {
     display: "Contact",
     path: "/contact",
+    onClick: () => {// This is used to scroll to the top of the page
+      document.getElementById("top0").window.scrollTo(0, 0)({ behavior: "smooth" });
+    },
   },
 ];
 
@@ -78,7 +90,6 @@ const Header = () => {
           {/* ======= menu ======= */}
           <div className="navigation" ref={menuRef} onClick={() => { // This is used to toggle the menu when the user clicks outside the menu
             toggleMenu();
-            window.scrollTo(0, 0);
           }}>
             <div className="menu d-flex align-items-center gap-5">
               {nav__links.map((item, index) => ( // This is used to map through the nav__links array
@@ -88,9 +99,7 @@ const Header = () => {
                   className={(navClass) =>
                     navClass.isActive ? "active__menu" : "" // This is used to add the active__menu class to the active link
                   }
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                  }}
+                  onClick={item.onClick}
                 >
                   {item.display}
                 </NavLink> // This is used to display the nav__links array
