@@ -50,7 +50,7 @@
 
 Visit the deployed website, track live work progress.
 
-www.kakedessertdelivery.com
+https://kakedessertdelivery.com/
 
 ### Copyright and License:
 
