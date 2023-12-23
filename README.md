@@ -53,7 +53,7 @@
 
 Visit the deployed website, track live work progress.
 
-https://kakedessertdelivery.com/
+https://kake-project.web.app/
 
 ### Copyright and License:
 
