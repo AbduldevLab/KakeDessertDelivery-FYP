@@ -1,62 +1,59 @@
-## Kake Dessert Delivery WebApp FYP
-
-### Features:
+Here’s the updated `README.md` with a link to the MIT license:
 
 ---
 
-##### Features included in this final year project
+# Kake Dessert Delivery WebApp FYP
 
-- Add to cart functionality
-- Shopping cart functionality
-- Product Filtering functionality
-- Product page
-- Cart and checkout page
-- Contact page
-- Register/sign-up page
-- Modern  UI/UX
-- Admin Dashboard
-- Admin panel pages
-- Admin authentication and authorisation to access the panel
-- Private Routing
-- sitemaping gg
-- App icon page
-- Survey/feedback link 
-- other social media links such as tiktok, whatsapp etc
-- direction/location google map redirect/link
-- Kake includes features for Google login, user registration, email verification, forgot password, reset password.
-- The web application is designed for easy browsing on touch devices, making it accessible to a wide range of users
-- Kake is fully responsive across all devices, providing a seamless experience for your customers.
+A modern dessert delivery web application, created as a final year project, designed to provide users with an exceptional online shopping experience for desserts. Visit the live site here: [Kake Dessert Delivery WebApp](https://kake-project.web.app/)
 
-### Technologies Used:
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
 ---
 
-1. React js
-2. Redux Toolkit
-3. ReactStrap
-4. CSS
-5. Bootstrap
-6. RemixIcon/flaticon
-7. React-router-dom
-8. React-google-charts
-9. React-icons
-10. TypeScript
-11. Firebase
-12. boxicons
-13. Jest
-14. Firestore
-15. React sitemapping
+## Features
 
-### Live domain link:
+This project includes the following features:
+
+- **Add to Cart**: Seamlessly add items to the shopping cart.
+- **Shopping Cart**: View, update, and manage items before checkout.
+- **Product Filtering**: Filter products for better browsing.
+- **Product, Cart, Checkout Pages**: Dedicated pages for product browsing, cart management, and checkout process.
+- **Contact & Sign-Up Pages**: Contact page and registration/sign-up support.
+- **Modern UI/UX**: Intuitive and user-friendly interface.
+- **Admin Dashboard & Panel**: Admin control panel with secure access, authentication, and authorization.
+- **Private Routing**: Protected routes for enhanced security.
+- **Google Sitemapping**: Structured for search engine optimization.
+- **Feedback & Social Links**: Survey link and social links for TikTok, WhatsApp, and others.
+- **Location Link**: Google Maps redirection for easy location tracking.
+- **User Authentication**: Supports Google login, registration, email verification, and password recovery.
+- **Touch-Friendly Design**: Optimized for touch devices, ensuring ease of use.
+- **Responsive Design**: Fully adaptable to any screen size for consistent user experience.
+
+## Technologies Used
+
+This project is powered by the following technologies:
+
+1. **React.js**: JavaScript library for building user interfaces.
+2. **Redux Toolkit**: State management for efficient data flow.
+3. **ReactStrap & Bootstrap**: Component libraries for styling.
+4. **CSS**: Styling and layout.
+5. **RemixIcon & Flaticon**: Icons for UI enhancement.
+6. **React-Router-Dom**: Handles routing for single-page applications.
+7. **React-Google-Charts**: Visualization for dashboard analytics.
+8. **React-Icons & Boxicons**: Icon libraries for consistent UI.
+9. **TypeScript**: Type-safe JavaScript for more reliable code.
+10. **Firebase**: Provides backend services including Firestore for data storage.
+11. **Jest**: Testing framework for reliable functionality.
+12. **React Sitemapping**: Structured sitemap for SEO.
+
+## License
 
 ---
 
-Visit the deployed website, track live work progress.
-
-https://kake-project.web.app/
-
-### Copyright and License:
+© 2023 Abduldevlab. This project is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
-
-copyright 2023 A.Zino.
