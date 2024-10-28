@@ -54,6 +54,6 @@ This project is powered by the following technologies:
 
 ---
 
-© 2023 Abduldevlab. This project is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).
+© 2023 Abdul@devlab. This project is open-source and licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
